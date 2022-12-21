@@ -1,6 +1,5 @@
 # **Infraestructura Abierta**
 ```
-· Módulo Sistema de captura
 · Módulo Visualizador
 ```
 
