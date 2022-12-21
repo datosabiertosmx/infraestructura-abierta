@@ -1,0 +1,416 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <%- include ('partials/headProyectos'); -%>
+    </head>
+    <body>
+        <%- include ('partials/header'); -%>
+        <!-- Filtro de busqueda -->
+        <%- include ('partials/busqueda_general'); -%>
+        <!-- Sección Página -->
+        <div id="paginaSeccion" class="tamanoBody">
+            <!-- Breadcrum -->
+            <nav class="ubicacion sticky-top sticky-top_movil">
+                <ol class="breadcrumb breadcrumb_movil">
+                    <li class="breadcrumb-item"><a class="inicio" href="/">Inicio</a></li>
+                    <li class="breadcrumb-item color_detalle">Proyectos</li>
+                </ol>
+            </nav>
+            
+            <div>
+                <%- include ('partials/banner_general'); -%>
+            </div>
+            <!--Lista de proyectos y Numeralia-->
+            <div class="container ubicacion_card card_dispositivo_two">
+                <div>
+                    <div class="card card_sinBorde screen_all">
+                        <div class="card-header head_card">
+                            <ul class="nav nav-tabs card-header-tabs pestana letter_head_card_two" id="proyect-list" role="tablist">
+                                <li class="col-md-6 nav-item two_card">
+                                    <a class="nav-link active pestaña centra_letra cambioColor" href="#listas" role="tab" aria-controls="listas" aria-selected="true">Listado de proyectos</a>
+                                </li>
+                                <li class="col-md-6 nav-item two_card" onclick="closeTooltip()">
+                                    <a class="nav-link cambioColor centra_letra"  href="#numeralia" role="tab" aria-controls="numeralia" aria-selected="false">Numeralia</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content mt-3">
+                                <div class="tab-pane active" id="listas" role="tabpanel">
+                                    <div>
+                                        <!-- Buscador -->
+                                        <div onclick="closeTooltip()">
+                                            <h1 class="titulo_lista faMovil">Listado de proyectos</h1>
+                                            <br>
+                                            <div class="row" id="busqueda_contratos">
+                                                <div class="cienWidth">
+                                                    <form class="form-inline search-form">
+                                                        <div class="input-group col-md-3 select_menu_movil">
+                                                            <input id="palabra_clave" class="letramovilfiltroSearch filtrosListadoSearch form-control py-2 select_letra_tamaño borderCornerLeft" type="search" placeholder="Buscar proyectos" onkeyup="buscarDelay()">
+                                                            <span class="input-group-append">
+                                                                <button class="btn buscar_proyectos borderCorner lupin" type="button">
+                                                                    <i class="fa fa-search faMovil"></i>
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-md-3 select_menu_movil">
+                                                            <select id="sectorFilter" class="letramovilfiltro filtrosListado select_menu form-control-sm select_letra_tamaño proyectos_filtros borderCorners" onchange="buscar()">
+                                                                <option value="0">- Sector</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-3 select_menu_movil">
+                                                            <select id="typeFilter" class="letramovilfiltro filtrosListado select_menu form-control-sm select_letra_tamaño proyectos_filtros borderCorners" onchange="buscar()">
+                                                                <option value="0">- Tipo</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-3 select_menu_movil">
+                                                            <select id="statusFilter" class="letramovilfiltro filtrosListado select_menu form-control-sm select_letra_tamaño proyectos_filtros borderCorners" onchange="buscar()">
+                                                                <option value="0">- Estatus</option>
+                                                            </select>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <!-- Gráfica d3 bubble chart -->
+                                            <div id="vis" class="svg-container"></div>
+                                        </div>
+                                        <div id="lista_proyectos" onclick="closeTooltip()"></div>
+                                        <div class="container box">                 
+                                            <ul class="pagination justify-content-center">
+                                                <div id="paginas_lista_proyectos" class="row"></div>        
+                                            </ul>
+                                        </div>
+                                        <a id="downloadAnchorElem" style="display:none"></a>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="numeralia" role="tabpanel" aria-labelledby="numeralia-tab">
+                                    <div>
+                                        <div class="row icon_center numeralia_ubicacion">
+                                            <div class="col-lg-2 col-md-4">
+                                                    <img class="size_icono_numeralia" src="/images/iconos/proyectosenpreparacion-01.svg">
+                                                    <p id="proyectosIdentificacion" class="cifra_numeralia_num">0</p>
+                                                    <p class="cifra_numeralia">Proyectos en identificación</p>
+                                            </div>
+                                            <div class="col-lg-2 col-md-4">
+                                                    <img class="size_icono_numeralia" src="/images/iconos/proyectosenpreparacion-01.svg">
+                                                    <p id="proyectosPreparacion" class="cifra_numeralia_num">0</p>
+                                                    <p class="cifra_numeralia">Proyectos en preparación</p>
+                                            </div>
+                                            <div class="col-lg-2 col-md-4">
+                                                    <img class="size_icono_numeralia" src="/images/iconos/proyectosenlicitacion-01.svg">
+                                                    <p id="proyectosImplementacion" class="cifra_numeralia_num">0</p>
+                                                    <p class="cifra_numeralia">Proyectos en implementación</p>
+                                            </div>
+                                            <div class="col-lg-2 col-md-4">
+                                                    <img class="size_icono_numeralia" src="/images/iconos/proyectosenejecucion-01.svg">
+                                                    <p id="proyectosTerminacion" class="cifra_numeralia_num">0</p>
+                                                    <p class="cifra_numeralia">Proyectos en terminación</p>
+                                            </div>
+                                            <div class="col-lg-2 col-md-4">
+                                                    <img class="size_icono_numeralia" src="/images/iconos/proyectosterminados-01.svg">
+                                                    <p id="proyectosTerminados" class="cifra_numeralia_num">0</p>
+                                                    <p class="cifra_numeralia">Proyectos terminados</p>
+                                            </div>
+                                            <div class="col-lg-2 col-md-4">
+                                                    <img class="size_icono_numeralia" src="/images/iconos/proyectoscancelados-01.svg">
+                                                    <p id="proyectosCancelados" class="cifra_numeralia_num">0</p>
+                                                    <p class="cifra_numeralia">Proyectos cancelados</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Avances de Proyectos -->
+                                    <!-- <div class="tab-pane" id="avancesP" role="tabpanel" aria-labelledby="avancesP-tab">
+                                        <br><br>
+                                        <h3 class="card-title negritas">Avances de proyectos</h3>
+                                        <div class="card">
+                                            <div class="card-header fondoColor">
+                                                <ul class="nav nav-tabs card-header-tabs pestana" id="avancesProyecto-list" role="tablist">
+                                                    <li class="col-md-4 nav-item total_hover">
+                                                        <a class="nav-link active cambioColor letra_avanceP" href="#avanceFP" role="tab" aria-controls="avanceFP" aria-selected="true">Avance físico</a>
+                                                    </li>
+                                                    <li class="col-md-4 nav-item total_hover">
+                                                        <a class="nav-link cambioColor letra_avanceP"  href="#avanceAP" role="tab" aria-controls="avanceAP" aria-selected="false">Avance financiero</a>
+                                                    </li>
+                                                    <li class="col-md-4 nav-item total_hover">
+                                                        <a class="nav-link cambioColor letra_avanceP"  href="#presupuestoAP" role="tab" aria-controls="presupuestoAP" aria-selected="false">Presupuesto</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="tab-content mt-3"> -->
+                                                    <!-- Avance Físico -->
+                                                    <!-- <div class="tab-pane active" id="avanceFP" role="tabpanel">
+                                                        <div>
+                                                            <ul class="ia_bars_color_guide">
+                                                                <li><b class="ia_color_guide_circle double"></b> Estimado</li>
+                                                                <li><b class="ia_color_guide_circle double second"></b> Observado</li>
+                                                            </ul>
+                                                            <div>
+                                                                <div>
+                                                                    <div class="row alinea mb-3">
+                                                                        <div class="col-3">
+                                                                            <div class="row">
+                                                                                <div class="col-3">
+                                                                                    <img class="size_icono_numeralia" src="/images/iconos/perfildecontratacio1/proyectosmorado.svg">
+                                                                                </div>
+                                                                                <div class="col-9">
+                                                                                    <p class="ia_bars_label">Construcción de la Plaza Gastronómica Nuevo León </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <div class="ia_hbar" style="background: rgb(17, 130, 242); width: 10%;">
+                                                                                <p style="color: #ffffff">0%</p>
+                                                                            </div>
+                                                                            <div class="ia_hbar" style="background: rgb(82, 50, 194); width: 10%;">
+                                                                                <p style="color: #ffffff">0%</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 pt-4">
+                                                                            <div class="ia_separator bottom"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row alinea mb-3">
+                                                                        <div class="col-3">
+                                                                            <div class="row">
+                                                                                <div class="col-3">
+                                                                                    <img class="size_icono_numeralia" src="/images/iconos/perfildecontratacio1/proyectosmorado.svg">
+                                                                                </div>
+                                                                                <div class="col-9">
+                                                                                    <p class="ia_bars_label">Mejoramiento de Centro Deportivo Regional</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <div class="ia_hbar" style="background: rgb(17, 130, 242); width: 10%;">
+                                                                                <p style="color: #ffffff">0%</p>
+                                                                            </div>
+                                                                            <div class="ia_hbar" style="background: rgb(82, 50, 194); width: 10%;">
+                                                                                <p style="color: #ffffff">0%</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 pt-4">
+                                                                            <div class="ia_separator bottom"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div> -->
+                                                    <!-- Avance Financiero -->
+                                                    <!-- <div class="tab-pane" id="avanceAP" role="tabpanel">
+                                                        <div>
+                                                            <ul class="ia_bars_color_guide">
+                                                                <li><b class="ia_color_guide_circle double"></b> Presupuestado</li>
+                                                                <li><b class="ia_color_guide_circle double second"></b> Ejecutado</li>
+                                                            </ul>
+                                                            <div>
+                                                                <div>
+                                                                    <div class="row alinea mb-3">
+                                                                        <div class="col-3">
+                                                                            <div class="row">
+                                                                                <div class="col-3">
+                                                                                    <img class="size_icono_numeralia" src="/images/iconos/perfildecontratacio1/proyectosmorado.svg">
+                                                                                </div>
+                                                                                <div class="col-9">
+                                                                                    <p class="ia_bars_label">Construcción de la Plaza Gastronómica Nuevo León </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <div class="ia_hbar" style="background: rgb(17, 130, 242); width: 100%;">
+                                                                                <p style="color: #ffffff">100%</p>
+                                                                            </div>
+                                                                            <div class="ia_hbar" style="background: rgb(82, 50, 194); width: 99.85%;">
+                                                                                <p style="color: #ffffff">99.85%</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 pt-4">
+                                                                            <div class="ia_separator bottom"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row alinea mb-3">
+                                                                        <div class="col-3">
+                                                                            <div class="row">
+                                                                                <div class="col-3">
+                                                                                    <img class="size_icono_numeralia" src="/images/iconos/perfildecontratacio1/proyectosmorado.svg">
+                                                                                </div>
+                                                                                <div class="col-9">
+                                                                                    <p class="ia_bars_label">Mejoramiento de Centro Deportivo Regional</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <div class="ia_hbar" style="background: rgb(17, 130, 242); width: 100%;">
+                                                                                <p style="color: #ffffff">100%</p>
+                                                                            </div>
+                                                                            <div class="ia_hbar" style="background: rgb(82, 50, 194); width: 82.04%;">
+                                                                                <p style="color: #ffffff">82.04%</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 pt-4">
+                                                                            <div class="ia_separator bottom"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
+                                                    <!-- Presupuesto -->
+                                                    <!-- <div class="tab-pane" id="presupuestoAP" role="tabpanel">
+                                                        <div>
+                                                            <ul class="ia_bars_color_guide">
+                                                                <li><b class="ia_color_guide_circle double"></b> Presupuestado</li>
+                                                                <li><b class="ia_color_guide_circle double second"></b> Ejecutado</li>
+                                                            </ul>
+                                                            <p class="text_centrado">Cifras en pesos mexicanos (MXN).</p>
+                                                            <div>
+                                                                <div>
+                                                                    <div class="row alinea mb-3">
+                                                                        <div class="col-3">
+                                                                            <div class="row">
+                                                                                <div class="col-3">
+                                                                                    <img class="size_icono_numeralia" src="/images/iconos/perfildecontratacio1/proyectosmorado.svg">
+                                                                                </div>
+                                                                                <div class="col-9">
+                                                                                    <p class="ia_bars_label">Construcción de la Plaza Gastronómica Nuevo León </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <div class="ia_hbar" style="background: rgb(17, 130, 242); width: 100%;">
+                                                                                <p style="color: #ffffff">$29,994,176</p>
+                                                                            </div>
+                                                                            <div class="ia_hbar" style="background: rgb(82, 50, 194); width: 99%;">
+                                                                                <p style="color: #ffffff">$29,947,706</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 pt-4">
+                                                                            <div class="ia_separator bottom"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row alinea mb-3">
+                                                                        <div class="col-3">
+                                                                            <div class="row">
+                                                                                <div class="col-3">
+                                                                                    <img class="size_icono_numeralia" src="/images/iconos/perfildecontratacio1/proyectosmorado.svg">
+                                                                                </div>
+                                                                                <div class="col-9">
+                                                                                    <p class="ia_bars_label">Mejoramiento de Centro Deportivo Regional</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <div class="ia_hbar" style="background: rgb(17, 130, 242); width: 100%;">
+                                                                                <p style="color: #ffffff">$19,163,406</p>
+                                                                            </div>
+                                                                            <div class="ia_hbar" style="background: rgb(82, 50, 194); width: 80%;">
+                                                                                <p style="color: #ffffff">$15,721,065</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 pt-4">
+                                                                            <div class="ia_separator bottom"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <!-- Competencia en los procedimientos de contratación de los proyectos estratégicos -->
+                                    <!-- <div class="tab-pane" id="proyectosE" role="tabpanel" aria-labelledby="proyectosE-tab">
+                                        <br><br>
+                                        <h3 class="card-title negritas">Competencia en los procedimientos de contratación de los proyectos estratégicos</h3>
+                                        <div class="card">
+                                            <div class="card-header fondoColor">
+                                                <ul class="nav nav-tabs card-header-tabs pestana" id="proyectosEstrategicos-list" role="tablist">
+                                                    <li class="col-md-6 nav-item total_hover">
+                                                        <a class="nav-link active cambioColor letra_avanceP" href="#montoPE" role="tab" aria-controls="montoPE" aria-selected="true">Monto</a>
+                                                    </li>
+                                                    <li class="col-md-6 nav-item total_hover">
+                                                        <a class="nav-link cambioColor letra_avanceP"  href="#contratosPE" role="tab" aria-controls="contratosPE" aria-selected="false">Contratos</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="tab-content mt-3"> -->
+                                                    <!-- Monto -->
+                                                    <!-- <div class="tab-pane active" id="montoPE" role="tabpanel">
+                                                        <div>
+                                                            <ul class="ia_bars_color_guide">
+                                                                <li><b class="ia_color_guide_circle double"></b> <strong>Alta</strong> (más de 5 licitantes)</li>
+                                                                <li><b class="ia_color_guide_circle double second"></b> <strong>Normal</strong> (entre 2 y 5 licitantes)</li>
+                                                                <li><b class="ia_color_guide_circle double tercer"></b> <strong>Baja</strong> (1 licitante)</li>
+                                                            </ul>
+                                                            <p class="text_centrado">Cifras en pesos mexicanos (MXN).</p>
+                                                            <div>
+                                                                <div>
+                                                                    <div class="row alinea mb-3">
+                                                                        <div class="col">
+                                                                            <div class="ia_hbar" style="background: rgb(17, 130, 242); width: 100%;">
+                                                                                <p style="color: #ffffff">$ 45,581,683</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
+                                                    <!-- Contratos -->
+                                                    <!-- <div class="tab-pane" id="contratosPE" role="tabpanel">
+                                                        <div>
+                                                            <ul class="ia_bars_color_guide">
+                                                                <li><b class="ia_color_guide_circle double"></b> <strong>Alta</strong> (más de 5 licitantes)</li>
+                                                                <li><b class="ia_color_guide_circle double second"></b> <strong>Normal</strong> (entre 2 y 5 licitantes)</li>
+                                                                <li><b class="ia_color_guide_circle double tercer"></b> <strong>Baja</strong> (1 licitante)</li>
+                                                            </ul>
+                                                            <div>
+                                                                <div>
+                                                                    <div class="row alinea mb-3">
+                                                                        <div class="col">
+                                                                            <div class="ia_hbar" style="background: rgb(17, 130, 242); width: 100%;">
+                                                                                <p style="color: #ffffff">3</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" id="year" value="<%= paramYear %>">
+            <input type="hidden" id="entity" value="<%= paramEntity %>">
+            <input type="hidden" id="implementer" value="<%= paramImplementer %>">
+        </div>
+        <%- include ('partials/footer'); -%> 
+    </body>       
+</html>
+<script>
+    $('#proyect-list a').on('click', function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
+    $('#avancesProyecto-list a').on('click', function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
+    $('#proyectosEstrategicos-list a').on('click', function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
+</script>

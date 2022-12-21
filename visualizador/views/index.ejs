@@ -1,0 +1,152 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <%- include ('partials/headHome'); -%>
+    </head>
+    <body>
+        <%- include ('partials/header'); -%>
+        <!-- Filtro de busqueda -->
+        <%- include ('partials/busqueda_general'); -%>
+        <!-- Sección Página -->
+        <div id="paginaSeccion" class="tamanoBody">
+            <%- include ('partials/banner'); -%>
+            <div>
+                <section class="busqueda_index">
+                    <div>
+                        <div class="busqueda_espacio interno">
+                            <form class="form-inline search-form">
+                                <div class="col-4 select_menu_movil filtrosSepara">
+                                    <input id="palabra_clave" placeholder="Buscar palabra clave" class="vMovil ia_search busqanch bordeEsquinas" type="search" onkeyup="buscarPalabra()">
+                                    <button class="btn buscarMapa lupanone borderDerecho" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                                <div class="col-4 select_menu_movil">
+                                    <select id="statusFilter" class="ia_select_hm vMovil" onchange="buscar()">
+                                        <option value="0">- Estatus</option>
+                                    </select>
+                                </div>
+                                <div class="col-4 select_menu_movil">
+                                    <select id="municipioFilter" class="ia_select_hm vMovil" onchange="buscar()">
+                                        <option value="0">- Municipio</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="mapid" class="mapa_index">
+                        </div>
+                        <div class="filtro_container" id="accordion">
+                            <div class="card filtros_index">
+                                <div class="card-header color_head textFiltrar" id="headingOne"  data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <h5 class="mb-0">
+                                    <a class="btn btn-link sizeFontInicio">
+                                        Filtrar por ↓
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="ia_box_labels">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h5 class="sizeFontInicio">SECTOR</h5>
+                                        </div>
+                                        <div class="col-12 col-sm-12">
+                                            <%for ( var i = 0; i < sectors.length; i++){%>
+                                                <label class="ia_checkbox_container">
+                                                    <input id="sectorFilter" name="sectorFilter" type="checkbox" value="<%= sectors[i].code %>" onchange="buscar()">
+                                                    <span class="ia_checkbox_checkmark checkboxInicio"></span>
+                                                    <span class="ia_checkbox_text"><img class="sizeIconoInicio" src="<%= sectors[i].icono %>" title="<%= sectors[i].title %>"></span><span class="sizeFontInicio"> <%= sectors[i].title %> </span>
+                                                </label>
+                                            <%}%>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="ia_separator bottom"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h5 class="sizeFontInicio">TIPO</h5>
+                                        </div>
+                                        <div class="col-12 col-sm-12">
+                                            <%for ( var i = 0; i < types.length; i++){%>
+                                                <label class="ia_checkbox_container">
+                                                    <input id="typeFilter" name="typeFilter" type="checkbox" value="<%= types[i].title %>" onchange="buscar()">
+                                                    <span class="ia_checkbox_checkmark checkboxInicio topCheck"></span>
+                                                    <span class="ia_checkbox_text sizeFontInicio sizeIconoInicio"><%= types[i].title %></span>
+                                                </label>
+                                            <%}%>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div>
+                <p class="titulo tituloInicio">Explora más <strong>Infraestructura Abierta</strong></p>
+            </div>
+            <div class="col-lg-8 col-md-12 margenCifras">
+                <div class="row icon_center">
+                    <div class="col-lg-3 maxCol3 col-md-4 maxCol4">
+                        <a href="/proyectos" class="icon_card">
+                            <div class="iconoProyecto iconosInicio sizeInicio">
+                                <br><span id="proyectosTotal" class="cifra_num cifraInicio">0</span>
+                                <br><span class="cifra_text letraInicio">Proyectos de infraestructura</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 maxCol3 col-md-4 maxCol4">
+                        <a href="/contrataciones" class="icon_card">
+                            <div class="iconoContratacion iconosInicio sizeInicio">
+                                <br><span id="contratacionesTotal" class="cifra_num cifraInicio">0</span>
+                                <br><span class="cifra_text letraInicio">Contrataciones</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 maxCol3 col-md-4 maxCol4">
+                        <a href="/contratistas" class="icon_card">
+                            <div class="iconoContratista iconosInicio sizeInicio">
+                                <br><span id="contratistasTotal" class="cifra_num cifraInicio">0</span>
+                                <br><span class="cifra_text letraInicio">Contratistas</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 maxCol3 col-md-6 maxCol4">
+                        <a href="/contratistas" class="icon_card">
+                            <div class="iconoContratista iconosInicio sizeInicio">
+                                <br><span id="licitantesTotal" class="cifra_num cifraInicio">0</span>
+                                <br><span class="cifra_text letraInicio">Licitantes</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 maxCol3 col-md-6 maxCol4">
+                        <a href="/instituciones" class="icon_card institucion_line">
+                            <div class="iconoInstitucion iconosInicio sizeInicio">
+                                <br><span id="institucionesTotal" class="cifra_num cifraInicio">0</span>
+                                <br><span class="cifra_text letraInicio">Instituciones públicas</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="height: 50px; margin-top: 100px; margin-bottom: 150px;">
+                <hr>
+                <div class="row">
+                    <div class="col-md-6 cifra_text">
+                        <a href="/acerca" class="btn btn-primary btn-lg active colorear" role="button" aria-pressed="true">Acerca del proyecto</a>
+                    </div>
+                    <div class="col-md-6 cifra_text">
+                        <a href="/glosario" class="btn btn-primary btn-lg active colorear" role="button" aria-pressed="true">Glosario</a>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <input type="hidden" id="year" value="<%= paramYear %>">
+            <input type="hidden" id="entity" value="<%= paramEntity %>">
+            <input type="hidden" id="implementer" value="<%= paramImplementer %>">
+        </div>
+        <%- include ('partials/footer'); -%>
+    </body>       
+</html>

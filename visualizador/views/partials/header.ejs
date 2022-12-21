@@ -1,0 +1,98 @@
+<div>
+  <!-- Logos -->
+  <nav class="fixed-top sobre navbar navbar-expand-lg">
+    <a class="col-lg-4 col-sm-2 navbar-brand" href="https://home.inai.org.mx/">
+      <img class="logo_inai" src="/images/inai.png" alt="INAI"/>
+    </a>
+    <a class="col-lg-4 col-sm-6 navbar-brand" href="/">
+      <img class="logo_infraestructura" src="/images/Infraestructura_Abierta.svg" alt="Infraestructura Abierta"/>
+    </a>
+    <a class="col-lg-3 col-sm-2 navbar-brand" href="https://www.mexicoevalua.org/">
+      <img class="logo_mexico" src="/images/mexicoEvalua.png" alt="México Evalúa"/>
+    </a>
+  </nav>
+  <!-- Filtros -->
+  <nav class="navbar todo navbar-expand-lg ubicacion2 navbar-dark alt-filt">
+
+    <button class="navbar-toggler collapsed border-0" type="button" data-toggle="collapse" data-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+      <div class="close-icon fa fa-times"></div>
+    </button>
+
+    <%if (valor == '0') { %>
+      <div class="collapse navbar-collapse en_movil" id="navbarContent">
+        <div class="row inicio_movil cel" style="width: 104%;">
+      </div>
+    <%} else {%>
+      <div class="collapse navbar-collapse en_movil" id="navbarContent">
+        <div class="row inicio_movil cel" style="width: 104%;">
+          <div class="col-md-4 col-sm-4 select_menu_movil margen_filtro">
+            <select id="yearFilter" class="select_menu form-control-sm selectFiltros" onchange="filtrarEjercicio()">
+              <option value="0">- Ejercicio</option>
+            </select>
+          </div>
+          <div class="col-md-4 col-sm-4 select_menu_movil margen_filtro">
+            <select id="entityFilter" class="select_menu form-control-sm selectFiltros" onchange="filtrarEntidad()">
+              <option value="0">- Entidad</option>
+            </select>
+          </div>
+          <div class="col-md-4 col-sm-4 select_menu_movil margen_filtro">
+            <select id="implementatorFilter" class="select_menu form-control-sm selectFiltros" disabled onchange="filtrarImplementador()">
+              <option value="0">- Publicador</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    <%}%>
+
+  <!--Menú-->
+    <div class="collapse navbar-collapse movil_pantalla all_screen" id="navbarContent">
+      <ul class="navbar-nav marg-auto menu-item select_movil">
+        <li id="projects">
+          <a id="project_active" class="nav-link letra letra_size" href="#">PROYECTOS</a>
+        </li>
+        <li id="contractings">
+          <a id="contractings_active" class="nav-link letra letra_size ajuste" href="#">CONTRATACIONES</a>
+        </li>
+        <li id="contractors">
+          <a id="contractors_active" class="nav-link letra letra_size ajuste" href="#">CONTRATISTAS</a>
+        </li>
+        <li id="institutions">
+          <a id="institutions_active" class="nav-link letra letra_size ajuste" href="#">INSTITUCIONES</a>
+        </li>
+        <li id="indicadores">
+          <a id="indicadores_active" class="nav-link letra letra_size ajuste" href="#">INDICADORES</a>
+        </li>
+      </ul>
+    </div>
+    <button id="abreL" onclick="abreL()" class="btn lupaUbica" type="button">
+      <i class="fa fa-search fa-2x lupColor lupa_movil"></i>
+    </button>
+    <button id="cierraL" onclick="cierraL()" class="btn" style="display:none;" type="button" data-toggle="collapse" data-target="#collapseLupa" aria-expanded="false" aria-controls="collapseLupa" style="width: 78px; background-color: #db4b36;">
+      <i class="fa fa-times fa-2x lupColor lupa_movil"></i>
+    </button>
+  </nav>
+</div>
+<script>
+  var btnAbre = document.getElementById('abreL');
+  var btnCierra = document.getElementById('cierraL');
+
+  btnAbre.addEventListener('click', () => {
+    // hide button
+    btnAbre.style.display = 'none';
+
+    // show div
+    const box = document.getElementById('inputSearch');
+    box.style.display = 'block';
+    btnCierra.style.display = 'block';
+  });
+  btnCierra.addEventListener('click', () => {
+    // hide button
+    btnCierra.style.display = 'none';
+
+    // show div
+    const box = document.getElementById('inputSearch');
+    box.style.display = 'none';
+    btnAbre.style.display = 'block';
+  });
+</script>

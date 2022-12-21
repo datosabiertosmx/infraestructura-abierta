@@ -1,0 +1,303 @@
+/***********************
+    Barra de menu
+***********************/
+.navbar-extra-large{
+    width: 200px;
+    text-align: center;
+}
+.navbar-large{
+    width: 170px;
+    text-align: center;
+}
+.navbar-short{
+    width: 120px;
+    text-align: center;
+}
+.letra, .letra:hover {
+    color: #ffffff!important;
+    /* font-size: 14px; */
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+.menu-item .nav-link:hover {
+    background-color: #c63823!important;
+    height: 56px;
+}
+.nav-link:active {
+    background-color: #c63823!important;
+    height: 56px;
+}
+.sticky-top {
+    padding-top: 156px;
+}
+.alt-filt {
+    top: 101px;
+}
+.sobre {
+    z-index: 9999;
+    background-color: #333333;
+    text-align: center;
+}
+.ubicacion {
+    position: static; 
+    z-index: 1000; 
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.ubicacion2 {
+    position: fixed; 
+    z-index: 9000; 
+    width: 100%;
+    background-color: #db4b36;
+}
+.marg-auto {
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+.inicio {
+    color: #333333;
+}
+.inicio:hover {
+    color: #333333;
+    border-bottom: 1px solid #333333;
+    text-decoration: none;
+}
+.breadcrumb-item +.breadcrumb-item::before {
+    content: '>';
+    color: #333333;
+}
+.breadcrumb {
+    border-radius: 0;
+    background-color: #f2f2f2;
+    margin-bottom: 0rem;
+}
+.color_detalle {
+    color:#c63823;
+}
+.margen-breacrumb {
+    margin-left: 1%;
+}
+.select_menu {
+    display: block;
+    color: white;
+    font-size: 16px;
+    font-family: "Proxima Nova Regular";
+    padding-right: 28px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid transparent;
+    -webkit-box-shadow: 1px 1px 3px 1px rgb(34 34 34 / 30%);
+    -moz-box-shadow: 1px 1px 3px 1px rgba(34, 34, 34, 0.3);
+    box-shadow: 0px 0px 0px 0px rgb(34 34 34 / 30%);
+    border-radius: 5px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #c63823;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNTI0Ljg3NCA4OTUuNDgxIj48dGl0bGU+dHJpw6FuZ3VsbyBwZXN0YcOxYTwvdGl0bGU+PGcgaWQ9ImFkM2ExMWVmLTI3ZTctNGExOS1iZWJlLTYxYjg1MTI3MTkzMCIgZGF0YS1uYW1lPSJMYXllciAyIj48ZyBpZD0iNmM3OTU5NDMtNmVkNS00NjA2LTlhODEtZTMwZjAwN2EyODNhIiBkYXRhLW5hbWU9IkxheWVyIDEiPjxwYXRoIGQ9Ik0wLDBIMTUyNC44NzRMNzYyLjQzNyw4OTUuNDgxWiIgZmlsbD0iI2ZmZiIvPjwvZz48L2c+PC9zdmc+);
+    background-repeat: no-repeat, repeat;
+    background-position: right 0.7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+    text-transform: uppercase;
+}
+.collapse.fondo {
+    background-color: #db4b36;
+}
+.lupColor {
+    color:#ffffff;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.lupaUbica {
+    width: 78px; 
+    background-color: #db4b36!important;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: 0;
+}
+
+/* hide close when burger shown */
+.navbar-toggler.collapsed .close-icon {
+    display: none;
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+    display: inline;
+}
+
+.close-icon {
+    color: #ffffff;
+}
+
+.logo_infraestructura {
+    height: 60px;
+}
+.logo_inai {
+    height:50px;
+}
+.logo_mexico {
+    height:75px;
+}
+
+@media only screen
+and (min-device-width: 300px)
+and (max-device-width: 480px) {
+    .select_movil {
+        padding-left: 20px;
+    }
+    .letra_size {
+        font-size: 60px;
+        padding-left: 46px !important;
+        margin-right: 15px !important;
+    }
+    .letra_size:hover {
+        font-size: 60px;
+        padding-left: 46px !important;
+        margin-right: 15px !important;
+    }
+    .sticky-top_movil {
+        padding-top: 208px;
+    }
+    .menu-item .nav-link:hover {
+        background-color: #c63823!important;
+        height: 120px;
+    }
+    .breadcrumb_movil {
+        font-size: 40px;
+        height: 120px;
+        padding-top: 54px;
+    }
+    .breadcrumb_movil_detalle {
+        width: 235%;
+        font-size: 40px;
+        height: 120px;
+        padding-top: 54px;
+    }
+    .select_menu_movil {
+        flex: 100%!important;
+        max-width: 100%!important;
+        margin-bottom: 10px;
+    }
+    .select_letra_tamaño {
+        font-size: 36px;
+    }
+    .selectFiltros {
+        font-size: 60px;
+    }
+    .navbar-collapse.en_movil {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .lupa_movil {
+        font-size: 60px;
+    }
+    .movil_pantalla {
+        min-height: 100vh;
+    }
+    .inicio_movil {
+        width: 104%!important;
+    }
+    .navbar-toggler-icon {
+        width: 84px;
+        height: 84px;
+    }
+    .close-icon {
+        font-size: 80px;
+    }
+    .puntos_suspensivos {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 24%;
+    }
+    .filtrosSepara {
+        margin-bottom: -4px;
+    }
+    .alt-filt {
+        top: 144px;
+    }
+}
+
+@media only screen
+and (min-width: 991px) {
+    .navbar.todo {
+        height: 56px;
+    }
+    #navbarContent ul li a { 
+        width:150px; 
+        text-align: center; 
+    }
+    .navbar-expand-lg .navbar-collapse {
+        flex-basis: 0;
+    }
+}
+
+@media only screen
+and (max-width: 700px) {
+    .area_inai {
+        width:100px;
+    }
+    .area_infraestructura {
+        width:200px;
+    }
+    .area_mexico {
+        width:60px;
+    }
+    .margen_filtro {
+        margin-top: 10px;
+    }
+    /* .pru {
+        min-height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to right, rgba(82, 50, 194, 0.95), rgba(3, 139, 187, 0.95));
+        z-index: 10;
+    } */
+}
+
+@media only screen
+and (min-device-width: 480px)
+and (max-width: 991px) {
+    .all_screen {
+        min-height: 100vh;
+        margin-top: 10px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .cel {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .ajuste {
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+}
+
+@media only screen
+    and (min-device-width: 300px)
+    and (max-device-width: 1024px) {
+        .lupaUbica {
+            width: 10%;
+        }
+        .logo_infraestructura {
+            height: 120px;
+        }
+        .logo_inai {
+            height:80px;
+        }
+        .logo_mexico {
+            height:100px;
+        }
+    }

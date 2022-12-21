@@ -1,0 +1,116 @@
+.logosInstit {
+    padding-top: 20px;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+.alinIcon {
+    text-align: center;
+    padding-top: 25px;
+}
+.espacioText {
+    padding-top: 40px;
+}
+.alinText {
+    text-align: justify;
+    font-size: 22px;
+    color: #212529;
+}
+.sinpadding {
+    padding-left: 0;
+    padding-right: 0;
+}
+.espacioJSON {
+    padding-top: 40px;
+}
+.sizeText {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.espacio_institucion_contacto {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+.text18INST {
+    font-size: 18px;
+    color: #777;
+    font-family: "Proxima Nova Regular";
+    padding-top: 15px;
+}
+.cambioColor {
+    color: #ffffff!important;
+}
+
+@media only screen
+and (min-device-width: 300px)
+and (max-device-width: 480px) {
+    .text18INST {
+        font-size: 36px;
+    }
+    .formatoTextTitulo {
+        font-size: 40px;
+    }
+    .formatoTextValor {
+        font-size: 36px;
+    }
+}
+.ocultadivIN {
+    height: 18px;
+    background-color: #FFF;
+    margin-top: -20px;
+    position: relative;
+    width: 60px;
+}
+#chartdiv {
+    width: 100%;
+    height: 400px;
+}
+#chartdiv2 {
+    width: 100%;
+    height: 500px;
+}
+.ia_bars_color_guide li {
+    list-style: none;
+    display: inline-block;
+    font: 400 14px "Open Sans", Helvetica, Arial, sans-serif;
+    margin-right: 15px;
+}
+.ia_color1 {
+    display: inline-block;
+    background: rgb(82, 50, 194);
+    width: 1em;
+    height: 1em;
+}
+.colorTextgra {
+    color: #212529;
+}
+#chartInstitucion {
+    width: 100%;
+    height: 400px;
+}
+
+.tamanoBody {
+    display: block;
+}
+
+@media only screen
+and (min-device-width: 300px)
+and (max-device-width: 1024px) {
+    .tamanoBody {
+        width: 108%;
+    }.tamaSIGI {
+        font-size: 34px!important;
+        text-align: left;
+    }
+    #chartdiv2 {
+        height: 800px;
+    }
+    .colorTextgra {
+        font-size: 36px;
+    }
+}

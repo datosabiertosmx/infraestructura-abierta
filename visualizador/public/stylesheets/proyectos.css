@@ -1,0 +1,628 @@
+.nav-link.active {
+    background-color: #c63823!important;
+}
+.nav-link:hover {
+    background-color: #F4A89C!important;
+}
+.numeralia_ubicacion {
+    margin-top: 80px!important;
+}
+.proyectos_filtros {
+    text-transform: none;
+}
+.nav-tabs .nav-link { 
+    border: 0;
+}
+.nav-tabs .nav-item {
+    margin-bottom: 0;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    pointer-events: none;
+    border-color: #ffffff;
+}
+.cambioColor {
+    color: #ffffff!important;
+}
+.fondoColor {
+    background-color: #ffffff;
+}
+.head_card {
+    background-color: #ffffff;
+    padding: 0;
+}
+.ubicacion_card {
+    margin-top: -52px;
+}
+.card_sinBorde {
+    border: none;
+}
+.cienWidth {
+    width: 100%;
+}
+.buscar_proyectos {
+    color: #FFFFFF;
+    border-color: #db4b36;
+    background-color: #c63823!important;
+    pointer-events: none;
+}
+.size_icono_numeralia {
+    height: 50px;
+}
+.iconoPestana {
+    height: 40px;
+}
+.iconoPestanaDesglose {
+    height: 20px;
+}
+.cifra_numeralia {
+    font-size: 18px;
+    text-align: center;
+    font-family: "Proxima Nova Bold";
+    color: #666666;
+}
+.cifra_numeralia_num {
+    font-family: "Proxima Nova Regular";
+    font-size: 27px;
+    text-align: center;
+    color: #c63823;
+    padding-top: 10px;
+    margin: 10px;
+}
+.letra_avanceP {
+    font-size: 16px;
+    font-family: "Proxima Nova Bold";
+}
+.three_card {
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+    width: 33.33%;
+}
+.two_card {
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+    width: 50%;
+}
+.pestana {
+    background-color: #db4b36; 
+    font-size: 24px; 
+    text-align: center;
+}
+.center-text {
+    text-align: center;
+}
+.espaciado {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.topbotton {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.negritas {
+    font-weight: 600;
+}
+.sinDatosPD {
+    font-weight: 600;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 40px;
+}
+.tam_disen {
+    font-size: 30px;
+}
+.titulosDiseño {
+    padding-top: 14px;
+    font-size: 20px;
+}
+.colorandfont {
+    background-color: #db4b36;
+    color: #ffffff;
+    font-family: 'Proxima Nova Bold';
+}
+.text-alin-right {
+    text-align: right;
+}
+.iconoSizeCalendario {
+    height: 22px;
+}
+.iconoSizeBase {
+    height: 40px;
+}
+.iconoSize {
+    height: 45px;
+}
+.paddingCuadro {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.lineaAvance {
+    padding: 14px;
+}
+.splide__list {
+    width: 33.3%;
+}
+.splide__listAuto {
+    width: auto!important;
+}
+.colocacion {
+    display:inline-flex;
+}
+.colocacionC {
+    display:inline-flex;
+}
+.splide__slide {
+    width: 350px;
+}
+.splide__pagination {
+    bottom: -30px;
+}
+.splide {
+    padding-right: 5%;
+    padding-left: 5%;
+}
+.styleCard {
+    width: 18rem; 
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 40px;
+}
+.lineTime {
+    content: "";
+    border: 1px solid #c63823;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    top: 24px;
+}
+.salt {
+    padding-top: 14px;
+    margin-bottom: 0px;
+}
+.grafico {
+    position: relative;
+    width: 200px;
+    padding: 2px;
+    }
+.grafico .barra {
+    display: block;
+    position: relative;
+    background: rgb(17, 130, 242);
+    text-align: left;
+    color: #FFFFFF;
+    height: 2em;
+    line-height: 2em;
+    padding-left: 1%;
+}
+.grafico .barra span {
+    position: absolute; left: 1em;
+}
+.grafico_espaciado {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.card-header-tabs {
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+.dosColumnas {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+}
+.filtrosListado {
+    font-size: 16px;
+    font-family: "Proxima Nova Bold";
+    height: 45px;
+}
+.filtrosListadoSearch {
+    font-size: 16px;
+    height: 45px;
+}
+.sdretapas{
+    margin-bottom: 40px;
+    margin-left: 12px;
+}
+.spaceetapas{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.panel-heading  a:before {
+    content: "\2193";
+    float: right;
+    margin-left: 10px;
+ }
+ .panel-heading.active a:before {
+   content: "\2191";
+ }
+ .flechita {
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+    margin-bottom: -14px;
+    margin-top: -24px;
+ }
+.colorBoton {
+    background-color: #f4a89cff;
+    color: #c63823ff;
+    border: 1px solid transparent;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+.colorBoton:hover {
+    background-color: #f16752ff;
+    color: #ffffff;
+    border: 1px solid transparent;
+    font-weight: 600;
+    font-size: 14px;
+}
+.colorBoton:focus {
+    box-shadow: 0 0 0 .2rem rgba(219,75,54,1);
+    background-color: #db4b36ff;
+    color: #ffffff;
+}
+.colorBoton:focus:hover {
+    box-shadow: 0 0 0 .2rem rgba(198,56,35,1);
+    background-color: #c63823ff;
+    color: #ffffff;
+}
+.total_hover {
+    padding-left: 0;
+    padding-right: 0;
+}
+.iconAlinea {
+    text-align: right;
+}
+.textJustify {
+    text-align: justify;
+}
+.sinespacio {
+    padding: 0;
+}
+.pad {
+    padding: 8px;
+}
+.maxFechaDP {
+    max-width: 12.5%;
+}
+.maxBotonDP {
+    max-width: 13.7%;
+}
+.maxFormatoDP {
+    max-width: 10%;
+}
+.ubicaBoton {
+    text-align: center;
+    padding-top: 20px;
+}
+.styleTab {
+    margin-top: -17px;
+    font-size: 14px;
+}
+.informacionDescripcion {
+    margin-top: 50px;
+}
+.sectorAlinea{
+    color:#ffffff; 
+    /* text-align: justify;  */
+    padding-left: 30px; 
+    padding-right: 30px;
+}
+.espacioFase {
+    margin-bottom: 50px;
+}
+.btn {
+    color: #fff;
+    background-color: #f16752;
+    border-color: #db4b36;
+}
+.btn:hover {
+    color: #fff;
+    background-color: #db4b36;
+    border-color: #db4b36;
+}
+.tamIcoCal {
+    width: 40px;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance:none;
+}
+
+@media only screen
+and (min-device-width: 300px)
+and (max-device-width: 480px) {
+    .sizeFontGeneral {
+        font-size: 36px;
+    }
+    .card_dispositivo_movil {
+        margin-top: -110px;
+    }
+    .letter_head_card {
+        font-size: 40px;
+        height: 110px;
+    }
+    .card_dispositivo_two {
+        margin-top: -122px;
+    }
+    .letter_head_card_two {
+        font-size: 40px;
+        height: 110px;
+    }
+    .nav-link:hover {
+        background-color: #c63823!important;
+        height: 110px;
+    }
+    .nav-link:active {
+        background-color: #F4A89C!important;
+        height: 110px;
+    }
+    .nav-link.active {
+        height: 110px;
+    }
+    .active.pestaña {
+        height: 110px;
+    }
+    .centra_letra {
+        padding-top: 24px;
+    }
+    .centraFases {
+        padding-top: 15px;
+        height: 100px;
+        font-size: 36px;
+    }
+    .interlineado {
+        line-height: 48px;
+    }
+    .letramovilfiltro {
+        font-size: 36px;
+        font-family: "Proxima Nova Bold";
+        height: calc(1.5em + .5rem + 2px);
+    }
+    .letramovilfiltroSearch {
+        font-size: 36px;
+        height: calc(1.5em + .5rem + 2px);
+    }
+    .faMovil {
+        font-size: 40px;
+    }
+    .borderCorner {
+        border-radius: 0 14px 14px 0;
+    }
+    .borderCornerLeft {
+        border-radius: 14px 0 0 14px;
+    }
+    .borderCorners {
+        border-radius: 14px 14px 14px 14px;
+    }
+    .lupin {
+        width: 120px;
+    }
+    .sectorMovil {
+        width: 40px;
+    }
+    .size_icono_numeralia {
+        height: 100px;
+    }
+    .cifra_numeralia {
+        font-size: 36px;
+    }
+    .cifra_numeralia_num {
+        font-size: 60px;
+    }
+    .espacioIG {
+        margin-bottom: 50px;
+    }
+    .negritas {
+        font-size: 40px;
+    }
+    .titulosValores {
+        font-size: 36px;
+    }
+    .espacioBuscador {
+        margin-bottom: 10px;
+    }
+    .titulosFases {
+        font-size: 40px;
+    }
+    .titulosDesglose {
+        font-size: 36px;
+    }
+    .iconoPestana {
+        height: 80px;
+    }
+    .ocultaTexto {
+        font-size: 0;
+    }
+    .botonMovil {
+        display: block;
+        width: 100%;
+        font-size: 36px;
+    }
+    .botonMovil:hover {
+        display: block;
+        width: 100%;
+        font-size: 36px;
+    }
+    .maxFechaDP {
+        max-width: 50%!important;
+    }
+    .maxBotonDP {
+        max-width: 25%;
+    }
+    .maxFormatoDP {
+        max-width: 50%!important;
+        margin-top: 0;
+    }
+    .sizeIcono {
+        width: 40px !important;
+        margin-top: 0px !important;
+    }
+    .iconoSizeCalendario {
+        height: 80px;
+    }
+    .splide__slide {
+        font-size: 36px;
+    }
+    .margenLis {
+        margin-left: 90px;
+    }
+    .lineTime {
+        top: 60px;
+    }
+    .splide__pagination__page {
+        height: 30px;
+        margin: 8px;
+        width: 30px;
+    }
+    .splide__arrow {
+        height: 6em;
+        width: 6em;
+    }
+    .splide__slide img {
+        vertical-align: baseline;
+    }
+    .fechaSinEspacio {
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 36px;
+    }
+    .tamIcoCal {
+        width: 80px;
+    }
+    .flechita {
+        font-size: 60px;
+        margin-bottom: -33px;
+    }
+    .tamfontmvlgrl {
+        font-size: 36px;
+    }
+    .fontMovilLinea {
+        font-size: 36px;
+    }
+}
+
+/* Avances de Proyectos */
+.ia_bars_color_guide {
+    text-align: center;
+}
+.ia_color_guide_circle {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    background: #1182f2;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    margin-right: 2px;
+}
+.ia_color_guide_circle.second {
+    background-color: #5232c2;
+}
+.ia_hbar p, .ia_stack-item p {
+    font-size: 13px;
+    font-family: "Proxima Nova Regular";
+    line-height: 25px;
+    padding: 0 5px;
+    margin: 0;
+}
+.text_centrado {
+    text-align: center;
+}
+
+/* */
+.ia_color_guide_circle.tercer {
+    background-color: #4f86c6;
+}
+
+/* Proyectos Relacionados */
+.proyectos_relacionados {
+    background: #f2f2f2;
+}
+.relacion {
+    padding-top: 10px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.tamanoBody {
+    display: block;
+}
+
+.areapopup {
+    width: 100%!important;
+}
+.sizeFontPopup {
+    font-weight: 300; 
+    font-size: 14px; 
+    font-family: "Proxima Nova Regular"; 
+    display: block; 
+    text-transform: uppercase;
+}
+.sizeFontPopupValue {
+    font-size: 12px; 
+    font-family: "Proxima Nova Regular";
+}
+.botonVer {
+    background: #c63823;
+    color: white;
+    font-size: 14px;
+    font-family: "Proxima Nova Bold"; 
+    display: block; 
+    padding: 10px; 
+    text-align: center; 
+    transition: all 0.3s ease-out;
+}
+.cursorCerrar {
+    cursor: pointer;
+}
+#cerrar{
+    position: absolute;
+    top: -12px;
+    right: 0px;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #c3c3c3;
+    transition: all 200ms;
+}
+
+@media only screen
+and (min-device-width: 300px)
+and (max-device-width: 1024px) {
+    .tamanoBody {
+        width: 108%;
+    }
+    .areapopup {
+        width: 130%!important;
+    }
+    .sizeFontPopup {
+        font-size: 24px;
+    }
+    .sizeFontPopupValue {
+        font-size: 24px;
+    }
+    .botonVer {
+        font-size: 24px;
+    }
+    #cerrar{
+        font-size: 60px!important;
+        top: -28px;
+    }
+    .tam_disen {
+        font-size: 36px;
+    }
+    .mobile {
+        display: none;
+    }
+    .tablet {
+        display: block;
+    }
+    .no-mobile {
+        display: none;
+    }
+}

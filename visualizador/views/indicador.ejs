@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <%- include ('partials/headIndicadores'); -%>
+    </head>
+    <body>
+        <%- include ('partials/header'); -%>
+        <!-- Filtro de busqueda -->
+        <%- include ('partials/busqueda_general'); -%>
+        <!-- Sección Página -->
+        <div id="paginaSeccion" class="tamanoBody">
+            <!-- Breadcrum -->
+            <nav class="ubicacion sticky-top sticky-top_movil">
+                <ol class="breadcrumb breadcrumb_movil">
+                    <li class="breadcrumb-item"><a class="inicio" href="/">Inicio</a></li>
+                    <li class="breadcrumb-item color_detalle">Indicadores</li>
+                </ol>
+            </nav>
+
+            <div>
+                <%- include ('partials/banner'); -%>
+            </div>
+            <div class="container screen_all_contratacion">
+                <!--Sección Número de Proyectos-->
+                <div>
+                    <div class="marginIndi">
+                        <p class="tituloCont">Número de proyectos</p>
+                    </div>
+                    <!--Gráficas de Anillo-->
+                    <div id="chartdivProyectos" class="textosIndicadores"></div>
+                    <div class="ocultadiv"></div>
+                </div>
+                <hr>
+                <!-- Presupuesto de proyectos según estatus -->
+                <div>
+                    <div class="marginIndi">
+                        <div class="tituloCont">Presupuesto de proyectos según estatus</div>
+                        <div class="textosIndicadores">Cifras en pesos mexicanos (MXN).</div>
+                    </div>
+                    <br>
+                    <!-- Gráficas de barras -->
+                    <div id="chartdivPresupuesto"></div>
+                    <div class="ocultadivPresupuesto"></div>
+                </div>
+                <hr>
+                <!-- Proyectos de infraestructura construidos -->
+                <div>
+                    <div class="marginIndi">
+                        <div class="tituloCont">Proyectos de infraestructura construidos</div>
+                    </div>
+                    <div class="barrasTitulo">Porcentaje</div>
+                        <div id="chartdivProyectosConstruidosPorcentaje" class="textosIndicadores"></div>
+                        <div class="ocultadivProyectosConstruidos"></div>
+                    <div class="barrasTitulo">Número</div>
+                        <div id="chartdivProyectosConstruidosNumero" class="textosIndicadores"></div>
+                        <div class="ocultadivProyectosConstruidos"></div>
+                </div>
+                <hr>
+                <!-- Número de procesos de contratación según su estatus -->
+                <div>
+                    <div class="marginIndi">
+                        <div class="tituloCont">Número de procesos de contratación según su estatus:</div>
+                    </div>
+                    <!-- Gráficas de Anillo -->
+                    <div id="chartdivProcesosContratacion" class="textosIndicadores"></div>
+                    <div class="ocultadivProcesosContratacion"></div>
+                </div>
+                <hr>
+                <!-- Monto total de los contratos por método --> 
+                <div>
+                    <div class="marginIndi">
+                        <div class="tituloCont">Monto total de los contratos por método</div>
+                        <div class="textosIndicadores">Cifras en pesos mexicanos (MXN).</div>
+                    </div>
+                    <!-- Gráficas de barras -->
+                    <div id="chartdivMontoContratosMetodo" class="textosIndicadores"></div>
+                    <div class="ocultadivMontoContratosMetodo"></div>
+                </div>
+                <hr>
+                <!-- Total de contratos por método --> 
+                <div>
+                    <div class="marginIndi">
+                        <div class="tituloCont">Total de contratos por método</div>
+                    </div>
+                    <!-- Gráficas de barras -->
+                    <div id="chartdivTotalContratosMetodo" class="textosIndicadores"></div>
+                    <div class="ocultadivTotalContratosMetodo"></div>
+                </div>
+            </div>
+            <br><br><br><br><br>
+            <input type="hidden" id="year" value="<%= paramYear %>">
+            <input type="hidden" id="entity" value="<%= paramEntity %>">
+            <input type="hidden" id="implementer" value="<%= paramImplementer %>">
+        </div>
+        <%- include ('partials/footer'); -%>
+    </body>       
+</html>

@@ -1,0 +1,346 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <%- include ('partials/head'); -%>
+    </head>
+    <body>
+        <%- include ('partials/header'); -%>
+        <!-- Sección Página -->
+        <div class="tamanoBody">
+            <!-- Breadcrum -->
+            <nav class="ubicacion sticky-top sticky-top_movil">
+                <ol class="breadcrumb breadcrumb_movil">
+                    <li class="breadcrumb-item"><a class="inicio" href="/">Inicio</a></li>
+                    <li class="breadcrumb-item color_detalle">Glosario</li>
+                </ol>
+            </nav>
+
+            <div>
+                <%- include ('partials/banner'); -%>
+            </div>
+            <div class="container alineaGlosario">
+                <h1 class="tituloGlosario colorGlosario">Proyectos de infraestructura</h1>
+                <br>
+                <p>Son las distintas obras, remodelaciones y/o ampliaciones que realizan las instituciones públicas de los tres órdenes de gobierno disponibles en esta plataforma. 
+                Conforme al Estándar de Datos de Contrataciones Abiertas para Infraestructura (EDCAPI) (OC4IDS<sup>1</sup>, por sus siglas en inglés), el término “Proyecto” se refiere a un 
+                proyecto de infraestructura, definido como el desarrollo de un conjunto de activos de infraestructura en una ubicación específica. Un proyecto de infraestructura 
+                no debe entenderse como  un proyecto de inversión, programa de inversión o código presupuestario<sup>2</sup>.</p>
+                <p>Los proyectos cuentan con un identificador único y pueden  clasificarse por el estado actual de su implementación, por su tipo o sector. Cada proyecto puede tener 
+                uno o varios procedimientos de contratación relacionados con cada una de las fases de su implementación.</p>
+                <div class="espacioContainer">
+                    <h4 class="subtituloGlosario colorGlosario">Actor fuente</h4>
+                        <p>La organización u otro actor relacionado con un registro de presupuesto en particular.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Clave presupuestaria</h4>
+                        <p>Un identificador para un registro de presupuesto en particular, construido conforme a la estructura de la clave presupuestaria definida en el Manual de 
+                        Programación y Presupuesto para el ejercicio fiscal 2021<sup>3</sup>.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Estatus del proyecto</h4>
+                        <p>La fase actual o estatus del proyecto. Según la lista de códigos del Estatus del proyecto (projectStatus<sup>4</sup>), los valores pueden ser: identificación, preparación,
+                        implementación, terminación, terminado y cancelado.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Fecha de actualización</h4>
+                        <p>La última fecha en la cual la información a nivel de proyecto fue actualizada. Esta es independiente de las actualizaciones de  información sobre los procedimientos 
+                        de contratación, solo se actualiza cuando los datos a nivel de proyecto hayan sido registrados o modificados.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Fecha de aprobación</h4>
+                        <p>La fecha en la que se aprobó el presupuesto del proyecto.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Fecha de terminación</h4>
+                        <p>La fecha real de terminación de los proyectos (comparada con la "Fecha de fin" del periodo del proyecto).</p>
+                    <h4 class="subtituloGlosario colorGlosario">Identificador</h4>
+                        <p>Un identificador o número de referencia globalmente único para cada proyecto de infraestructura. Está compuesto por un prefijo del identificador de proyecto (asignado 
+                        por el Helpdesk del OC4IDS<sup>5</sup>), y por un identificador local de proyecto<sup>6</sup>.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Monto ejercido (MXN)</h4>
+                        <p>Es la sumatoria de todas las transacciones registradas en los procedimientos de contratación asociados a cada proyecto, expresado en pesos mexicanos.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Monto final (MXN)</h4>
+                        <p>El costo total de cada proyecto en su terminación (comparados con el presupuesto del proyecto), expresados en pesos mexicanos.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Monto presupuestado(MXN)</h4>
+                        <p>Especifica los costos proyectados o el presupuesto asignado para cada proyecto, expresado en pesos mexicanos. Este costo debe incluir la adquisición de terrenos y 
+                        propiedades, medidas de mitigación de impacto ambiental, disposiciones de salud y seguridad, costos de clientes, consultores y contratistas, así como los impuestos 
+                        aplicables. Cuando este valor incluye costos incurridos por el responsable del proyecto u otras agencias, que no están sujetas a la contratación, es posible que este 
+                        valor sea mayor que la suma de todos los procedimientos de contratación relacionados.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Monto total presupuestado (MXN)</h4>
+                        <p>Es la sumatoria de los presupuestos asignados a todos los proyectos publicados en esta plataforma, expresada en pesos mexicanos.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Número de contrataciones</h4>
+                        <p>El número de procedimientos de contratación relacionados con cada proyecto.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Periodo del proyecto</h4>
+                        <p>El periodo en el que cada proyecto estará en marcha. Este puede ser actualizado conforme el proyecto se mueve a través de cada fase mientras más información se vuelve 
+                        disponible para especificar, con mayor precisión, las fechas de inicio y fin.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Promedio de contrataciones</h4>
+                        <p>Promedio obtenido de la sumatoria de los procedimientos de contratación entre la sumatoria de los proyectos de infraestructura publicados en esta plataforma.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Propósito del proyecto</h4>
+                        <p>El propósito socioeconómico de cada proyecto.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Sector del proyecto</h4>
+                        <p>El principal sector al que cada proyecto está relacionado. Un proyecto puede pertenecer a uno o más sectores. En función de la lista de códigos de Sector del proyecto 
+                        (projectSector), los valores pueden ser: agua, comunicaciones, cultura, deportes, economía, educación, energía, gobernanza, habitacional, recreación, residuos, salud, 
+                        seguridad, transporte, transporte aéreo, transporte carretero, transporte ferroviario, transporte marítimo y transporte urbano.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Tipo de proyecto</h4>
+                        <p>Es posible clasificar el tipo de proyecto del que se trate. Según la lista de códigos de Tipo de proyecto (ProjectType), los valores pueden ser: construcción, expansión, 
+                        reemplazo, y rehabilitación.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Ubicaciones del proyecto</h4>
+                        <p>Información acerca de la ubicación en la que se está realizando el proyecto. Una o más ubicaciones pueden ser proporcionadas, y éstas pueden ser descritas de diferentes 
+                        maneras, como un punto central de localización de la construcción, o una descripción de la región en la que se llevan a cabo los trabajos.
+                        <br><br>
+                        Un punto de ubicación se puede identificar geocodificando una dirección de entrega. Para licencias de concesión, u otros contratos que cubran una ubicación en polígono que 
+                        no esté contenida en un diccionario geográfico conocido, se pueden usar polígonos y polígonos múltiples.
+                        </p>
+                </div>
+                <div class="supGlosario">
+                    <p>
+                        <sup>1</sup> <a href="https://standard.open-contracting.org/infrastructure/latest/es/" target="_blank">https://standard.open-contracting.org/infrastructure/latest/es/</a>
+                        <br>
+                        <sup>2</sup> Conoce más en: <a href="https://standard.open-contracting.org/infrastructure/latest/es/projects/#what-is-a-project" target="_blank">https://standard.open-contracting.org/infrastructure/latest/es/projects/#what-is-a-project</a>
+                        <br>
+                        <sup>3</sup> <a href="https://www.gob.mx/cms/uploads/attachment/file/574516/Manual_de_Programacion_y_Presupuesto_2021.pdf" target="_blank">https://www.gob.mx/cms/uploads/attachment/file/574516/Manual_de_Programacion_y_Presupuesto_2021.pdf</a>
+                        <br>
+                        <sup>4</sup> <a href="https://standard.open-contracting.org/infrastructure/latest/es/reference/codelists/#projectstatus" target="_blank">https://standard.open-contracting.org/infrastructure/latest/es/reference/codelists/#projectstatus</a>
+                        <br>
+                        <sup>5</sup> <a href="https://standard.open-contracting.org/infrastructure/0.9/es/guidance/identifiers/#project-identifier-prefixes" target="_blank">https://standard.open-contracting.org/infrastructure/0.9/es/guidance/identifiers/#project-identifier-prefixes</a>
+                        <br>
+                        <sup>6</sup> <a href="https://standard.open-contracting.org/infrastructure/latest/es/guidance/identifiers/#project-identifiers" target="_blank">https://standard.open-contracting.org/infrastructure/latest/es/guidance/identifiers/#project-identifiers</a>
+                        <br>
+                        <sup>7</sup> <a href="https://standard.open-contracting.org/infrastructure/latest/es/reference/codelists/#projectsector" target="_blank">https://standard.open-contracting.org/infrastructure/latest/es/reference/codelists/#projectsector</a>
+                        <br>
+                        <sup>8</sup> <a href="https://standard.open-contracting.org/infrastructure/latest/es/reference/codelists/#projecttype" target="_blank">https://standard.open-contracting.org/infrastructure/latest/es/reference/codelists/#projecttype</a>
+                    </p>
+                </div>
+                <hr>
+                <h1 class="tituloGlosario colorGlosario">Contrataciones</h1>
+                <br>
+                <p>Cada proyecto de infraestructura requiere generar al menos una contratación. En esta plataforma, para divulgar datos detallados sobre los procedimientos de contratación de 
+                bienes, obras y servicios, se utiliza el Estándar de Datos de Contrataciones Abiertas (EDCA) (OCDS, por sus siglas en inglés), que cubre cada una de las etapas de un proceso 
+                de contratación.</p>
+                <p>Los procedimientos de contratación cuentan con un identificador único y pueden clasificarse según su estatus de implementación, método de contratación y por la categoría de 
+                la contratación.</p>
+                <div class="espacioContainer">
+                    <h4 class="subtituloGlosario colorGlosario">EDCA-MX</h4>
+                        <p>El Estándar de Datos de Contrataciones Abiertas de México (EDCA-MX) es un instrumento que establece los elementos mínimos indispensables que deberán documentarse a lo 
+                        largo de cada una de las etapas del procedimiento de contratación en México, las cuales son planeación, licitación, adjudicación, contratación y ejecución. El estándar 
+                        define el cómo (forma) se deben publicar los datos de las contrataciones públicas, no es un instrumento que defina el qué (contenido) se debe publicar, sino que 
+                        establece criterios para la apertura y estandariza estructura y terminología de la información.</p>
+                        <p>El EDCA-MX es la traducción al español del OCDS y cuenta con las extensiones requeridas para que sea compatible con el sistema de compras gubernamentales en México y 
+                        la normativa nacional de transparencia, y cuenta con la información suficiente para que su adopción permita cumplir con las obligaciones de transparencia de la LGTAIP, 
+                        Art. 70, Fracción XXVIII. Consulta más información sobre el OCDS <a href="https://www.open-contracting.org/es/data-standard/" target="_blank">aquí</a> y sobre la 
+                        extensión EDCA-MX <a href="https://micrositios.inai.org.mx/contratacionesabiertas/?page_id=1090" target="_blank">aquí</a>.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Contratista</h4>
+                        <p>Son las personas o empresas que fueron contratadas para la construcción o entrega de un servicio.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Criterios de elegibilidad</h4>
+                        <p>Requisitos y condiciones que deben cumplir los interesados para participar en un procedimiento de contratación.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Criterio de evaluación de proposiciones</h4>
+                        <p>Especifica los criterios de evaluación de proposiciones para un procedimiento de contratación. Según la lista de códigos de Criterios de adjudicación (awardCriteria<sup>9</sup>), 
+                        los valores pueden ser: binario, costo beneficio, puntos y porcentajes y única oferta.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Detalles del método de contratación</h4>
+                        <p>Provee detalles adicionales sobre el método de contratación. Este campo puede ser utilizado para definir nombres locales del tipo de procedimiento de contratación que 
+                        se utiliza. En México, los valores utilizados son los siguientes: adjudicación directa, invitación a cuando menos tres personas y licitación pública.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Entidad compradora</h4>
+                        <p>Una entidad compradora es una institución cuyo presupuesto se utilizará para pagar bienes, obras o servicios relacionados con un contrato. Esta puede ser diferente a 
+                        la entidad contratante, la cual puede especificarse en los datos de licitación.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Entidad contratante</h4>
+                        <p>La entidad contratante es la institución que gestiona un procedimiento de contratación. Esta puede ser diferente a la entidad compradora que paga o usa los artículos que se están comprando.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Etapas de la contratación</h4>
+                        <div class="subnivelContainer">
+                            <h5 class="subtituloEtapas colorGlosario">Planeación</h5>
+                            <p>Esta primera etapa se realiza con base en el presupuesto aprobado por el Gobierno. A partir de ello, las dependencias gubernamentales planean el destino de los recursos 
+                            públicos. De este modo, las dependencias identifican las obras públicas que les permitirán cumplir con los objetivos de sus programas.</p>
+                            <h5 class="subtituloEtapas colorGlosario">Licitación</h5>
+                            <p>Una vez publicado el anuncio de la convocatoria, para el caso de licitaciones e invitación, las empresas participantes someterán sus propuestas para ser analizadas por 
+                            la dependencia, entidad o municipio.</p>
+                            <h5 class="subtituloEtapas colorGlosario">Adjudicación</h5>
+                            <p>Consiste en la definición del o los participantes que resultaron ganadores del contrato de acuerdo con la evaluación realizada por la dependencia, entidad o municipio y 
+                            se da a conocer mediante un acta de fallo. </p>
+                            <h5 class="subtituloEtapas colorGlosario">Contratación</h5>
+                            <p>Una vez que la dependencia, entidad o municipio anuncia al participante ganador, se firma un contrato. Este documento establece las especificaciones de la contratación 
+                            tales como: quién o quiénes serán los participantes que tienen la adjudicación y se convierten en proveedores del gobierno, la fecha de inicio y fecha de fin del contrato
+                            y el monto contratado.</p>
+                            <h5 class="subtituloEtapas colorGlosario">Ejecución</h5>
+                            <p>Durante esta fase se realiza lo establecido en el contrato firmado entre la dependencia, entidad o municipio y el proveedor, es decir, se realizan pagos por el bien o 
+                            servicio que se adquirió.</p>
+                        </div>
+                    <h4 class="subtituloGlosario colorGlosario">Fecha de actualización</h4>
+                        <p>La fecha en que se publicó cada procedimiento de contratación. Si se generó “bajo demanda”, esta fecha debe de reflejar la fecha del último cambio y los contenidos subyacentes.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Fecha de firma del contrato</h4>
+                        <p>La fecha en que se firmó el contrato.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Fecha de inicio</h4>
+                        <p>Fecha de inicio del periodo que se trate.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Fecha de la adjudicación</h4>
+                        <p>Fecha del documento en que se determina la resolución de la adjudicación.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Fecha de término</h4>
+                        <p>Fecha de conclusión del periodo que se trate.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Hitos</h4>
+                        <p>Eventos relevantes y/o entregables asociados al procedimiento de contratación.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Identificador</h4>
+                        <p>Un identificador único para cada procedimiento de contratación. Se compone de un prefijo del publicador y un identificador para el procedimiento de contratación.
+                        Para obtener más información, consulte la guía Open Contracting Identifier guidance<sup>10</sup>.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Ítems de la licitación</h4>
+                        <p>Bienes, servicios u obra pública de la licitación divididos en partidas o conceptos siempre que sea posible. Las partidas o conceptos no deben duplicarse.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Ítems del contrato</h4>
+                        <p>Bienes, servicios u obra pública objeto del contrato divididos en partidas o conceptos siempre que sea posible. Las partidas o conceptos no deben duplicarse.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Justificación del método de contratación</h4>
+                        <p>La justificación del método de contratación es especialmente importante para los casos en los que se utilicen los métodos de contratación: limitada, directa y selectiva.
+                        <br><br>
+                        Por ejemplo, en el caso de procedimientos de contratación por invitación a cuando menos tres personas o adjudicación directa, se señalan de manera general las razones por
+                        las cuáles resulta procedente la excepción a la licitación pública.
+                        </p>
+                    <h4 class="subtituloGlosario colorGlosario">Licitantes</h4>
+                        <p>Todas las personas físicas y morales que presenten una proposición en un procedimiento de contratación.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Métodos de contrataciones</h4>
+                        <p>Especifica el método de contratación utilizando la lista de códigos del método (method codelist<sup>11</sup>). Esta es una lista de códigos cerrada. Los tipos de procedimiento de 
+                        contratación locales deberán relacionarse con uno de los valores de esta lista. La información más específica de los tipos de procedimiento de contratación locales, 
+                        diferentes a los valores de la lista cerrada, deberán especificarse en el campo "Detalles del tipo de procedimiento de contratación".
+                        <br><br>
+                        Los valores pueden ser: abierta, selectiva, limitada y directa.
+                        </p>
+                        <div class="subnivelContainer">
+                            <h5 class="subtituloEtapas colorGlosario">Abierta</h5>
+                            <p>Consiste en una invitación abierta dirigida a todos aquellos con un posible interés en presentar ofertas, lo que significa una licitación.</p>
+                            <h5 class="subtituloEtapas colorGlosario">Directa</h5>
+                            <p>Es un procedimiento que se realiza sin puesta en concurrencia y por ende sin que exista competencia, adjudicándose el contrato a un proveedor que ha sido preseleccionado
+                            para tales efectos por la dependencia, entidad o municipio. Es una modalidad de selección que tiene la contratación estatal, donde las Entidades compradoras del Estado 
+                            pueden celebrar contratos con los particulares o con el mismo Estado, sin necesidad de realizar una convocatoria pública, esto con la finalidad de ahorrar tiempo en la 
+                            adquisición de bienes y/o servicios.</p>
+                            <h5 class="subtituloEtapas colorGlosario">Limitada</h5>
+                            <p>Un procedimiento de contratación en el que la entidad contratante contacta a un número de proveedores de su elección.</p>
+                            <h5 class="subtituloEtapas colorGlosario">Selectiva</h5>
+                            <p>Un procedimiento de contratación donde sólo los proveedores calificados son invitados a enviar una propuesta.</p>
+                        </div>
+                    <h4 class="subtituloGlosario colorGlosario">Modificaciones</h4>
+                        <p>Una modificación del contrato es un cambio formal o extensión de un contrato, y generalmente implica la publicación de un nuevo aviso de contrato / liberación, o algunos 
+                        otros documentos que detallan el cambio. La justificación y una descripción de los cambios realizados se pueden proporcionar aquí.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Monto adjudicado (MXN)</h4>
+                        <p>Valor económico de la adjudicación con impuestos incluidos, expresado en pesos mexicanos.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Monto contratado (MXN)</h4>
+                        <p>Valor económico del contrato con impuestos incluidos, expresado en pesos mexicanos.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Monto ejercido (MXN)</h4>
+                        <p>Es la sumatoria de las transacciones registradas en todos los procedimientos de contratación publicados en esta plataforma, expresada en pesos mexicanos.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Número de contratos</h4>
+                        <p>Número de contratos relacionados con un solo procedimiento de contratación.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Número de licitantes</h4>
+                        <p>Número total de proposiciones recibidas en el procedimiento de licitación pública o de invitación a cuando menos tres personas.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Objeto del procedimiento de contratación</h4>
+                        <p>Objeto del procedimiento de contratación.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Periodo de entrega de proposiciones</h4>
+                        <p>Fechas que comprenden el inicio y cierre del plazo para la presentación de proposiciones en las licitaciones públicas e invitación a cuando menos tres personas.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Periodo de evaluación y adjudicación</h4>
+                        <p>El plazo para la toma de decisiones respecto a la adjudicación del contrato. La fecha de finalización debe ser la fecha en la que se da el fallo de adjudicación. 
+                        La fecha de inicio es opcional y puede utilizarse para indicar el inicio de un período de evaluación.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Periodo del contrato</h4>
+                        <p>En la etapa de licitación se refiere al período durante el cual se estima o se requiere que el contrato esté activo. Por otra parte, en la etapa de contrato se 
+                        refiere a la vigencia del contrato adjudicado.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Periodo para presentar solicitudes de aclaración</h4>
+                        <p>Periodo para solicitar aclaraciones, según se trate de procedimientos de contratación en materia de adquisiciones, arrendamientos y servicios; obras públicas y 
+                        servicios relacionados con las mismas, y contrataciones financiadas con créditos externos.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Transacciones relacionadas con los pagos</h4>
+                        <p>Lista de las transacciones relacionadas con los pagos efectuados en cada contrato.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Unidad de medida</h4>
+                        <p>Unidad de medida en la que se especifica la cantidad del bien, servicio u obra pública objeto del procedimiento de contratación.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Valor estimado</h4>
+                        <p>El valor estimado de la contratación sin impuestos incluidos. En caso de contrataciones abiertas, se señala el presupuesto máximo que podría ejercerse en la 
+                        ejecución del contrato.</p>
+                </div>
+                <div class="supGlosario">
+                    <p>
+                        <sup>9</sup> <a href="https://standard.open-contracting.org/1.1/es/schema/codelists/#award-criteria" target="_blank">https://standard.open-contracting.org/1.1/es/schema/codelists/#award-criteria</a>
+                        <br>
+                        <sup>10</sup> <a href="https://standard.open-contracting.org/1.1/es/schema/identifiers/" target="_blank">https://standard.open-contracting.org/1.1/es/schema/identifiers/</a>
+                        <br>
+                        <sup>11</sup> <a href="https://standard.open-contracting.org/1.1/es/schema/codelists/#method" target="_blank">https://standard.open-contracting.org/1.1/es/schema/codelists/#method</a>
+                    </p>
+                </div>
+                <hr>
+                <h1 class="tituloGlosario colorGlosario">Contratistas</h1>
+                <br>
+                <p>Son las personas físicas o morales que fueron contratadas para la construcción o entrega de un servicio.</p>
+                <div class="espacioContainer">
+                    <h4 class="subtituloGlosario colorGlosario">Adjudicaciones</h4>
+                        <p>Número de adjudicaciones de un contratista en específico  dentro del universo de información registrado en esta plataforma.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Contacto</h4>
+                        <p>Persona o área administrativa que funge como punto de contacto en relación con este procedimiento de contratación.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Correo electrónico</h4>
+                        <p>Correo electrónico del punto de contacto.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Dirección</h4>
+                        <p>Domicilio de la persona física o moral, o del área de la institución pública.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Identificador</h4>
+                        <p>El identificador principal de esta organización o participante. Los identificadores que señalan exclusivamente una entidad legal deben ser preferidos. Para la 
+                        implementación de Infraestructura Abierta, se utiliza el Registro Federal de Contribuyentes (RFC), como el esquema de identificación<sup>12</sup>.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Localidad</h4>
+                        <p>Domicilio de la persona física o moral, o del área de la institución pública.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Monto adjudicado (MXN)</h4>
+                        <p>Sumatoria de todos los montos adjudicados a un contratista en particular, expresado en pesos mexicanos y con impuestos incluidos.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Monto recibido (MXN)</h4>
+                        <p>Sumatoria de todas las transacciones relacionadas con un contratista en particular, expresado en pesos mexicanos y con impuestos incluidos.</p>
+                    <h4 class="subtituloGlosario colorGlosario">RFC</h4>
+                        <p>El Registro Federal de Contribuyentes (RFC), utilizado como el esquema de identificación de las organizaciones o participantes.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Sector</h4>
+                        <p>Los sectores asociados a los proyectos en los que el contratista ha participado.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Sitio web</h4>
+                        <p>Dirección web del punto de contacto.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Teléfono</h4>
+                        <p>El número de teléfono del punto de contacto/persona. Incluyendo el código de marcación internacional.</p>
+                </div>
+                <div class="supGlosario">
+                    <p>
+                        <sup>12</sup> Para más información consulte la organization identifier guidance: <a href="http://standard.open-contracting.org/latest/es/schema/identifiers/" target="_blank">http://standard.open-contracting.org/latest/es/schema/identifiers/</a>.
+                    </p>
+                </div>
+                <hr>
+                <h1 class="tituloGlosario colorGlosario">Instituciones públicas</h1>
+                <br>
+                <p>Instituciones públicas de los tres órdenes de gobierno responsables de desarrollar los activos de infraestructura y/o de entregar los servicios públicos relacionados con los 
+                proyectos disponibles en esta plataforma.</p>
+                <hr>
+                <h1 class="tituloGlosario colorGlosario">Entidad compradora</h1>
+                <br>
+                <p>Institución pública cuyo presupuesto se utilizará para pagar bienes, obras o servicios relacionados con un contrato.</p>
+                <div class="espacioContainer">
+                    <h4 class="subtituloGlosario colorGlosario">Contacto</h4>
+                        <p>Persona o área administrativa que funge como punto de contacto en el desarrollo de los proyectos de infraestructura  relacionados con la institución pública que se trate.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Contrataciones</h4>
+                        <p>Número de procedimientos de contratación relacionados con una institución en particular.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Correo electrónico</h4>
+                        <p>Correo electrónico del punto de contacto.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Dirección</h4>
+                        <p>Domicilio de la persona física o moral, o del área de la institución pública.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Identificador</h4>
+                        <p>El identificador principal de esta organización o participante. Los identificadores que señalan exclusivamente una entidad legal deben ser preferidos. Para la implementación 
+                        de Infraestructura Abierta, se utiliza el Registro Federal de Contribuyentes (RFC), como el esquema de identificación<sup>13</sup>.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Monto contratado</h4>
+                        <p>Valor económico del contrato con impuestos incluidos, expresado en pesos mexicanos.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Monto ejercido</h4>
+                        <p>Es la sumatoria de todas las transacciones registradas en los procedimientos de contratación asociados a cada proyecto, expresado en pesos mexicanos.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Promedio de contrataciones</h4>
+                        <p>Promedio obtenido de la sumatoria de los procedimientos de contratación entre la sumatoria de los proyectos de infraestructura publicados en esta plataforma, mismos que han 
+                        sido ejecutados por una institución en particular.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Promedio de proyectos</h4>
+                        <p>Promedio obtenido de la sumatoria de los proyectos de infraestructura entre la sumatoria de las instituciones públicas que han publicado información en esta plataforma, mismos 
+                        que han sido ejecutados por una institución en particular.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Proyectos</h4>
+                        <p>Número de proyectos de infraestructura relacionados con una institución en particular.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Razón social</h4>
+                        <p>Nombre o razón social de una institución o contratista.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Teléfono</h4>
+                        <p>El número de teléfono del punto de contacto/persona. Incluye el código de marcación internacional.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Sitio web</h4>
+                        <p>Dirección web del punto de contacto de una institución o contratista.</p>
+                </div>
+                <div class="supGlosario">
+                    <p>
+                        <sup>13</sup> Para más información consulte la organization identifier guidance:  <a href="http://standard.open-contracting.org/latest/es/schema/identifiers/" target="_blank">http://standard.open-contracting.org/latest/es/schema/identifiers/</a>.
+                    </p>
+                </div>
+                <hr>
+                <h1 class="tituloGlosario colorGlosario">Indicadores</h1>
+                <br>
+                <p>De los indicadores se tienen las siguientes definiciones:</p>
+                <div class="espacioContainer">
+                    <h4 class="subtituloGlosario colorGlosario">Avance financiero</h4>
+                        <p>Es el porcentaje de dinero pagado sobre el monto total aprobado a gastar. En caso que dicho porcentaje sea 85% significa que, a la fecha de actualización, se pagado ese 
+                        porcentaje del total del contrato y/o proyecto.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Diversidad de Empresas Ganadoras (por cada 100)</h4>
+                        <p>Es el número de empresas distintas, de los contratos disponibles en la plataforma, que tienen contratos adjudicados por cada 100 empresas. Este indicador ayuda a entender
+                        que tanto se ha contratado con distintas empresas.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Procedimiento con Convenio (Promedio)</h4>
+                        <p>Es el número de contratos, en promedio y disponibles en la plataforma, que cuentan con un convenio en el que se modifica el monto o el plazo de entrega de la obra o servicio.</p>
+                    <h4 class="subtituloGlosario colorGlosario">Incremento ejecutado (Promedio)</h4>
+                        <p>Es el porcentaje promedio de incremento en el monto pagado de los contratos respecto al monto aprobado. Esto se hace respecto a todas las contrataciones disponibles en la plataforma.</p>
+                </div>
+            </div>
+        </div>
+        <%- include ('partials/footer'); -%>
+    </body>       
+</html>

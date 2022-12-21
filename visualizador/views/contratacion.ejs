@@ -1,0 +1,706 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <%- include ('partials/headDetalleContratacion'); -%>
+    </head>
+    <body>
+        <%- include ('partials/header'); -%>
+        <!-- Filtro de busqueda -->
+        <%- include ('partials/busqueda_general'); -%>
+        <!-- Sección Página -->
+        <div id="paginaSeccion" class="tamanoBody">
+            <!-- Breadcrum -->
+            <nav class="ubicacion sticky-top sticky-top_movil">
+                <ol class="breadcrumb breadcrumb_movil_detalle">
+                    <li class="breadcrumb-item"><a class="inicio" href="/">Inicio</a></li>
+                    <li class="breadcrumb-item"><a class="inicio" href="/contrataciones/">Contrataciones</a></li>
+                    <li id="_titlebreadcrum" class="col-sm-3 breadcrumb-item color_detalle puntos_suspensivos limitado" aria-current="page" style="max-width: 70%;"><%= title %></li>
+                </ol>
+            </nav>
+
+            <div>
+                <%- include ('partials/banner_detalle'); -%>
+            </div>
+            <div class="container screen_all_contratacion">
+                <div>
+                    <!-- Cifras destacadas -->
+                    <div class="row espacio_contratacion_contacto">
+                        <div class="col-lg-3 col-md-6">
+                            <p class="formatoText">Entidad compradora</p>
+                            <p><img class="icono_size" src="<%=icon_contratacionD_1%>" /></p>
+                            <p class="formatoTextValor" id="_entidadCompradora"><%= entidadCompradora %></p>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <p class="formatoText">Entidad contratante</p>
+                            <p><img class="icono_size" src="<%=icon_contratacionD_2%>" /></p>
+                            <p class="formatoTextValor"  id="_entidadContratante"><%= entidadContratante %></p>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <p class="formatoText">Fecha de inicio</p>
+                            <p><img class="icono_size" src="<%=icon_contratacionD_3%>" /></p>
+                            <p class="formatoTextValor"  id="_fechaInicio"><%= fechaInicio %></p>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <p class="formatoText">Fecha de término</p>
+                            <p><img class="icono_size" src="<%=icon_contratacionD_4%>" /></p>
+                            <p class="formatoTextValor"  id="_fechaTermino"><%= fechaTermino %></p>
+                        </div>
+                        <div class="textJustify espacioDescripcion">
+                            <span class="textNegritaAlineado">Descripción:</span> <span id="_descripcion"> <%= descripcion %></span>
+                        </div>
+                    </div>
+                    <!--Gráficas de Anillo-->
+                    <!-- <div style="margin-bottom: 50px; margin-top: 50px; ">
+                        <div class="row" style="margin-left: auto; margin-right: auto; ">
+                            <div class="col-md-6" style="height: 400px;">
+                                <div id="container"></div>
+                                <script>
+
+                                    anychart.onDocumentReady(function () {
+                                    // define sample data
+                                    var data = [
+                                        { name: 'Point 1', value: 0, group: 'stock' },
+                                        { name: 'Point 2', value: 0, group: 'stock' },
+                                        { name: 'Point 3', value: 0, group: 'stock' },
+                                        { name: 'Point 4', value: 0, group: 'stock' },
+                                        { name: 'Point 5', value: 0, group: 'stock' },
+                                        { name: 'Point 6', value: 0, group: 'stock' },
+                                        { name: 'Point 7', value: 100, group: 'stock' },
+                                        { name: 'Point 8', value: 0, group: 'bonds' },
+                                        { name: 'Point 9', value: 0, group: 'bonds' },
+                                        { name: 'Point 10', value: 0, group: 'bonds' },
+                                        { name: 'Point 11', value: 0, group: 'bonds' },
+                                        { name: 'Point 12', value: 0, group: 'bonds' }
+                                    ];
+
+                                    // pre process data points, to define indexes groups and set color from palette
+                                    var groupsPalette = ['#003268', '#0E3119'];
+                                    var dataPointsCount = data.length;
+                                    var groupsMap = {};
+                                    var groupsIndex = 0;
+                                    var explodedGroupName;
+
+                                    for (var i = 0; i < dataPointsCount; i++) {
+                                        var point = data[i];
+                                        var groupName = point.group;
+                                        var group = groupsMap[groupName];
+
+                                        if (!group) {
+                                        group = {};
+                                        group.index = groupsIndex;
+                                        group.sum = 0;
+                                        group.palette = anychart.palettes.distinctColors(
+                                            anychart.color.singleHueProgression(
+                                            groupsPalette[groupsIndex],
+                                            dataPointsCount
+                                            )
+                                        );
+                                        group.lastPointIndex = -1;
+                                        group.indexes = [];
+                                        groupsMap[groupName] = group;
+                                        groupsIndex++;
+                                        }
+                                        group.lastPointIndex++;
+                                        group.sum += point.value;
+                                        var groupPalette = group.palette;
+                                        var lastPointIndex = group.lastPointIndex;
+                                        var groupIndexes = group.indexes;
+                                        groupIndexes.push(i);
+
+                                        point.fill = groupPalette.itemAt(lastPointIndex);
+                                        point.stroke = groupPalette.itemAt(lastPointIndex);
+                                    }
+
+                                    // create pie chart with passed data
+                                    var chart = anychart.pie(data);
+
+                                    // set chart title text settings
+                                    chart
+                                        .title({fontSize: 28, fontStyle: 'bold', fontColor: '#293232', text: 'Avance físico'})
+                                        .interactivity('single')
+                                        // disable chart legend
+                                        .legend(false)
+                                        // set chart radius
+                                        .radius('43%')
+                                        .labels(false)
+                                        // create empty area in pie chart
+                                        .innerRadius('70%');
+
+                                    //createChartLabel(chart, 0, 'right-top', 'bonds');
+                                    createChartLabel(chart, 1, 'center-top', 'stock');
+
+                                    // set container id for the chart
+                                    chart.container('container');
+                                    // initiate chart drawing
+                                    chart.draw();
+
+                                    chart.listen('pointMouseOver', function (evt) {
+                                        var pointIndex = evt.pointIndex;
+                                        var groupName = chart.data().get(pointIndex, 'group');
+                                        var group = groupsMap[groupName];
+                                        var groupIndexes = group.indexes;
+
+                                        chart.unhover();
+                                        chart.hover(groupIndexes);
+                                    });
+
+                                    chart.listen('pointMouseOut', function () {
+                                        chart.unhover();
+                                    });
+
+                                    function createChartLabel(chart, index, anchor, groupName) {
+                                        var label = chart.label(index);
+                                        label
+                                        .position('center')
+                                        .anchor(anchor)
+                                        .offsetY(0)
+                                        .offsetX(0)
+                                        .hAlign('center')
+                                        .useHtml(true)
+                                        .text(
+                                            '<span style="font-size: 35px; color: #293232">' +
+                                            groupsMap[groupName].sum +
+                                            '</span><br><span style="font-size: 0px; font-weight: bold">' +
+                                            groupName.toUpperCase() +
+                                            '</span>'
+                                        );
+
+                                        label.listen('mouseOver', function () {
+                                        document.body.style.cursor = 'pointer';
+                                        var group = groupsMap[groupName];
+                                        var groupIndexes = group.indexes;
+
+                                        chart.unhover();
+                                        chart.hover(groupIndexes);
+                                        });
+
+                                        label.listen('mouseOut', function () {
+                                        document.body.style.cursor = '';
+                                        chart.unhover();
+                                        });
+
+                                        label.listen('mouseDown', function () {
+                                        var group = groupsMap[groupName];
+
+                                        if (explodedGroupName === groupName) {
+                                            chart.unselect();
+                                            explodedGroupName = '';
+                                        } else {
+                                            var groupIndexes = group.indexes;
+                                            explodedGroupName = groupName;
+                                            chart.select(false);
+                                            chart.select(groupIndexes, true);
+                                        }
+                                        });
+                                    }
+                                    });
+                                
+                                </script>
+                            </div>
+                            <div class="col-md-6" style="height: 400px;">
+                                <div id="container1"></div>
+                                <script>
+
+                                    anychart.onDocumentReady(function () {
+                                    // define sample data
+                                    var data = [
+                                        { name: 'Point 1', value: 0, group: 'stock' },
+                                        { name: 'Point 2', value: 0, group: 'stock' },
+                                        { name: 'Point 3', value: 0, group: 'stock' },
+                                        { name: 'Point 4', value: 0, group: 'stock' },
+                                        { name: 'Point 5', value: 0, group: 'stock' },
+                                        { name: 'Point 6', value: 0, group: 'stock' },
+                                        { name: 'Point 7', value: 100, group: 'stock' },
+                                        { name: 'Point 8', value: 0, group: 'bonds' },
+                                        { name: 'Point 9', value: 0, group: 'bonds' },
+                                        { name: 'Point 10', value: 0, group: 'bonds' },
+                                        { name: 'Point 11', value: 0, group: 'bonds' },
+                                        { name: 'Point 12', value: 0, group: 'bonds' }
+                                    ];
+
+                                    // pre process data points, to define indexes groups and set color from palette
+                                    var groupsPalette = ['#003268', '#0E3119'];
+                                    var dataPointsCount = data.length;
+                                    var groupsMap = {};
+                                    var groupsIndex = 0;
+                                    var explodedGroupName;
+
+                                    for (var i = 0; i < dataPointsCount; i++) {
+                                        var point = data[i];
+                                        var groupName = point.group;
+                                        var group = groupsMap[groupName];
+
+                                        if (!group) {
+                                        group = {};
+                                        group.index = groupsIndex;
+                                        group.sum = 0;
+                                        group.palette = anychart.palettes.distinctColors(
+                                            anychart.color.singleHueProgression(
+                                            groupsPalette[groupsIndex],
+                                            dataPointsCount
+                                            )
+                                        );
+                                        group.lastPointIndex = -1;
+                                        group.indexes = [];
+                                        groupsMap[groupName] = group;
+                                        groupsIndex++;
+                                        }
+                                        group.lastPointIndex++;
+                                        group.sum += point.value;
+                                        var groupPalette = group.palette;
+                                        var lastPointIndex = group.lastPointIndex;
+                                        var groupIndexes = group.indexes;
+                                        groupIndexes.push(i);
+
+                                        point.fill = groupPalette.itemAt(lastPointIndex);
+                                        point.stroke = groupPalette.itemAt(lastPointIndex);
+                                    }
+
+                                    // create pie chart with passed data
+                                    var chart = anychart.pie(data);
+
+                                    // set chart title text settings
+                                    chart
+                                        .title({fontSize: 28, fontStyle: 'bold', fontColor: '#293232', text: 'Avance financiero'})
+                                        .interactivity('single')
+                                        // disable chart legend
+                                        .legend(false)
+                                        // set chart radius
+                                        .radius('43%')
+                                        .labels(false)
+                                        // create empty area in pie chart
+                                        .innerRadius('70%');
+
+                                    //createChartLabel(chart, 0, 'right-top', 'bonds');
+                                    createChartLabel(chart, 1, 'center-top', 'stock');
+
+                                    // set container id for the chart
+                                    chart.container('container1');
+                                    // initiate chart drawing
+                                    chart.draw();
+
+                                    chart.listen('pointMouseOver', function (evt) {
+                                        var pointIndex = evt.pointIndex;
+                                        var groupName = chart.data().get(pointIndex, 'group');
+                                        var group = groupsMap[groupName];
+                                        var groupIndexes = group.indexes;
+
+                                        chart.unhover();
+                                        chart.hover(groupIndexes);
+                                    });
+
+                                    chart.listen('pointMouseOut', function () {
+                                        chart.unhover();
+                                    });
+
+                                    function createChartLabel(chart, index, anchor, groupName) {
+                                        var label = chart.label(index);
+                                        label
+                                        .position('center')
+                                        .anchor(anchor)
+                                        .offsetY(0)
+                                        .offsetX(0)
+                                        .hAlign('center')
+                                        .useHtml(true)
+                                        .text(
+                                            '<span style="font-size: 35px; color: #293232">' +
+                                            groupsMap[groupName].sum +
+                                            '</span><br><span style="font-size: 0px; font-weight: bold">' +
+                                            groupName.toUpperCase() +
+                                            '</span>'
+                                        );
+
+                                        label.listen('mouseOver', function () {
+                                        document.body.style.cursor = 'pointer';
+                                        var group = groupsMap[groupName];
+                                        var groupIndexes = group.indexes;
+
+                                        chart.unhover();
+                                        chart.hover(groupIndexes);
+                                        });
+
+                                        label.listen('mouseOut', function () {
+                                        document.body.style.cursor = '';
+                                        chart.unhover();
+                                        });
+
+                                        label.listen('mouseDown', function () {
+                                        var group = groupsMap[groupName];
+
+                                        if (explodedGroupName === groupName) {
+                                            chart.unselect();
+                                            explodedGroupName = '';
+                                        } else {
+                                            var groupIndexes = group.indexes;
+                                            explodedGroupName = groupName;
+                                            chart.select(false);
+                                            chart.select(groupIndexes, true);
+                                        }
+                                        });
+                                    }
+                                    });
+                                
+                                </script>
+                            </div>
+                        </div>
+                        <style>
+                            .anychart-credits {
+                                display: none;
+                            }
+                            .anychart-ui-support {
+                                pointer-events: none;
+                            }
+                        </style>
+                    </div> -->
+                    <!--Etapas-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <!-- Nombre de etapas -->
+                                <div class="card-header fondoColor sinespacio">
+                                    <ul class="nav nav-tabs card-header-tabs etapas" id="etapas-list" role="tablist">
+                                        <li class="col-md-3 nav-item anchoEtapas total_hover">
+                                            <a class="nav-link pruca active cambioColorNAVCD ocultaTexto" href="#planeacion" role="tab" aria-controls="planeacion" aria-selected="true"><img class="iconoEtapas" src="/images/iconos/planeacionBlanco.svg" /> Planeación</a>
+                                        </li>
+                                        <li class="col-md-3 nav-item anchoEtapas total_hover">
+                                            <a class="nav-link cambioColorNAVCD ocultaTexto"  href="#licitacion" role="tab" aria-controls="licitacion" aria-selected="false"><img class="iconoEtapas" src="/images/iconos/licitacionBlanco.svg" /> Licitación</a>
+                                        </li>
+                                        <li class="col-md-3 nav-item anchoEtapas total_hover">
+                                            <a class="nav-link cambioColorNAVCD ocultaTexto" href="#adjudicacion" role="tab" aria-controls="adjudicacion" aria-selected="false"><img class="iconoEtapas" src="/images/iconos/adjudicacionBlanco.svg" /> Adjudicación</a>
+                                        </li>
+                                        <li class="col-md-3 nav-item anchoEtapas total_hover">
+                                            <a class="nav-link cambioColorNAVCD ocultaTexto" href="#contratacion" role="tab" aria-controls="contratacion" aria-selected="false"><img class="iconoEtapas" src="/images/iconos/contratacionBlanco.svg" /> Contratación</a>
+                                        </li>
+                                        <li class="col-md-3 nav-item anchoEtapas total_hover">
+                                            <a class="nav-link cambioColorNAVCD ocultaTexto" href="#ejecucion" role="tab" aria-controls="ejecucion" aria-selected="false"><img class="iconoEtapas" src="/images/iconos/ejecucionBlanco.svg" /> Ejecución</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Etapas contratación-->
+                                <div class="card-body">
+                                    <div class="tab-content mt-3">
+                                        <!-- Planeación -->
+                                        <div class="tab-pane active paddingCuadro" id="planeacion" role="tabpanel">
+                                            <div class="sizeFontGeneral">
+                                                <br>
+                                                <strong>Proyecto: </strong><span id="_tituloProyecto"><%= tituloProyecto %></span>
+                                            </div>
+                                            <br>
+                                            <div id="documentosPlaneacionCollapsed">
+                                                <div class="panel-heading">
+                                                    <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#documentosPlaneacionCollapsed" href="#collapseDocument1" aria-expanded="true" aria-controls="collapseDocument1">
+                                                        Documentos (<span id="_conteoDocumentos"><%= conteoDocumentos %></span>) <div class="flechita"><a></a></div>
+                                                    </button>
+                                                </div>
+                                                <div id="collapseDocument1" class="panel-collapse collapse space">
+                                                    <div class="sizeFontGeneral" id="_documentos"></div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <!-- Licitación -->
+                                        <div class="tab-pane paddingCuadro" id="licitacion" role="tabpanel" aria-labelledby="licitacion-tab">
+                                            <div class="row">
+                                                <div class="col-lg-2 col-md-12 ubicaBotonEstatus tablet mobile">
+                                                    <div id="_statusMobile"></div>
+                                                </div>
+                                                <div class="col-lg-10">
+                                                    <p id="_titletender" class="styleName formatoTextTitulo"><%= titletender %></p>
+                                                    <div class="col-lg-4 col-md-8 styleID formatoTextValor">
+                                                        <span>ID: </span><span id="_idcontratacion"><%= idContratacion %></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2 col-md-12 ubicaBotonEstatus no-mobile">
+                                                    <div id="_status"></div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div>
+                                                <div class="textJustify formatoTextValor">
+                                                    <strong>Justificación:</strong> <span id="_objetoProcedimiento"> <%= objetoProcedimiento %></span>
+                                                </div>
+                                                <div class="row ubicaBoton">
+                                                    <div class="col-lg-6 col-md-12">
+                                                        <strong class="formatoTextTitulo">Valor estimado</strong>
+                                                        <div class="textStyle formatoTextValor">
+                                                            <span>$</span> <span id="_valorEstimado"><%= valorEstimado %> </span> <span id="_valorCurrency"> <%= valorCurrency %> </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-12">
+                                                        <strong class="formatoTextTitulo">Entidad contratante</strong>
+                                                        <p id="_entidadCL" class="textStyle formatoTextValor"><%= entidadCL %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <br>
+                                            <div id="itemsCollapsed">
+                                                <div class="panel-heading">
+                                                <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#itemsCollapsed" href="#collapseItems" aria-expanded="false" aria-controls="collapseItems" >
+                                                    Ítems (<span id="_conteoItems"><%= conteoItems %></span>) <div class="flechita"><a></a></div>
+                                                </button >
+                                                </div>
+                                                <div id="collapseItems" class="panel-collapse collapse space">
+                                                <br>
+                                                <div id="_items" class="hscroll"></div>
+                                            </div>
+                                            </div>
+                                            <hr>
+                                            <br>
+                                            <div id="procurementMethodCollapsed">
+                                                <div class="panel-heading">
+                                                    <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#procurementMethodCollapsed" href="#collapseMetodo" aria-expanded="true" aria-controls="collapseMetodo">
+                                                        Método de contratación <div class="flechita"><a></a></div>
+                                                    </button>
+                                                </div>
+                                                <div id="collapseMetodo" class="panel-collapse collapse space">
+                                                    <div class="card card-body card_sinBorde">
+                                                        <div class="row center-text space anchoMC">
+                                                            <div class="col-lg-4 col-md-6">
+                                                                <p class="formatTextI formatoTextTitulo">Método de contratación</p>
+                                                                <p id="_metodoContratacion" class="text18 formatoTextValor"><%= metodoContratacion %></p>
+                                                                <p><img class="icono_size" src="<%=icon_metodoC%>" /></p>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-6">
+                                                                <p class="formatTextI formatoTextTitulo">Detalles del método de contratación</p>
+                                                                <p id="_detalleMetodo" class="text18 formatoTextValor"><%= detalleMetodo %></p>
+                                                                <p><img class="icono_size" src="<%=icon_detalleC%>" /></p>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-12">
+                                                                <p class="formatTextI formatoTextTitulo">Categoría principal de contratación</p>
+                                                                <p id="_categoriaContratacion" class="text18 formatoTextValor"><%= categoriaContratacion %></p>
+                                                                <p><img class="icono_size" src="<%=icon_categoriaC%>" /></p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cajachik textJustify">
+                                                            <hr>
+                                                            <p class="tituloL formatoTextTitulo">Justificación del método de contratación</p>
+                                                            <p id="_justificacionContratacion" class="formatoTextValor"><%= justificacionContratacion %></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <br>
+                                            <div id="criterioCollapsed">
+                                                <div class="panel-heading">
+                                                    <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#criterioCollapsed" href="#collapseCriterio" aria-expanded="true" aria-controls="collapseCriterio">
+                                                        Criterio de evaluación de proposiciones <div class="flechita"><a></a></div>
+                                                    </button>
+                                                </div>
+                                                <div id="collapseCriterio" class="panel-collapse collapse space">
+                                                    <div class="card card-body card_sinBorde">
+                                                        <div class="row center-text space">
+                                                            <div class="col-12">
+                                                                <p class="formatTextI formatoTextTitulo">Criterio de evaluación de proposiciones</p>
+                                                                <p id="_criterioEvaluacion" class="text18 formatoTextValor"><%= criterioEvaluacion %></p>
+                                                                <p><img class="icono_size" src="<%=icon_criterioE%>" /></p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cajachik">
+                                                            <hr>
+                                                            <div class="row">
+                                                                <div class="col-lg-6 col-md-12">
+                                                                    <p class="tituloL formatoTextTitulo">Detalles sobre el criterio de evaluación de proposiciones</p>
+                                                                    <p class="textJustify formatoTextValor" id="_criterioProposiciones"><%= criterioProposiciones %></p>
+                                                                </div>
+                                                                <div class="col-lg-6 col-md-12">
+                                                                    <p class="tituloL formatoTextTitulo">Criterios de elegibilidad</p>
+                                                                    <p class="textJustify formatoTextValor" id="_criterioElegibilidad"><%= criterioElegibilidad %></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <br>
+                                            <div id="periodoEntregaCollapsed">
+                                                <div class="panel-heading">
+                                                    <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#periodoEntregaCollapsed" href="#collapsePeriodo" aria-expanded="true" aria-controls="collapsePeriodo">
+                                                        Período de entrega de proposiciones <div class="flechita"><a></a></div>
+                                                    </button>
+                                                </div>
+                                                <div id="collapsePeriodo" class="panel-collapse collapse space">
+                                                    <div class="card card-body card_sinBorde">
+                                                        <div class="row center-text space">
+                                                            <div class="col-6">
+                                                                <p class="formatTextI formatoTextTitulo">Fecha de inicio</p>
+                                                                <p id="_cierreFechaP" class="text18 formatoTextValor"><%= cierreFechaP %></p>
+                                                                <p><img class="icono_size" src="<%=icon_inicioP%>" /></p>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <p class="formatTextI formatoTextTitulo">Fecha de cierre</p>
+                                                                <p id="_inicioFechaP" class="text18 formatoTextValor"><%= inicioFechaP %></p>
+                                                                <p><img class="icono_size" src="<%=icon_cierreP%>" /></p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cajachik">
+                                                            <hr>
+                                                            <div class="row">
+                                                                <div class="col-lg-6 col-md-12">
+                                                                    <p class="tituloL formatoTextTitulo">Medios para la recepción de las proposiciones</p>
+                                                                    <p id="_mediosRecepcion" class="formatoTextValor"><%= mediosRecepcion %></p>
+                                                                </div>
+                                                                <div class="col-lg-6 col-md-12">
+                                                                    <p class="tituloL formatoTextTitulo">Descripción de los medios para la recepción de las proposiciones</p>
+                                                                    <p id="_descripcionMediosRecepcion" class="formatoTextValor"><%= descripcionMediosRecepcion %></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <br>
+                                            <div id="periodoSolicitudesCollapsed">
+                                                <div class="panel-heading">
+                                                    <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#periodoSolicitudesCollapsed" href="#collapsePeriodoSolicitudes" aria-expanded="true" aria-controls="collapsePeriodoSolicitudes">
+                                                        Período para presentar solicitudes de aclaración <div class="flechita"><a></a></div>
+                                                    </button>
+                                                </div>
+                                                <div id="collapsePeriodoSolicitudes" class="panel-collapse collapse space">
+                                                    <div class="card card-body card_sinBorde">
+                                                        <div class="row center-text space">
+                                                            <div class="col-6">
+                                                                <p class="formatTextI formatoTextTitulo">Fecha de inicio</p>
+                                                                <p id="_inicioFechaS" class="text18 formatoTextValor"><%= inicioFechaS %></p>
+                                                                <p><img class="icono_size" src="<%=icon_inicioS%>" /></p>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <p class="formatTextI formatoTextTitulo">Fecha de cierre</p>
+                                                                <p id="_cierreFechaS" class="text18 formatoTextValor"><%= cierreFechaS %></p>
+                                                                <p><img class="icono_size" src="<%=icon_cierreS%>" /></p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cajachik">
+                                                            <hr>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <p class="tituloL formatoTextTitulo">¿Hubo solicitudes de aclaración?</p>
+                                                                    <p id="_huboCotizaciones" class="formatoTextValor"><%= huboCotizaciones %></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <br>
+                                            <div id="periodoeyaCollapsed">
+                                                <div class="panel-heading">
+                                                    <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#periodoeyaCollapsed" href="#collapsePEA" aria-expanded="true" aria-controls="collapsePEA">
+                                                        Período de evaluación y adjudicación <div class="flechita"><a></a></div>
+                                                    </button>
+                                                </div>
+                                                <div id="collapsePEA" class="panel-collapse collapse space">
+                                                    <div class="card card-body card_sinBorde">
+                                                        <div class="row center-text space">
+                                                            <div class="col-6">
+                                                                <p class="formatTextI formatoTextTitulo">Fecha de inicio</p>
+                                                                <p id="_inicioFechaEA" class="text18 formatoTextValor"><%= inicioFechaEA %></p>
+                                                                <p><img class="icono_size" src="<%=icon_inicioEA%>" /></p>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <p class="formatTextI formatoTextTitulo">Fecha de cierre</p>
+                                                                <p id="_cierreFechaEA" class="text18 formatoTextValor"><%= cierreFechaEA %></p>
+                                                                <p><img class="icono_size" src="<%=icon_cierreEA%>" /></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <br>
+                                            <div id="licitantesCollapsed">
+                                                <div class="panel-heading">
+                                                    <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#licitantesCollapsed" href="#collapseLicitantes" aria-expanded="true" aria-controls="collapseLicitantes">
+                                                        Licitantes (<span id="_conteoLicitantes"><%= conteoLicitantes %></span>) <div class="flechita"><a></a></div>
+                                                    </button>
+                                                </div>
+                                                <div id="collapseLicitantes" class="panel-collapse collapse space">
+                                                    <br>
+                                                    <div id="_tenderers" class="hscroll"></div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <br>
+                                            <div id="documentosLicitacionCollapsed">
+                                                <div class="panel-heading">
+                                                    <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#documentosLicitacionCollapsed" href="#collapseDocumentoLicitacion" aria-expanded="true" aria-controls="collapseDocumentoLicitacion">
+                                                        Documentos (<span id="_conteoDocumentosLicitantes"><%= conteoDocumentosLicitacion %></span>) <div class="flechita"><a></a></div>
+                                                    </button>
+                                                </div>
+                                                <div id="collapseDocumentoLicitacion" class="panel-collapse collapse space">
+                                                    <div id="_documentosLicitacion"></div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <br>
+                                            <div id="hitosCollapsed">
+                                                <div class="panel-heading">
+                                                    <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#hitosCollapsed" href="#collapseHitos" aria-expanded="true" aria-controls="collapseHitos">
+                                                        Hitos (<span id="_conteoHitos"><%= conteoHitos %></span>) <div class="flechita"><a></a></div>
+                                                    </button>
+                                                </div>
+                                                <div id="collapseHitos" class="panel-collapse collapse space">
+                                                    <br>
+                                                    <div id="_hitos" class="hscroll"></div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <!-- Adjudicación -->
+                                        <div class="tab-pane paddingCuadro" id="adjudicacion" role="tabpanel" aria-labelledby="adjudicacion-tab"></div>
+                                        <!-- Contratación -->
+                                        <div class="tab-pane paddingCuadro" id="contratacion" role="tabpanel" aria-labelledby="contratacion-tab"></div>
+                                        <!-- Ejecución -->
+                                        <div class="tab-pane paddingCuadro" id="ejecucion" role="tabpanel" aria-labelledby="ejecucion-tab"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Lista de proyectos relacionados -->
+            <div class="proyectos_relacionados">
+                <div class="container screen_all_contratacion relacion">
+                    <div>
+                        <h1 class="titulo_lista sizeFontGeneral">Proyecto relacionado al proceso de contratación</h1>
+                        <br>
+                        <div id="lista_proyectos"></div>
+                        <!-- <div class="container box">                 
+                            <ul class="pagination justify-content-center">
+                                <div id="paginas_lista_proyectos" class="row"></div>        
+                            </ul>
+                        </div> -->
+                        <a id="downloadAnchorElem" style="display:none"></a>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" id="prefixOCID" value="<%= prefixOCID %>">
+            <input type="hidden" id="ocid" value="<%= ocid %>">
+        </div> 
+        <%- include ('partials/footer'); -%>
+    </body>       
+</html>
+<script>
+    $('#etapas-list a').on('click', function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
+</script>
+<script>
+    window.onload=contraer;
+</script>
+<script>
+  $('.panel-collapse').on('show.bs.collapse', function () {
+    $(this).siblings('.panel-heading').addClass('active');
+  });
+
+  $('.panel-collapse').on('hide.bs.collapse', function () {
+    $(this).siblings('.panel-heading').removeClass('active');
+  });
+</script>

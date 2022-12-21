@@ -1,0 +1,520 @@
+.nav-link.active {
+    background-color: #c63823!important;
+}
+.nav-link:hover {
+    background-color: #F4A89C!important;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    pointer-events: none;
+    border-color: #ffffff;
+}
+.nav-tabs .nav-link { 
+    border: 0;
+}
+.nav-tabs .nav-item {
+    margin-bottom: 0;
+}
+.cambioColorNAVCD {
+    color: #ffffff!important;
+}
+.card_sinBorde {
+    border: none;
+}
+.center-text {
+    text-align: center;
+}
+.colorandfont {
+    background-color: #db4b36;
+    color: #ffffff;
+    font-family: 'Proxima Nova Bold';
+}
+.card-header-tabs {
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+.espacios {
+    margin-top: 300px;
+    margin-bottom: 80px;
+}
+.espacio_contratacion_contacto {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.espacioDescripcion {
+    margin-top: 50px;
+    margin-left: 28px;
+    margin-right: 28px;
+}
+.textNegritaAlineado {
+    font-family: 'Proxima Nova Bold';
+}
+.fondoColor {
+    background-color: #ffffff;
+}
+.cienWidth {
+    width: 100%;
+}
+.formatoText {
+    font-weight: 600;
+    font-size: 14px;
+}
+.anchoEtapas {
+    max-width: 20%;
+}
+.etapas {
+    background-color: #db4b36; 
+    font-size: 18px; 
+    text-align: center;
+}
+.space {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.panel-heading  a:before {
+    content: "\2193";
+    float: right;
+    margin-left: 10px;
+ }
+ .panel-heading.active a:before {
+   content: "\2191";
+ }
+.flechisabajo a:before{
+    content: "\2193";
+    float: right;
+    margin-left: 10px;
+ }
+ .flechisarriba a:before {
+   content: "\2191";
+   float: right;
+   margin-left: 10px;
+ }
+ .flechita {
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+    margin-bottom: -14px;
+    margin-top: -24px;
+ }
+.iconoSize {
+    height: 45px;
+}
+.paddingCuadro {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.colorCard {
+    background-color: #c63823;
+    border: 1px solid transparent;
+    font-weight: 600;
+    font-size: 14px;
+    width: 100%;
+    text-align: left;
+}
+.colorBoton {
+    background-color: #f4a89cff;
+    color: #c63823ff;
+    border: 1px solid transparent;
+    font-weight: 600;
+    font-size: 14px;
+}
+.colorBoton:hover {
+    background-color: #f16752ff;
+    color: #ffffff;
+    border: 1px solid transparent;
+    font-weight: 600;
+    font-size: 14px;
+}
+.colorBoton:focus {
+    box-shadow: 0 0 0 .2rem rgba(219,75,54,1);
+    background-color: #db4b36ff;
+    color: #ffffff;
+}
+.colorBoton:focus:hover {
+    box-shadow: 0 0 0 .2rem rgba(198,56,35,1);
+    background-color: #c63823ff;
+    color: #ffffff;
+}
+.total_hover {
+    padding-left: 0;
+    padding-right: 0;
+}
+.textJustify {
+    text-align: justify;
+}
+.sinespacio {
+    padding: 0;
+}
+.pad {
+    padding: 8px;
+    text-align: justify;
+}
+.iconoEtapas{
+    height: 40px;
+}
+.maxFecha {
+    max-width: 12.5%;
+}
+.maxBoton {
+    max-width: 13.7%;
+}
+.maxFormato {
+    max-width: 10%;
+}
+.fechaPublicacion {
+    font-size: 12px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+.styleName {
+    font-size: 21px;
+    font-weight: 700;
+}
+.styleID {
+    background-color: #f2f2f2;
+    font-size: 13px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.ubicaBoton {
+    text-align: center;
+    padding-top: 20px;
+}
+.ubicaBotonEstatus {
+    text-align: right;
+    padding-top: 20px;
+}
+.botonStyleColorG {
+    background: #b7b7b7ff;
+    border: 1px solid #b7b7b7ff;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    text-transform: uppercase;
+}
+.botonStyleColorA {
+    background: #f1c232;
+    border: 1px solid #f1c232;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    text-transform: uppercase;
+}
+.botonStyleColorV {
+    background: #6aa84f;
+    border: 1px solid #6aa84f;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    text-transform: uppercase;
+}
+.botonStyleColorAZ {
+    background: #3c78d8;
+    border: 1px solid #3c78d8;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    text-transform: uppercase;
+}
+.botonStyleColorAZF {
+    background: #0b5394ff;
+    border: 1px solid #0b5394ff;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    text-transform: uppercase;
+}
+.botonStyleColorR {
+    background: #a64d79;
+    border: 1px solid #a64d79;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    text-transform: uppercase;
+}
+.textStyle {
+    font-size: 27px;
+    font-weight: 500;
+    color: #c63823;
+    margin-bottom: 45px;
+}
+.text18 {
+    font-size: 18px;
+    font-weight: 700;
+}
+.cajachik {
+    width: 85%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.tituloL {
+    font-weight: 600;
+    font-size: 18px;
+}
+.sinRegistro {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.formatTextI {
+    font-size: 14px;
+}
+.styleTab {
+    margin-top: -17px;
+    font-size: 14px;
+}
+.spaceDocumentos {
+    font-size: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.documentTitulo {
+    font-size: 18px;
+    color: #222;
+    font-weight: 600;
+    line-height: normal;
+}
+.descripDocument {
+    padding-left: 15px;
+}
+.paddingCuadros {
+    padding-left: 20px;
+}
+.botonStyle {
+    line-height: normal;
+}
+.botonStyleA {
+    background: #0476D9;
+    border: 1px solid #035ba7;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    text-transform: uppercase;
+}
+.itemDescripcion {
+    color: #222;
+    line-height: normal;
+    font-size: 14px;
+}
+.itemTitulo {
+    color: #222;
+    font-weight: 600;
+    line-height: normal;
+    font-size: 15px;
+    margin-bottom: 0px;
+}
+.linea {
+    width: 98.5%;
+}
+.interlinea {
+    border: 1px solid #ddd;
+}
+.table thead th {
+    vertical-align: top;
+    border-bottom: 2px solid #dee2e6;
+}
+.medidaIcono {
+    height: 19px;
+}
+.widthitems_8 {
+    max-width: 8%;
+}
+.widthitems_10 {
+    max-width: 10%;
+}
+.widthitems_12 {
+    max-width: 12%;
+}
+.widthitems_14 {
+    max-width: 14%;
+}
+.btn {
+    color: #fff;
+    background-color: #f16752;
+    border-color: #db4b36;
+}
+.btn:hover {
+    color: #fff;
+    background-color: #db4b36;
+    border-color: #db4b36;
+}
+.sinDatos {
+    pointer-events: none;
+    background-color: antiquewhite;
+}
+.ocultaIndice {
+    font-size: 0;
+}
+
+/* Proyectos Relacionados */
+.proyectos_relacionados {
+    background: #f2f2f2;
+}
+.relacion {
+    padding-top: 10px;
+    padding-bottom: 80px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media only screen
+and (min-device-width: 300px)
+and (max-device-width: 480px) {
+    .anchoMC {
+        margin-right: 20px;
+    }
+    .anchoDL {
+        margin-left: -34px;
+        margin-right: -34px;
+    }
+    .faMovil {
+        font-size: 40px;
+    }
+    .borderCorner {
+        border-radius: 0 14px 14px 0;
+    }
+    .borderCornerLeft {
+        border-radius: 14px 0 0 14px;
+    }
+    .paddingPlaneacion {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+    .iconoFases {
+        width: 40px !important;
+        margin-top: 0px !important;
+    }
+    .maxFecha {
+        max-width: 50%!important;
+    }
+    .maxBoton {
+        max-width: 25%;
+    }
+    .maxFormato {
+        max-width: 50%!important;
+        margin-top: 0;
+    }
+    .sizeIcono {
+        width: 80px !important;
+        margin-top: 0px !important;
+    }
+    .nav-link:hover {
+        background-color: #c63823!important;
+    }
+    .nav-link:active {
+        background-color: #F4A89C!important;
+        height: 110px;
+    }
+    .iconoEtapas{
+        height: 80px;
+    }
+    .etapas {
+        height: 110px;
+    }
+    .cambioColorNAVCD {
+        height: 110px;
+        padding-top: 16px;
+    }
+    .formatoText {
+        font-weight: 600;
+        font-size: 40px;
+    }
+    .formatoTextTitulo {
+        font-size: 40px;
+    }
+    .formatoTextValor {
+        font-size: 36px;
+    }
+    .espacioDescripcion {
+        font-size: 36px;
+    }
+    .sizeFontDescripcion {
+        font-size: 36px;
+    }
+    .sizeFontGeneral {
+        font-size: 36px;
+    }
+    .ocultaTexto {
+        font-size: 0;
+    }
+    .botonMovil {
+        display: block;
+        width: 100%;
+        font-size: 36px;
+    }
+    .botonMovil:hover {
+        display: block;
+        width: 100%;
+        font-size: 36px;
+    }
+    .ubicaBotonEstatus {
+        text-align: right;
+        margin-bottom: 14px;
+    }
+    .styleTab {
+        font-size: 36px;
+    }
+    .tituloMargen {
+        margin-top: 20px;
+    }
+    .hscroll {
+        overflow-x: auto; /* Horizontal */
+      }
+    .widthitemsMobile {
+        width: 30%;
+    }
+    .tableMobile {
+        width:300%!important;
+    }
+    .tableMobile2 {
+        width:200%!important;
+    }
+    .medidaIcono {
+        height: 38px;
+    }
+    .espacioCol {
+        margin-bottom: 20px;
+    }
+    .prueba {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .prueba2 {
+        white-space: initial;
+    }
+    .flechita {
+        font-size: 60px;
+        margin-bottom: -33px;
+    }
+}
+
+.tamanoBody {
+    display: block;
+}
+
+@media only screen
+and (min-device-width: 300px)
+and (max-device-width: 1024px) {
+    .tamanoBody {
+        width: 108%;
+    }
+    .iconoSize {
+        height: 80px;
+    }
+}

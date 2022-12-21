@@ -1,0 +1,43 @@
+<%if (description != '') { %>
+    <div class="area_banner_inicio">
+        <section class="banner">
+            <div class="container area_movil">
+                <div class="row">
+                    <div class=".col-12 .col-md-6 col-lg-6 pitb sin_pitb">
+                        <h1 class="titulo_banner titulo_movil"><%= title %></h1>
+                        <%if (title_detalle == '') { %>
+                            <%} else {%>
+                            <p class="titulo_detalle titulo_detalle_movil"><%= title_detalle %></p>
+                        <%}%>
+                    </div>
+                    <div class=".col-12 .col-md-6 col-lg-6 sin_pitb">
+                        <p class="descripcion descripcion_movil"><%= description %></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+<%} else {%>
+    <div>
+        <section class="banner">
+            <%if (valor_1 == '1') { %>
+            <div class="container area_movil">
+                <%} else {%>
+                    <div class="container area_movil"></div>
+                <%}%>
+                <div class="row">
+                    <div class=".col-12 .col-md-6 col-lg-6 pitb sin_pitb">
+                        <h1 class="titulo_banner titulo_movil"><%= title %></h1>
+                        <%if (title_detalle == '') { %>
+                            <%} else {%>
+                            <p class="titulo_detalle titulo_detalle_movil"><%= title_detalle %></p>
+                        <%}%>
+                    </div>
+                    <div class=".col-12 .col-md-6 col-lg-6 sin_pitb">
+                        <p class="descripcion descripcion_movil"><%= description %></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+<%}%>

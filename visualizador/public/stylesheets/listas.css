@@ -1,0 +1,376 @@
+/***********************
+    Sección Listas
+***********************/
+.card-body {
+    padding: 0;
+}
+.alinea {
+    margin-right: 0;
+    margin-left: 0;
+}
+.base_card {
+    background-color: #FFFFFF;
+    margin-bottom: 30px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #db4b36;
+    border-radius: 14px;
+}
+.base_card h2 {
+    font-size: 21px;
+    font-weight: 700;
+}
+.titulo_lista {
+    font-size: 26px;
+    font-family: "Proxima Nova Bold";
+    margin-top: 50px;
+}
+/* .area_grafica {
+    margin-top: 100px;
+    margin-bottom: 100px;
+} */
+.colorLinea {
+    text-decoration: underline #db4b36;
+}
+.linkListas {
+    text-decoration: none;
+}
+.linkListas, .linkListas:link {
+    color: #666666;
+    background-color: transparent;
+    text-decoration: none;
+}
+.linkListas:hover {
+    color: #f16752;
+}
+.box_institucion {
+    font-size: 15px;
+    margin-bottom: 27px;
+}
+.box_institucion a{
+    border-bottom: 2px solid #db4b36;
+}
+.pl-0, .px-0 {
+    padding-left: 0 !important;
+}
+.pr-0, .px-0 {
+    padding-right: 0 !important;
+}
+.mb-2, .my-2 {
+    margin-bottom: 0.5rem !important;
+}
+.mb-4, .my-4 {
+    margin-bottom: 1.5rem !important;
+}
+.mobile, .tablet {
+    display: none;
+}
+.btn:hover {
+    color:#FFFFFF;
+}
+.text_justify {
+    text-align: justify;
+}
+@media only screen
+    and (max-width: 991px) {
+        .mobile {
+            display: none;
+        }
+        .tablet {
+            display: block;
+        }
+        .lista_movil {
+            margin-left: 15px;
+            padding-right: 30px;
+        }
+        .no-mobile {
+            display: none;
+        }
+        .box_id {
+            border-radius: 14px 14px 0 0 !important;
+        }
+        .box_amount {
+            border-radius: 0 0 14px 14px !important;
+        }
+        .box_download {
+            border-radius: 0 0 14px 14px !important;
+        }
+        .box_download a:hover {
+            border-radius: 0 0 14px 14px !important;
+        }
+        .lista_movil_id {
+            max-width: 100%;
+        }
+    }
+
+@media only screen
+and (min-device-width: 300px)
+and (max-device-width: 480px) {
+    .screen_all {
+        width: 129%;
+        margin-left: -100px;
+        margin-top: 12px;
+    }
+    .screen_all_contratacion {
+        max-width: 94%;
+    }
+    .box_idtfch {
+        font-size: 36px !important;
+    }
+    .label_item {
+        font-size: 36px !important;
+    }
+    .icono_size {
+        height: 100px !important;
+    }
+    .base_card h2 {
+        font-size: 36px !important;
+    }
+    .box_institucion {
+        font-size: 36px !important;
+    }
+    .separator.bottom {
+        border-bottom: 8px solid #f2f2f2 !important;
+    }
+    .box_link {
+        font-size: 36px !important;
+        padding-bottom: 8px !important;
+    }
+    .label_box {
+        font-size: 36px !important;
+    }
+    .list-12 {
+        max-width: 100% !important;
+        flex: auto;
+    }
+    .tam_list_icono {
+        width: 80px !important;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+    }
+    .box_amount .label_box.title {
+        font-size: 36px !important;
+    }
+    .box_amount h3 {
+        font-size: 86px !important;
+    }
+    .box_amount h3 .currency {
+        font-size: 36px !important;
+    }
+    .box_amount .download {
+        font-size: 40px !important;
+    }
+    .box_amount .box_download a {
+        font-size: 40px !important;
+        height: 100px;
+        padding-top: 20px;
+    }
+    .box_amount {
+        padding-bottom: 130px !important;
+    }
+    .box_sinlink {
+        font-size: 36px !important;
+    }
+    .size_text {
+        font-size: 63px !important;
+    }
+    .text_justify {
+        text-align: justify;
+        padding-right: 14px;
+    }
+}
+
+.box_idtfch {
+    color: #8e8e8e;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+.box_id {
+    border-radius: 14px 0 0 0;
+    background: #db4b36;
+    color: white;
+    display: inline-block;
+    padding: 5px 14px;
+}
+.label_item {
+    font-size: 13px;
+    text-align: center;
+}
+.icono_size {
+    height: 50px;
+}
+.tam_list_icono {
+    display: inline-block;
+    width: 15px;
+    margin-top: -3px;
+}
+.separator.bottom {
+    border: 0;
+    border-bottom: 1px solid #f2f2f2;
+    padding-bottom: 10px;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 10px;
+    height: 1px;
+}
+.label_box {
+    color: #8e8e8e;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.box_link {
+    color: #4d4d4d;
+    border-bottom: 2px solid #db4b36;
+    font-size: 14px;
+}
+.box_link.not_link {
+    border: 0;
+}
+.box_icono {
+    margin: 0 auto 10px;
+    text-align: center;
+}
+.box_amount {
+    background-color: #db4b36;
+    border-radius: 0 14px 14px 0;
+    color: white;
+    position: relative;
+    text-align: center;
+    padding-bottom: 60px;
+}
+.box_amount .label_box.title {
+    color: white;
+    font-size: 13px;
+    margin: 35px 0 5px;
+    text-transform: uppercase;
+}
+.box_amount h3 .currency {
+    display: block;
+    font-size: 14px;
+}
+.box_amount h3 {
+    font-size: 26px;
+    padding: 0 15px 50px;
+    font-family: "Proxima Nova Bold";
+}
+.box_amount .download_json {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.box_amount .download {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    margin: 0 0 5px;
+    text-transform: uppercase;
+}
+.box_amount .box_download {
+    background-color: #c63823;
+    border-radius: 0 0 14px 0;
+    list-style: none;
+    margin: 0;
+}
+.box_amount .box_download a:hover {
+    background: #f16752;
+    border-radius: 0 0 14px 0;
+}
+.box_amount .box_download a {
+    color: white;
+    display: block;
+    font-size: 14px;
+    padding-bottom: 4px;
+}
+
+/* Lista de contrataciones */
+.ancho_download {
+    left: 0px;
+}
+.centro_icono {
+    padding-left: 7px;
+}
+.iconoEstatusMovil {
+    height: 50px;
+}
+@media only screen
+and (min-device-width: 300px)
+and (max-device-width: 480px) {
+    .iconoEstatusMovil {
+        height: 100px;
+    }
+}
+
+/* Lista de contratistas */
+.box_sinlink {
+    color: #4d4d4d;
+    font-size: 14px;
+}
+.size_icono {
+    width: 40px;
+    text-align: center;
+}
+.size_text {
+    font-size: 27px;
+    color: #c63823;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.sincambio {
+    text-decoration: none!important;
+}
+.sincambio:hover {
+    color: #222;
+}
+
+/***********************
+    Paginador
+***********************/
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #c63823;
+    border-color: #c63823;
+}
+.page-link {
+    color: #333333;
+    font-family: "Proxima Nova Regular";
+    font-size: 12px;
+    margin-left: 0;
+}
+.page-link:hover {
+    color: #f16752;
+    background-color: #fff;
+    font-family: "Proxima Nova Regular";
+    font-size: 12px;
+}
+/* .pagination {
+    box-shadow: 1px 1px 3px 1px rgba(34, 34, 34, 0.3);
+} */
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media only screen
+and (min-device-width: 300px)
+and (max-device-width: 480px) {
+    .page-link {
+        width: 100px;
+        height: 100px;
+        font-size: 40px;
+        padding: 1.5rem 1.7rem;
+        text-align: center;
+    }
+    .page-link:hover {
+        font-size: 40px;
+    }
+}
+
+@media only screen
+and (min-device-width: 300px)
+and (max-device-width: 1024px) {
+.colorLinea {
+    font-size: 36px;
+}
+}

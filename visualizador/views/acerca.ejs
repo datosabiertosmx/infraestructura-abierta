@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <%- include ('partials/head'); -%>
+    </head>
+    <body>
+        <%- include ('partials/header'); -%>
+        <!-- Sección Página -->
+        <div class="tamanoBody">
+            <!-- Breadcrum -->
+            <nav class="ubicacion sticky-top sticky-top_movil">
+                <ol class="breadcrumb breadcrumb_movil">
+                    <li class="breadcrumb-item"><a class="inicio" href="/">Inicio</a></li>
+                    <li class="breadcrumb-item color_detalle">Acerca de Infraestructura Abierta</li>
+                </ol>
+            </nav>
+
+            <div>
+                <%- include ('partials/banner'); -%>
+            </div>
+            <div class="container alineaAcerca">
+                <br>
+                <div style="text-align: center;">
+                    <iframe class="sizeVideo" src="https://www.youtube.com/embed/DBwMhE7qnUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h1 class="tituloAcerca colorAcerca">¿Qué es Infraestructura Abierta?</h1>
+                <br>
+                <p>Infraestructura Abierta es una política pública de <span class="colorAcerca">transparencia y datos abiertos</span> que promueve la adopción 
+                del Estándar de Datos de Contrataciones Abiertas (OCDS, por sus siglas en inglés) y del Estándar de Datos de Contrataciones Abiertas para Infraestructura 
+                (OC4IDS, por sus siglas en inglés), los cuales contribuyen a la <span class="colorAcerca">generación, administración y divulgación de datos y documentos</span> 
+                sobre los procedimientos de contratación que se llevan a cabo durante el desarrollo de los proyectos de infraestructura. Con este esfuerzo se busca:</p>
+                <ol class="numeroAcerca">
+                    <li><span class="letraAcerca">Publicar información en <span class="colorAcerca">formatos abiertos y accesibles</span> acerca de contrataciones, financiamiento y todo lo relacionado con proyectos de infraestructura.</span></li>
+                    <li><span class="letraAcerca">Promover la <span class="colorAcerca">participación ciudadana y la vigilancia</span> de las instituciones para monitorear el ejercicio de los recursos públicos.</span></li>
+                    <li><span class="letraAcerca">Incrementar la <span class="colorAcerca">eficiencia y la eficacia</span> de la gestión pública para mejorar la calidad y precio de los bienes, servicios y obras contratados.</span></li>
+                </ol>
+                <p>La implementación de Infraestructura Abierta otorga diversas <span class="colorAcerca">ventajas a las instituciones</span>, las cuales se traducen en 
+                <span class="colorAcerca">beneficios que impactan</span> en la esfera política, social y económica. Algunos de ellos son:</p>
+                <ul class="numeroAcerca">
+                    <li><span class="letraAcerca">Incremento de la <span class="colorAcerca">transparencia</span> a partir de las mejores prácticas internacionales, e identificación de áreas vulnerables a la corrupción para reducir riesgos.</span></li>
+                    <li><span class="letraAcerca">Incremento de la <span class="colorAcerca">eficiencia y la eficacia</span> en el ejercicio de los recursos públicos, a partir de un análisis y uso estratégico de la información pública.</span></li>
+                    <li><span class="letraAcerca">Incremento de la <span class="colorAcerca">participación ciudadana</span> en el monitoreo de los procesos de contratación, dotando de mayor legitimidad el ejercicio de la función pública.</span></li>
+                    <li><span class="letraAcerca">Mejora de la <span class="colorAcerca">calidad y precio</span> de las contrataciones que realiza el Estado, lo cual se traduce en la garantía de <span class="colorAcerca">derechos para las personas.</span></span></li>
+                </ul>
+                <p>Es importante reconocer que este proyecto retoma la experiencia derivada de la implementación de la iniciativa 
+                <a class="subrayadoAcerca" href="http://si.nl.gob.mx/transparencia/" target="_blank">Infraestructura Abierta en el Estado de Nuevo León.</a></p>
+                <h5 class="colorAcerca">EDCA-MX</h5>
+                <p>El Estándar de Datos de Contrataciones Abiertas de México (EDCA-MX) es un instrumento que establece los elementos mínimos indispensables que deberán documentarse 
+                a lo largo de cada una de las etapas del procedimiento de contratación en México, las cuales son planeación, licitación, adjudicación, contratación y ejecución. 
+                El estándar define el cómo (forma) se deben publicar los datos de las contrataciones públicas, no es un instrumento que defina el qué (contenido) se debe publicar, 
+                sino que establece criterios para la apertura y estandariza estructura y terminología de la información. El EDCA-MX es la traducción al español del OCDS y cuenta con 
+                las extensiones requeridas para que sea compatible con el sistema de compras gubernamentales en México y la normativa nacional de transparencia, y cuenta con la 
+                información suficiente para que su adopción permita cumplir con las obligaciones de transparencia de la LGTAIP, Art. 70, Fracción XXVIII. Consulta más información 
+                sobre el OCDS <a class="subrayadoAcerca" href="https://www.open-contracting.org/es/data-standard/" target="_blank">aquí</a> y sobre la extensión EDCA-MX 
+                <a class="subrayadoAcerca" href="https://micrositios.inai.org.mx/contratacionesabiertas/?page_id=1090" target="_blank">aquí</a>.</p>
+                <h5 class="colorAcerca">EDCAPI</h5>
+                <p>El Estándar de Datos de Contrataciones Abiertas para Infraestructura (EDCAPI) define la información a publicar sobre proyectos de infraestructura, los contratos y los 
+                programas presupuestarios de financiamiento relacionados a estos proyectos. El EDCAPI es la traducción al español del OC4IDS. Consulta más información sobre el 
+                OC4IDS <a class="subrayadoAcerca" href="https://standard.open-contracting.org/infrastructure/latest/es/" target="_blank">aquí</a>.</p>
+                <hr>
+                <h3 class="colorAcerca">Piloto de la herramienta</h3>
+                <p>Durante el 2022, el <span class="colorAcerca">INAI y México Evalúa</span> en colaboración con la <em><u>Alianza para las Contrataciones Abiertas</u></em> (OCP, 
+                en inglés), y la <em><u>Iniciativa de Transparencia en Infraestructura</u></em> (CoST, en inglés), <span class="colorAcerca">convocarán hasta 20 gobiernos o 
+                instituciones públicas</span> de los tres órdenes de gobierno para participar en la iniciativa, los cuales serán seleccionados conforme diversos criterios de 
+                elegibilidad. Podrán participar proyectos: (1) <span class="colorAcerca">emblemáticos</span> o estratégicos por su presupuesto o impacto social, (2) relacionados 
+                con la <span class="colorAcerca">emergencia sanitaria</span> SARS-CoV-2, y (3) <span class="colorAcerca">mantenimiento</span> de obras preexistentes.</p>
+                <p>Durante los trabajos de implementación, se contará con la <span class="colorAcerca">sensibilización, capacitación, asistencia técnica y acompañamiento</span>
+                de los convocantes.</p>
+                <p>Concluido el periodo de pilotaje, se llevará a cabo una <span class="colorAcerca">presentación pública</span> junto con las instituciones involucradas, de 
+                los <span class="colorAcerca">proyectos de infraestructura participantes.</span></p>
+                <h5 class="colorAcerca">¿Cómo participar en la implementación de Infraestructura Abierta?</h5>
+                <p>Una vez seleccionados los participantes, se llevará a cabo la integración de grupos específicos de trabajo, en los cuales se contará con la participación y apoyo 
+                de otras <span class="colorAcerca">organizaciones</span>.</p>
+                <p>Para participar en el pilotaje, se deberán cumplir las siguientes actividades:</p>
+                <ol>
+                    <li>Manifestaciones de interés y selección de participantes</li>
+                    <li>Instalación de Redes de Datos Abiertos, Mesa Multiactor o Grupo de trabajo</li>
+                    <li>Análisis de proyectos y elaboración del Programa de trabajo</li>
+                    <li>Elaboración del Compromiso de publicación</li>
+                    <li>Mapeo de datos, Capacitaciones y registro de información</li>
+                    <li>Revisión y validación de los datos y documentos.</li>
+                </ol>
+                <p>Visita el <a class="subrayadoAcerca" href="http://infraestructuraabierta.mx/" target="_blank">micrositio</a> de la herramienta para más información sobre la 
+                implementación.</p>
+                <hr>
+                <h3 class="colorAcerca">Herramienta tecnológica</h3>
+                <p>La plataforma de Infraestructura Abierta desarrollada en el INAI permite <span class="colorAcerca">registrar y visualizar datos y documentos</span> de los 
+                proyectos con el mayor grado de desagregación posible. Para ello, el visualizador se organiza en <span class="colorAcerca">seis secciones</span>:</p>
+                <ol>
+                    <li><span class="colorAcerca">Inicio</span>, en la cual se puede consultar un mapa de ubicaciones de los diferentes proyectos publicados en la herramienta, así como filtrar y buscar información.</li>
+                    <li><span class="colorAcerca">Proyectos</span>, en la cual se encuentra un listado y gráfico de burbujas de los proyectos de infraestructura publicados en la herramienta.</li>
+                    <li><span class="colorAcerca">Contrataciones</span>, en la cual se encuentra un listado y gráfico de burbujas de los procedimientos de contratación asociados a los proyectos de infraestructura publicados en la herramienta.</li>
+                    <li><span class="colorAcerca">Contratistas</span>, en la cual se encuentra un listado y gráfico de burbujas de los diferentes contratistas que participan en los procedimientos de contratación asociados a los proyectos de infraestructura publicados en la herramienta.</li>
+                    <li><span class="colorAcerca">Instituciones</span>, en la cual se encuentra un listado y gráfico de las instituciones que publican y financian los proyectos de infraestructura en la herramienta.</li>
+                    <li><span class="colorAcerca">Indicadores</span>, en la cual se encuentran diversos gráficos para una mejor comprensión y visualización de los datos publicados en la herramienta.</li>
+                </ol>
+                <h5 class="colorAcerca">Requerimientos técnicos de la herramienta</h5>
+                <ul class="numeroAcerca">
+                    <li><span class="letraAcerca">La plataforma de Infraestructura Abierta, está desarrollada en <span class="colorAcerca">código abierto y software libre</span>; lo que permite que cualquier interesado pueda utilizarla.</span></li>
+                    <li><span class="letraAcerca">Para el pilotaje, <span class="colorAcerca">el visualizador así como los sistemas de captura serán proporcionados por el INAI y México Evalúa</span>, por los que no será necesario realizar instalaciones en la infraestructura de cada participante.</span></li>
+                    <li><span class="letraAcerca">Concluido el periodo del pilotaje:</span></li>
+                        <ul>
+                            <li><span class="letraAcerca">Se llevará a cabo el <span class="colorAcerca">respaldo y la transferencia de información</span> a cada participante.</span></li>
+                            <li><span class="letraAcerca">El participante deberá <span class="colorAcerca">asignar infraestructura tecnológica para alojar únicamente el sistema de captura</span> con la información registrada durante el pilotaje.</span></li>
+                            <li><span class="letraAcerca">El INAI proporcionará la <span class="colorAcerca">infraestructura tecnológica para el visualizador</span>, mismo que podrá enlazarse con los sistemas de captura de cada participante.</span></li>
+                        </ul>
+                </ul>
+                <p>Para consultar el repositorio del código para la herramienta, así como manuales de instalación y usuario, consulta la página 
+                <a class="subrayadoAcerca" href="https://github.com/datosabiertosmx" target="_blank">Github de Datos Abiertos del INAI</a>.</p>
+                <br>
+            </div>
+        </div>
+        <%- include ('partials/footer'); -%>
+    </body>       
+</html>

@@ -1,0 +1,153 @@
+/***********************
+    Footer
+***********************/
+    .foot {
+        background-color: #333333;
+        color: #999999;
+        text-align: center;
+    }
+    .space_img {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 50px;
+    }
+    .titulos {
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .footerRedes {
+        background-color: #F16752;
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+    .footerRedesInfra {
+        background-color: #c63823;
+    }
+    .redesTable {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
+    }
+    .redesTable1 {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-top: 1%;
+    }
+    .redesTableInfra {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+    .redesLogo {
+        width: 30px;
+    }
+    .sizeGitHub {
+        width: 46px;
+    }
+    .espacioRedes {
+        width: 15%;
+        text-align: left;
+        padding-top: 1%;
+    }
+    .espacioRedesMax {
+        width: 20%;
+        text-align: left;
+        padding-top: 1%;
+    }
+    .espacioRedesMin {
+        width: 10%;
+    }
+    .linkRedes {
+        color: #fff; 
+        text-decoration: none;
+    }
+    .linkRedes:hover {
+        color: #fff; 
+        text-decoration: none;
+    }
+    .hashtag {
+        color: #db4b36; 
+        font-size: 18px; 
+        font-weight: bold;
+        margin-top: 20%;
+    }
+    .version {
+        font-size: 14px;
+    }
+    .textos {
+        font-size: 12px;
+        color: #999999;
+    }
+    .links:hover {
+        color: #ffffff;
+        font-size: 12px;
+        text-decoration: none;
+    }
+    .espacio_texts {
+        padding-top: 45px;
+    }
+    .espacio_img {
+        padding-top: 43px;
+    }
+    .barra_footer {
+        background-color: #c63823;
+        height: 20px;
+    }
+    @media only screen
+    and (min-device-width: 300px)
+    and (max-device-width: 1024px) {
+        .foot {
+            width: 108%;
+        }
+        .redesLogo {
+            width: 80px;
+            padding-bottom: 8%;
+        }
+        .linkRedes {
+            font-size: 32px;
+            padding-top: 3%;
+        }
+        .redesTableInfra {
+            width: 92%;
+            padding-top: 6%;
+            padding-bottom: 0;
+        }
+        .redesTable {
+            width: 78%;
+            padding-top: 4%;
+        }
+        .redesTable1 {
+            width: 78%;
+            margin-top: 0;
+        }
+        .titulos {
+            font-size: 32px;
+        }
+        .hashtag {
+            font-size: 32px;
+        }
+        .space_img {
+            width: 96%;
+        }
+        .version {
+            font-size: 32px;
+        }
+        .sizeGitHub {
+            width: 80px;
+        }
+        .altoFooter {
+            padding-top: 6%;
+        }
+        .textos {
+            font-size: 32px;
+        }
+        .espTexMovil {
+            padding-top: 45px;
+        }
+    }

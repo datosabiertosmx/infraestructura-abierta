@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <%- include ('partials/headInstitucion'); -%>
+    </head>
+    <body>
+        <%- include ('partials/header'); -%>
+        <!-- Filtro de busqueda -->
+        <%- include ('partials/busqueda_general'); -%>
+        <!-- Sección Página -->
+        <div id="paginaSeccion" class="tamanoBody">
+            <!-- Breadcrum -->
+            <nav class="ubicacion sticky-top sticky-top_movil">
+                <ol class="breadcrumb breadcrumb_movil">
+                    <li class="breadcrumb-item"><a class="inicio" href="/">Inicio</a></li>
+                    <li class="breadcrumb-item color_detalle">Instituciones</li>
+                </ol>
+            </nav>
+
+            <div>
+                <%- include ('partials/banner_general'); -%>
+            </div>
+            <!--Instituciones y Distribución de Instituciones-->
+            <div class="container ubicacion_card card_dispositivo_two">
+                <div>
+                    <div class="card card_sinBorde screen_all">
+                        <div class="card-header head_card">
+                            <ul class="nav nav-tabs card-header-tabs pestana letter_head_card_two" id="institute-list" role="tablist">
+                                <li class="col-md-6 nav-item two_card">
+                                    <a class="nav-link active pestaña centra_letra cambioColor" href="#institute" role="tab" aria-controls="institute" aria-selected="true">Instituciones</a>
+                                </li>
+                                <li class="col-md-6 nav-item two_card">
+                                    <a class="nav-link cambioColor interlineado"  href="#instituteDistribution" role="tab" aria-controls="instituteDistribution" aria-selected="false">Distribución de instituciones</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content mt-3">
+                                <div class="tab-pane active" id="institute" role="tabpanel">
+                                    <h1 class="titulo_lista faMovil">Listado de instituciones públicas</h1>
+                                    <!-- Buscador -->
+                                    <div class="busquedaCenlqP" id="busqueda_contratos">
+                                        <div>
+                                            <form class="form-inline search-form">
+                                                <div class="input-group">
+                                                    <input id="palabra_clave" class="form-control py-2 select_letra_tamaño borderCornerLeft" type="search" placeholder="Buscar instituciones" onkeyup="buscarPalabra()">
+                                                    <span class="input-group-append">
+                                                        <button class="btn buscar_proyectos borderCorner lupin" type="button">
+                                                            <i class="fa fa-search faMovil"></i>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <!-- Lista de instituciones -->
+                                        <div id="lista_instituciones"></div>
+                                        <div class="container box">                 
+                                            <ul class="pagination justify-content-center">
+                                                <div id="paginas_lista_instituciones" class="row"></div>        
+                                            </ul>
+                                        </div>
+                                        <a id="downloadAnchorElem" style="display:none"></a>
+                                    </div>
+                                </div>
+
+                                <!-- Gráfica de Distribución de Instituciones -->
+                                <div class="tab-pane" id="instituteDistribution" role="tabpanel" aria-labelledby="instituteDistribution-tab">
+                                    <br><br>
+                                    <h4 class="card-title formatoTextTitulo">Distribución de Instituciones</h4>
+                                    <p class="formatoTextValor">Cifras en pesos mexicanos (MXN).</p>
+                                    <div>
+                                        <div id="chartdiv2" class="tamaSiGI"></div>
+                                        <div class="ocultadivIN"></div>
+                                    </div>
+                                    <br><br>
+                                    <!-- <div class="alinIcon">
+                                        <ul class="ia_bars_color_guide">
+                                            <li>
+                                                <span id="institucionesName" class="tamaSiGI"></span>
+                                            </li>
+                                        </ul>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" id="year" value="<%= paramYear %>">
+            <input type="hidden" id="entity" value="<%= paramEntity %>">
+            <input type="hidden" id="implementer" value="<%= paramImplementer %>">
+        </div>
+        <%- include ('partials/footer'); -%>
+    </body>       
+</html>
+<script>
+    $('#institute-list a').on('click', function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
+</script>

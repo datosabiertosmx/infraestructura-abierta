@@ -1,0 +1,148 @@
+.anychart-credits {
+    display: none;
+}
+.anychart-ui-support {
+    pointer-events: none;
+}
+.marginIndi {
+    margin-top: 50px;
+}
+.colorIndicador li {
+    list-style: none;
+    display: inline-block;
+    font: 400 14px "Open Sans", Helvetica, Arial, sans-serif;
+    margin-right: 15px;
+}
+#chartdivProyectos {
+    width: 100%;
+    height: 500px;
+}
+#chartdivPresupuesto {
+    width: 100%;
+    height: 500px;
+}
+#chartdivProyectosConstruidosProcentaje {
+    width: 100%;
+    height: 500px;
+}
+#chartdivProyectosConstruidosNumero {
+    width: 100%;
+    height: 500px;
+}
+#chartdivProcesosContratacion {
+    width: 100%;
+    height: 500px;
+}
+#chartdivMontoContratosMetodo {
+    width: 100%;
+    height: 250px;
+}
+#chartdivTotalContratosMetodo {
+    width: 100%;
+    height: 250px;
+}
+.ocultadiv {
+    height:20px; 
+    background-color:#fff; 
+    margin-top:-20px; 
+    position: relative;
+}
+.ocultadivPresupuesto {
+    height:16px; 
+    background-color:#fff; 
+    margin-top:-18px; 
+    position: relative;
+    width: 66px;
+}
+.ocultadivProyectosConstruidos {
+    height: 16px;
+    background-color: #FFF;
+    margin-top: -20px;
+    position: relative;
+    width: 66px;
+}
+.ocultadivProcesosContratacion {
+    height: 40px;
+    background-color: #FFF;
+    margin-top: -20px;
+    position: relative;
+    width: 66px;
+}
+.ocultadivMontoContratosMetodo{
+    height: 18px;
+    background-color: #FFF;
+    margin-top: -20px;
+    position: relative;
+    width: 66px;
+}
+.ocultadivTotalContratosMetodo{
+    height: 18px;
+    background-color: #FFF;
+    margin-top: -20px;
+    position: relative;
+    width: 66px;
+}
+.alinCirculos {
+    text-align: center;
+}
+.areaGraf {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.ordenText {
+    text-align: right;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.barrasIndica {
+    display: inline-block;
+    background: rgb(17, 130, 242);
+    color: white;
+    height: 25px;
+    margin-top: 23px;
+}
+.barrasTitulo {
+    color: #777;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 30px;
+}
+.periodos {
+    margin-bottom: 50px;
+}
+.barrasPerioA {
+    display: inline-block;
+    background: rgb(17, 130, 242);
+    color: white;
+    height: 25px;
+    margin-top: 40px;
+}
+.barrasPerioM {
+    display: inline-block;
+    background: rgb(108, 73, 184);
+    color: white;
+    height: 25px;
+    margin-top: 40px;
+}
+
+.tamanoBody {
+    display: block;
+}
+
+@media only screen
+and (min-device-width: 300px)
+and (max-device-width: 1024px) {
+    .tamanoBody {
+        width: 108%;
+    }
+    .textosIndicadores {
+        font-size: 32px;
+    }
+    .barrasTitulo {
+        font-size: 32px;
+    }
+    #chartdivPresupuesto {
+        font-size: 32px;
+    }
+}

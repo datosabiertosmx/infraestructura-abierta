@@ -1,0 +1,137 @@
+/***********************
+    Sección Banner
+***********************/
+.area_banner_inicio {
+    padding-top: 155px;
+}
+.banner {
+    padding: 110px 0 90px;
+    color: #ffffff;
+    /* background-image: linear-gradient(to right, #db4b36, #f16752); */
+    background-color: #f16752;
+    position: relative;
+}
+.titulo_banner {
+    font-size: 48px;
+    font-family: "Proxima Nova Bold";
+}
+.pitb {
+    padding-right: 48px;
+}
+.pitb_inicio {
+    padding-right: 70px;
+}
+.descripcion {
+    font-size: 23px;
+    padding-top: 14px;
+}
+.titulo_detalle {
+    font-size: 14px;
+}
+
+@media only screen
+and (min-device-width: 300px)
+and (max-device-width: 480px) {
+    /*** Banner General ***/
+    .sin_pitb {
+        padding-left:60px;
+    }
+    .titulo_movil {
+        font-size:76px!important;
+    }
+    .titulo_detalle_movil {
+        font-size:34px!important;
+    }
+    .descripcion_movil {
+        font-size:44px!important;
+    }
+    .area_movil {
+        padding-left: -50px;
+        padding-right: -50px;
+        margin-top: 70px;
+        max-width: 991px;
+    }
+    .descripcion_gral_movil {
+        font-size:36px!important;
+    }
+    .cifras_gral_movil {
+        font-size:36px!important;
+    }
+    .texto_gral_movil {
+        font-size:36px!important;
+    }
+    .area_banner {
+        padding-top: 308px !important;
+    }
+    .valoresDatos {
+        font-size: 36px;
+        margin-bottom: 10%;
+    }
+    /*** Banner Detalle ***/
+    .id_movil {
+        margin-top: 45px;
+        margin-left: 1%!important;
+    }
+    .texto_movil {
+        color:#ffffff!important;
+    }
+}
+
+@media only screen
+and (max-width: 992px) {
+    .actualiza_fecha {
+        top: 40px!important;
+        margin-left: -6px!important;
+    }
+}
+
+/*** Banner General ***/
+.text_center {
+    text-align: center;
+}
+.espacio_linea {
+    margin-bottom: 1.5rem !important;
+}
+.espacio_icono {
+    margin-bottom: 15px;
+}
+.cifras_altura {
+    margin-bottom: 0.25rem !important;
+    font-size: 24px;
+    font-family: "Proxima Nova Bold";
+}
+.size_letra {
+    font-size: 14px;
+}
+.tam_icono {
+    height: 80px;
+    padding-bottom: 18px;
+}
+
+/*** Banner Detalle ***/
+.titulo_bd {
+    font-size: 24px;
+    font-family: "Proxima Nova Bold";
+}
+.identificador {
+    background: #c63823;
+    position: absolute;
+    padding: 8px;
+    top: 0;
+    font-size: 12px;
+}
+.actualiza_fecha {
+    position: absolute;
+    top: 10px;
+    font-size: 12px;
+    margin-left: 25%;
+}
+.hipervinculo_contratista {
+    color:#ffffff;
+    border-bottom: 2px solid #c63823;
+}
+.hipervinculo_contratista:hover {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Proxima Nova Bold";
+}

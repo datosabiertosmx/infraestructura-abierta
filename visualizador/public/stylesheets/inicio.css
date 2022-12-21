@@ -1,0 +1,586 @@
+/***********************
+    Sección Inicio
+***********************/
+@font-face {
+    font-family: "Proxima Nova Regular";
+    src: url(/stylesheets/fonts/ProximaNova-Regular.otf);
+}
+@font-face {
+    font-family: "Proxima Nova Bold";
+    src: url(/stylesheets/fonts/ProximaNova-Bold.otf);
+}
+
+.html, body {
+    font-family: "Proxima Nova Regular";
+    color:#333333;
+}
+p, ul, ol, dl, table, form {
+    margin: 0 0 1.5em 0;
+}
+.tamanoBody {
+    display: block;
+}
+.encabezado {
+    margin-top: 200px;
+    background-image: linear-gradient(to right, #5232C2, #038bbb);
+    color: white;
+    position: relative;
+    height: 500px;
+}
+.titulo {
+    margin-top: 80px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.size_img {
+    height: 50px;
+}
+.cifra_num {
+    font-family: "Proxima Nova Bold";
+    font-size: 30px;
+    text-align: center;
+    color: #c63823;
+}
+.cifra_text {
+    font-size: 18px;
+    text-align: center;
+}
+.icon_center {
+    text-align: center;
+    padding-top: 1.5rem !important;
+    margin-top: 1.5rem !important;
+}
+.icon_card{
+    position: relative;
+    display: block;
+    text-align: center;
+    transition: all 0.3s ease-out;
+    color: #666666;
+}
+.icon_card:after, a.icon_card:link:after, a.icon_card:visited:after {
+    content: "";
+    border-right: 1px solid #f2f2f2;
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    top: 0;
+    right: -15px;
+}
+.icon_card.institucion_line:after, a.icon_card:link.institucion_line:after, a.icon_card:visited.institucion_line:after {
+    content: none;
+}
+.icon_card:hover, a.icon_card:link:hover, a.icon_card:visited:hover{
+    background: #c63823;
+    color: white;
+    text-decoration: none;
+}
+.icon_card:hover .cifra_num, a.icon_card:link:hover .cifra_num, a.icon_card:visited:hover .cifra_num {
+    color: #ffffff;
+}
+.busqueda_index {
+    background: #db4b36;
+    padding: 0;
+    position: relative;
+    height: auto;
+}
+.busqueda_espacio {
+    width: 90%;
+    margin: 0 5%;
+    z-index: 9;
+}
+.busqueda_espacio.interno{
+    padding: 0 0 14px;
+    position: relative;
+    margin-bottom: 21px;
+    top: 20px;
+}
+.busqueda_espacio.interno form {
+    margin: 0;
+}
+.busqueda_espacio input.ia_search {
+    border-radius: 5px 0 0 5px;
+    float: left;
+    width: 80%;
+}
+.busqueda_espacio input {
+    border: 0;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 1px 3px 1px rgb(34 34 34 / 30%);
+    -moz-box-shadow: 1px 1px 3px 1px rgba(34, 34, 34, 0.3);
+    box-shadow: 1px 1px 3px 1px rgb(34 34 34 / 30%);
+    font-size: 15px;
+    height: 44px;
+    padding: 10px;
+    width: 100%;
+}
+.busqueda_espacio button {
+    background: #c63823;
+    border: 0;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    -webkit-box-shadow: 1px 1px 3px 1px rgb(34 34 34 / 30%);
+    -moz-box-shadow: 1px 1px 3px 1px rgba(34, 34, 34, 0.3);
+    box-shadow: 1px 1px 3px 1px rgb(34 34 34 / 30%);
+    color: white;
+    cursor: pointer;
+    height: 44px;
+    padding: 10px;
+    width: 20%;
+    float: left;
+}
+.busqueda_espacio input.ia_search {
+    border-radius: 5px 0 0 5px;
+    float: left;
+    width: 80%;
+}
+.busqueda_altura {
+    display:none; 
+    margin-top: 157px; 
+    margin-bottom: -155px;
+}
+.ia_search_i {
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNy40NDggMTcuNDEiPgogIDx0aXRsZT5zw61tYm9sbyBidXNjYXI8L3RpdGxlPgogIDxnIGlkPSJjMzFmYjQyNy0yNTA4LTQwNWItODMzZi00OWNkMDUwZTFjOGQiIGRhdGEtbmFtZT0iTGF5ZXIgMiI+CiAgICA8ZyBpZD0iOTJiYzBjMjUtN2I5ZS00NWRkLWE0NDUtYTc2OTE5YWE4MmRlIiBkYXRhLW5hbWU9IlRleHRvIj4KICAgICAgPHBhdGggZD0iTTExLjg0OCwxMC4xMzRhMi4xMjUsMi4xMjUsMCwwLDEsLjI3Ny4ycTIuNTE2LDIuNTA5LDUuMDI3LDUuMDI0Yy4zOTIuMzkyLjM5NC42Mi4wMDgsMS4wMTFxLS4zNzguMzgzLS43NjEuNzYxYy0uMzc3LjM3MS0uNjI0LjM3MS0uOTkyLDBxLTIuNS0yLjUtNS01Yy0uMDg3LS4wODctLjE2My0uMTg0LS4yNS0uMjg0YTYuNTYxLDYuNTYxLDAsMCwxLTUuNjE5LjgxMUE2LjM0MSw2LjM0MSwwLDAsMSwxLDkuOTM3YTYuNDgxLDYuNDgxLDAsMSwxLDEwLjg0Ny4yWk02LjQ2NywxLjc2MmE0LjcxOSw0LjcxOSwwLDEsMCw0Ljc0NCw0LjY5M0E0LjcyNSw0LjcyNSwwLDAsMCw2LjQ2NywxLjc2MloiIGZpbGw9IiNmZmYiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=) no-repeat;
+    background-size: 18px;
+    height: 20px;
+    width: 20px;
+    display: block;
+    margin: 0 auto;
+}
+.ia_select_hm {
+    display: block;
+    color: white;
+    font-size: 16px;
+    font-family: "Proxima Nova Bold";
+    height: 45px;
+    padding: 0 10px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid transparent;
+    -webkit-box-shadow: 1px 1px 3px 1px rgb(34 34 34 / 30%);
+    -moz-box-shadow: 1px 1px 3px 1px rgba(34, 34, 34, 0.3);
+    box-shadow: 1px 1px 3px 1px rgb(34 34 34 / 30%);
+    border-radius: 5px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #c63823;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNTI0Ljg3NCA4OTUuNDgxIj48dGl0bGU+dHJpw6FuZ3VsbyBwZXN0YcOxYTwvdGl0bGU+PGcgaWQ9ImFkM2ExMWVmLTI3ZTctNGExOS1iZWJlLTYxYjg1MTI3MTkzMCIgZGF0YS1uYW1lPSJMYXllciAyIj48ZyBpZD0iNmM3OTU5NDMtNmVkNS00NjA2LTlhODEtZTMwZjAwN2EyODNhIiBkYXRhLW5hbWU9IkxheWVyIDEiPjxwYXRoIGQ9Ik0wLDBIMTUyNC44NzRMNzYyLjQzNyw4OTUuNDgxWiIgZmlsbD0iI2ZmZiIvPjwvZz48L2c+PC9zdmc+);
+    background-repeat: no-repeat, repeat;
+    background-position: right 0.7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+}
+section.busqueda_espacio .mapa_index {
+    width: 100%;
+    z-index: 0;
+}
+.filtro_container {
+    background: #f16752;
+    padding: 10px 0 20px;
+}
+.filtros_index {
+    min-height: 40px;
+    z-index: 9;
+    width: 91%;
+    margin: 10px 5% 10px;
+}
+.btn-link, .btn-link:link, .btn-link:visited {
+    font-family: "Proxima Nova Bold";
+    font-size: 12px;
+    color: #fff!important;
+    text-decoration: none!important;
+    text-transform: uppercase;
+}
+.color_head {
+    background-image: linear-gradient(to right, #c63823, #db4b36);
+    text-align: center;
+    height: 40px;
+    padding-top: 5px;
+    cursor: pointer;
+}
+.filtros_index .ia_box_labels {
+    background: white;
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    -ms-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+    -webkit-box-shadow: 1px 1px 3px 1px rgb(34 34 34 / 30%);
+    -moz-box-shadow: 1px 1px 3px 1px rgba(34, 34, 34, 0.3);
+    box-shadow: 1px 1px 3px 1px rgb(34 34 34 / 30%);
+    padding: 10px;
+}
+.filtros_index .ia_box_labels h5 {
+    font-size: 11px;
+    color: gray;
+}
+.ia_checkbox_container {
+    background: #f16752;
+    color: #ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    /* font: 500 12px "Proxima Nova Regular"; */
+    margin: 0 0 10px 10px;
+    padding: 5px 10px 5px 30px;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.ia_checkbox_container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+/* Create a custom checkbox */
+.ia_checkbox_checkmark {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    height: 15px;
+    width: 15px;
+    background-color: #fdfdff; 
+}
+
+/* On mouse-over, add a grey background color */
+.ia_checkbox_container:hover input ~ .ia_checkbox_checkmark {
+    background-color: #F4A89C; }
+
+.ia_checkbox_container:hover .ia_checkbox_text {
+    color: #F4A89C; }
+
+/* When the checkbox is checked, add a blue background */
+.ia_checkbox_container input:checked ~ .ia_checkbox_checkmark {
+    background-color: #c63823; }
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.ia_checkbox_checkmark:after {
+    content: "";
+    position: absolute;
+    display: none; }
+
+/* Show the checkmark when checked */
+.ia_checkbox_container input:checked ~ .ia_checkbox_text {
+    color: #ffffff;
+    font-weight: 700; }
+
+.ia_checkbox_container input:checked ~ .ia_checkbox_checkmark:after {
+    display: block; }
+
+/* Style the checkmark/indicator */
+.ia_checkbox_container .ia_checkbox_checkmark:after {
+    left: 5px;
+    top: 2px;
+    width: 5px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
+
+.ia_separator {
+    border: 1px solid #777;
+    height: 35px;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 15px;
+}
+.ia_separator.bottom {
+    border: 0;
+    border-bottom: 1px solid #f2f2f2;
+    padding-bottom: 10px;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 10px;
+    height: 1px;
+}
+
+#mapid { 
+    width: 100%;
+    height: 500px;
+    background: grey;
+    position: relative;
+    outline: none;
+    cursor: grab;
+}
+.leaflet-touch .leaflet-bar {
+    border: 2px solid rgb(255, 255, 255);
+}
+.leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out {
+    color: #fff;
+}
+.leaflet-top, .leaflet-bottom {
+    z-index: 900!important;
+}
+.leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out {
+    color: black;
+}
+.colorear {
+    background-color: #c63823!important;
+    border-color: #db4b36!important;
+    font-family: "Proxima Nova Bold";
+}
+.texto_maker {
+    color: #5d5c5e; 
+    font-size: 16px; 
+    font-family: "Proxima Nova Regular";
+    padding-bottom: 10px; 
+    border-bottom: 1px solid #f2f2f2; 
+    font-weight: 700; 
+    font-style: normal; 
+    line-height: 1.4;
+}
+.textMakerDP {
+    font-weight: 300; 
+    font-size: 14px; 
+    font-family: "Proxima Nova Regular"; 
+    display: block; 
+    text-transform: uppercase;
+}
+.lupanone {
+    pointer-events: none;
+    width: 40px!important;
+    height: 46.8px !important;
+}
+.busqanch {
+    width: 90% !important;
+    height: 46.8px !important;
+}
+.sizeIconoInicio{
+    width: 30px;
+}
+.margenCifras {
+    margin-left: auto;
+    margin-right: auto;
+}
+.maxCol3 {
+    max-width: 20%;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+-webkit-appearance:none;
+}
+
+@media only screen
+    and (min-device-width: 300px)
+    and (max-device-width: 480px) {
+    .vMovil {
+        font-size: 60px !important;
+        border-radius: 14px 14px 14px 14px;
+        height: calc(1.5em + .5rem + 2px) !important;
+    }
+    .buscarMapa {
+        color: #FFFFFF;
+        border-color: #db4b36;
+        background-color: #c63823;
+        pointer-events: none;
+        font-size: 60px;
+        width: 120px;
+    }
+    .lupanone {
+        pointer-events: none;
+        height: 100px !important;
+        margin-bottom: 14px !important;
+        width: 138px!important;
+    }
+    .busqanch {
+        width: 85% !important;
+    }
+    .bordeEsquinas {
+        border-radius: 14px 0 0 14px !important;
+    }
+    .borderDerecho {
+        border-radius: 0 14px 14px 0 !important;
+    }
+    .sizeIconoInicio {
+        width: 80px !important;
+        margin-left: 30px !important;
+    }
+    .sizeFontInicio {
+        font-size: 36px!important;
+    }
+    .checkboxInicio {
+        position: absolute;
+        top: 24px;
+        left: 10px;
+        height: 40px;
+        width: 40px;
+        background-color: #fdfdff;
+    }
+    .topCheck {
+        top: 18px; 
+    }
+    .textFiltrar {
+        height: 100px;
+        padding-top: 10px;
+    }
+    .tituloInicio {
+        font-size: 40px;
+    }
+    .sizeInicio {
+        background-size: 120px!important;
+        /* padding-top: 100px!important; */
+    }
+    .cifraInicio {
+        font-size: 60px;
+    }
+    .letraInicio {
+        font-size: 36px;
+        font-weight: 600;
+    }
+    .lineaDos {
+        margin-top: 120px;
+    }
+    .iconosInicio {
+        height: 400px!important;
+        padding-top: 160px!important;
+    }
+    .iconosInicio:hover {
+        height: 400px!important;
+        padding-top: 160px!important;
+    }
+    .maxCol4 {
+        max-width: 50%;
+    }
+}
+@media only screen
+and (min-device-width: 300px)
+and (max-device-width: 1024px) {
+    .tamanoBody {
+        width: 108%;
+    }
+    .colorear {
+        font-size: 32px;
+    }
+    .busqueda_altura {
+        margin-top: 210px;
+    }
+    .be_movil {
+        width: 100%;
+    }
+    .texto_maker {
+        font-size: 36px;
+        margin-top: 5%;
+    }
+    .textMakerDP {
+        font-size: 36px;
+    }
+    .leaflet-popup-content {
+        width: 440px!important;
+    }
+    .sizePopUPMap {
+        font-size: 24px!important;
+    }
+    .sizePopUPMapValue {
+        font-size: 24px!important;
+    }
+    .botonVerMap {
+        font-size: 24px!important;
+    }
+    #mapid {
+        height: 670px;
+    }
+    .leaflet-container a.leaflet-popup-close-button {
+        padding: 30px 60px 0 0!important;
+        font: 60px/14px Tahoma, Verdana, sans-serif!important;
+    }
+}
+
+.estiloSinResultados {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.sizePopUPMap {
+    font-weight: 300;
+    font-size: 14px;
+    font-family: "Proxima Nova Regular";
+    text-transform: uppercase;
+    display: block;
+}
+.sizePopUPMapValue {
+    font-size: 12px;
+    font-family: "Proxima Nova Regular";
+}
+.botonVerMap {
+    background: #c63823;
+    color: white!important;
+    font-size: 14px;
+    font-family: "Proxima Nova Bold"; 
+    display: block; 
+    padding: 10px; 
+    text-align: center; 
+    transition: all 0.3s ease-out;
+}
+.botonVerMap::after {
+    background: #c63823;
+}
+.colorComas {
+    color: #fff;
+}
+
+/************************************ Iconos Cifras destacadas ************************************/
+.iconoInstitucion {
+    background: url("/images/iconos/institucionespublicasrojo.svg") no-repeat;
+    background-size: 47px;
+    height: 220px;
+    background-position: 50% 20%;
+    padding-top: 60px;
+}
+.iconoInstitucion:hover {
+    background: url("/images/iconos/institucionespublicasblanco.svg") no-repeat;
+    background-size: 47px;
+    height: 220px;
+    background-position: 50% 20%;
+}
+.iconoContratista {
+    background: url("/images/iconos/contratistarojo.svg") no-repeat;
+    background-size: 47px;
+    height: 220px;
+    background-position: 50% 20%;
+    padding-top: 60px;
+}
+.iconoContratista:hover {
+    background: url("/images/iconos/contratistablanco.svg") no-repeat;
+    background-size: 47px;
+    height: 220px;
+    background-position: 50% 20%;
+}
+.iconoContratacion {
+    background: url("/images/iconos/contratacionesrojo.svg") no-repeat;
+    background-size: 47px;
+    height: 220px;
+    background-position: 50% 20%;
+    padding-top: 60px;
+}
+.iconoContratacion:hover {
+    background: url("/images/iconos/contratacionesblanco.svg") no-repeat;
+    background-size: 47px;
+    height: 220px;
+    background-position: 50% 20%;
+}
+.iconoProyecto {
+    background: url("/images/iconos/proyectorojo.svg") no-repeat;
+    background-size: 47px;
+    height: 220px;
+    background-position: 50% 20%;
+    padding-top: 60px;
+}
+.iconoProyecto:hover {
+    background: url("/images/iconos/proyectoblanco.svg") no-repeat;
+    background-size: 47px;
+    height: 220px;
+    background-position: 50% 20%;
+}
+/**************************************************************************************/

@@ -1,0 +1,590 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <%- include ('partials/headDetalleProyecto'); -%>
+    </head>
+    <body>
+        <%- include ('partials/header'); -%>
+        <!-- Filtro de busqueda -->
+        <%- include ('partials/busqueda_general'); -%>
+        <!-- Sección Página -->
+        <div id="paginaSeccion" class="tamanoBody">
+            <!-- Breadcrum -->
+            <nav class="ubicacion sticky-top sticky-top_movil">
+                <ol class="breadcrumb breadcrumb_movil_detalle">
+                    <li class="breadcrumb-item"><a class="inicio" href="/">Inicio</a></li>
+                    <li class="breadcrumb-item"><a class="inicio" href="/proyectos/">Proyectos</a></li>
+                    <li id="_titlebreadcrum" class="col-sm-3 breadcrumb-item color_detalle puntos_suspensivos limitado" aria-current="page" style="max-width: 70%;"><%= title %></li>
+                </ol>
+            </nav>
+
+            <div>
+                <%- include ('partials/banner_detalle'); -%>
+            </div>
+            <!--Información General, Fases del Proyecto y Avance-->
+            <div class="container px-0 screen_all_contratacion ubicacion_card card_dispositivo_movil">
+                <div>
+                    <div class="card card_sinBorde">
+                        <!-- Títulos de cada apartado -->
+                        <div class="card-header head_card" onclick="closeTooltip()">
+                            <ul class="nav nav-tabs card-header-tabs pestana letter_head_card" id="info-list" role="tablist">
+                                <li class="nav-item three_card">
+                                    <a class="nav-link cambioColor active pestaña interlineado" href="#informacionG" role="tab" aria-controls="informacionG" aria-selected="true">Información general</a>
+                                </li>
+                                <li class="nav-item three_card">
+                                    <a class="nav-link cambioColor interlineado"  href="#fasesP" role="tab" aria-controls="fasesP" aria-selected="false">Fases del proyecto</a>
+                                </li>
+                                <li class="nav-item three_card">
+                                    <a class="nav-link cambioColor centra_letra" href="#avance" role="tab" aria-controls="avance" aria-selected="false">Avance</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Contenido de cada apartado -->
+                        <div class="card-body">
+                            <div class="tab-content mt-3">
+                                <!-- Información General -->
+                                <div class="tab-pane active" id="informacionG" role="tabpanel">
+                                    <div class="titulosValores informacionDescripcion">
+                                        <strong>Descripción:</strong> <span id="_descripcionGeneral"></span>
+                                    </div>
+                                    <div class="row center-text espaciado">
+                                        <div class="col-lg-3 col-md-6">
+                                            <p class="negritas">Sector</p>
+                                            <div id="_sectorMobile" class="tablet mobile sectorAlinea"></div>
+                                            <div id="_sector" class="no-mobile sectorAlinea"></div>
+                                            <div class="espacioIG"></div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <p class="negritas">Tipo</p>
+                                            <div id="_tipoMobile" class="tablet mobile"></div>
+                                            <div id="_tipo" class="no-mobile"></div><br>
+                                            <div class="espacioIG titulosValores" id="_tipo_text"></div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <p class="negritas">Periodo</p>
+                                            <div id="_periodo"><img class="tamIcoCal" src="<%=icono_periodo%>" /> <span class="box_link"></span></div><br>
+                                            <div class="titulosValores"><span id="_startDate"></span> - <span id="_endDate"></span> <br><span>Duración en días: </span> <span id="_durationInDays"></span></div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <p class="negritas">Estatus</p>
+                                            <div id="_estatusMobile" class="tablet mobile"></div>
+                                            <div id="_estatus" class="no-mobile"></div><br>
+                                            <div class="titulosValores" id="_estatus_text"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="negritas">Ubicaciones del proyecto:</h4>
+                                        <div class="titulosValores" id="_ubicaciones"></div>
+                                    </div>
+                                    <div class="mapa_index">
+                                        <div id="mapid" class="mapa_index"></div>
+                                    </div>
+                                    <br><br><br>
+                                    <h4 class="negritas">Información general de contratos y contratistas</h4>
+                                    <br><br>
+                                    <div class="card card_sinBorde">
+                                        <div class="card-header head_card" onclick="closeTooltip()">
+                                            <ul class="nav nav-tabs card-header-tabs pestana letter_head_card" id="infoGeneral-list" role="tablist">
+                                                <li class="nav-item two_card">
+                                                    <a class="nav-link active cambioColor interlineado" href="#contratacionesP" role="tab" aria-controls="contratacionesP" aria-selected="true">Contrataciones del proyecto</a>
+                                                </li>
+                                                <li class="nav-item two_card">
+                                                    <a class="nav-link cambioColor interlineado centra_letra"  href="#contratistasP" role="tab" aria-controls="contratistasP" aria-selected="false">Contratistas del proyecto</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="tab-content mt-3">
+                                                <!-- Contrataciones del proyecto -->
+                                                <div class="tab-pane active" id="contratacionesP" role="tabpanel">
+                                                    <!-- Buscador -->
+                                                    <br>
+                                                    <div  class="row" id="busqueda_contratos" onclick="closeTooltip()">
+                                                        <div class="col-md-12 sinespacio">
+                                                            <form class="form-inline search-form">
+                                                                <div class="input-group col-lg-4 col-md-12 espacioBuscador">
+                                                                    <input id="palabra_clave_contrataciones" class="letramovilfiltroSearch filtrosListadoSearch form-control py-2 select_letra_tamaño borderCornerLeft" type="search" placeholder="Buscar contrataciones" onkeyup="buscarDelayContratacion()">
+                                                                    <span class="input-group-append">
+                                                                        <button class="btn buscar_proyectos borderCorner lupin" type="button">
+                                                                            <i class="fa fa-search faMovil"></i>
+                                                                        </button>
+                                                                    </span>
+                                                                </div>
+                                                                <!-- <div class="col-md-4">
+                                                                    <select class="form-control bootstrap-select" style="WIDTH: 100%;">
+                                                                        <option value="">Todos los métodos de adquisición</option>
+                                                                    </select>
+                                                                </div> -->
+                                                                <div class="col-md-8 select_menu_movil">
+                                                                    <select id="procurementMethodFilter" class="letramovilfiltro filtrosListado select_menu form-control-sm select_letra_tamaño proyectos_filtros borderCorners" onchange="filtrarProcurementMethod()">
+                                                                        <option value="">- Método</option>
+                                                                    </select>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                            <!-- d3 bubble chart -->
+                                                        <div id="vis" class="svg-container"></div>
+                                                    </div>
+                                                    <!-- Lista de contrataciones -->
+                                                    <div onclick="closeTooltip()">
+                                                        <!-- Lista de contrataciones -->
+                                                        <div id="lista_contrataciones_relacionadas"></div>
+                                                        <div class="container box">                 
+                                                            <ul class="pagination justify-content-center">
+                                                                <div id="paginas_lista_contrataciones_relacionadas" class="row"></div>        
+                                                            </ul>
+                                                        </div>
+                                                        <a id="downloadAnchorElem" style="display:none"></a>
+                                                    </div>
+                                                </div>
+                                                <!-- Contratistas del proyecto -->
+                                                <div class="tab-pane" id="contratistasP" role="tabpanel" aria-labelledby="contratistasP-tab">
+                                                    <br>
+                                                    <div class="row" id="busqueda_contratos">
+                                                        <div class="col-md-12 sinespacio">
+                                                            <form class="form-inline search-form">
+                                                                <div class="input-group col-md-12">
+                                                                    <input id="palabra_clave_contratista" class="letramovilfiltroSearch filtrosListadoSearch form-control py-2 select_letra_tamaño borderCornerLeft" type="search" placeholder="Buscar contratistas" onkeyup="buscarDelayContratistas()">
+                                                                    <span class="input-group-append">
+                                                                        <button class="btn buscar_proyectos borderCorner lupin" type="button">
+                                                                            <i class="fa fa-search faMovil"></i>
+                                                                        </button>
+                                                                    </span>
+                                                                </div>
+                                                                <!-- <div class="col-md-4">
+                                                                    <select class="form-control bootstrap-select" style="WIDTH: 100%;">
+                                                                        <option value="">Todos los métodos de adquisición</option>
+                                                                    </select>
+                                                                </div> -->
+                                                                <!-- <div class="col-md-8">
+                                                                    <select id="procurementMethodFilter" class="form-control bootstrap-select" style="WIDTH: 100%;" onchange="filtrarProcurementMethod()">
+                                                                        <option value="">- Método</option>
+                                                                    </select>
+                                                                </div> -->
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="col-sm-12 area_grafica">
+                                                            d3 bubble chart 
+                                                        <div id="visContratista" class="svg-container"></div> 
+                                                    </div> -->
+                                                    <!-- Lista de contratistas -->
+                                                    <div>
+                                                        <div id="lista_contratistas_relacionados"></div>
+                                                        <div class="container box">                 
+                                                            <ul class="pagination justify-content-center">
+                                                                <div id="paginas_lista_contratistas_relacionados" class="row"></div>        
+                                                            </ul>
+                                                        </div>
+                                                        <a id="downloadAnchorElem" style="display:none"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Fases del Proyecto-->
+                                <div class="tab-pane" id="fasesP" role="tabpanel" aria-labelledby="fasesP-tab">
+                                    <br><br>
+                                    <h3 class="card-title negritas">Fases del proyecto</h3>
+                                    <div class="card espacioFase">
+                                        <!-- Nombre de fases -->
+                                        <div class="card-header fondoColor sinespacio">
+                                            <ul class="nav nav-tabs card-header-tabs pestana letter_head_card" id="fasesProyecto-list" role="tablist">
+                                                <li class="col-md-4 nav-item total_hover">
+                                                    <a class="nav-link active cambioColor centraFases ocultaTexto" href="#diseñoFP" role="tab" aria-controls="diseñoFP" aria-selected="true"><img class="iconoPestana" src="<%=icono_diseno%>" /> Diseño</a>
+                                                </li>
+                                                <li class="col-md-4 nav-item total_hover">
+                                                    <a class="nav-link cambioColor centraFases ocultaTexto"  href="#construccionFP" role="tab" aria-controls="construccionFP" aria-selected="false"><img class="iconoPestana" src="<%=icono_construccion%>" /> Construcción</a>
+                                                </li>
+                                                <li class="col-md-4 nav-item total_hover">
+                                                    <a class="nav-link cambioColor centraFases ocultaTexto"  href="#terminacionFP" role="tab" aria-controls="terminacionFP" aria-selected="false"><img class="iconoPestana" src="<%=icono_terminacion%>" />Terminación</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- Fases del proyecto -->
+                                        <div class="card-body">
+                                            <div class="tab-content mt-3 paddingCuadro">
+                                                <!-- Diseño -->
+                                                <div class="tab-pane active" id="diseñoFP" role="tabpanel">
+                                                    <div class="row center-text espaciado">
+                                                        <div class="col-lg-6 col-md-12">
+                                                            <p><img class="icono_size" src="<%=icon_diseF_1%>" /></p>
+                                                            <span id="_montoPresupuestado" class="tam_disen"><%= monto_diseno %> </span><span class="tam_disen"> MXN</span></span>
+                                                            <p class="titulosDiseño negritas">Monto presupuestado</p>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-12">
+                                                            <p><img class="icono_size" src="<%=icon_diseF_2%>" /></p>
+                                                            <span id="_fechaAprobacion" class="tam_disen"></span>
+                                                            <p class="titulosDiseño negritas">Fecha de aprobación</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="textJustify">
+                                                        <h3 class="titulosFases">Propósito del proyecto</h3>
+                                                        <span class="titulosValores" id="_propositoproyecto"></span>
+                                                    </div>
+                                                    <br>
+                                                    <hr>
+                                                    <br>
+                                                    <div>
+                                                        <h3 class="titulosFases">Desglose Presupuestario</h3>
+                                                        <br>
+                                                        <div id="_desglosePresupuestario"></div>
+                                                    </div>
+                                                    <br><br>
+                                                    <div>
+                                                        <div>
+                                                            <h3 class="titulosFases">Documentación</h3>
+                                                        </div>
+                                                        <hr>
+                                                        <div id="documentosDiseno1">
+                                                            <div class="panel-heading">
+                                                                <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#documentosDiseno1" href="#collapseDiseno1" aria-expanded="true" aria-controls="collapseDiseno1">
+                                                                    Evaluación de Impacto Ambiental <div class="flechita"><a></a></div>
+                                                                </button>
+                                                            </div>
+                                                            <div class="panel-collapse collapse" id="collapseDiseno1">
+                                                                <div class="spaceetapas" id="_documentacion1"></div>
+                                                                <div class="sdretapas tamfontmvlgrl" id="_documentacion1a">Sin documentos registrados</div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div id="documentosDiseno2">
+                                                            <div class="panel-heading">
+                                                                <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#documentosDiseno2" href="#collapseDiseno2" aria-expanded="true" aria-controls="collapseDiseno2">
+                                                                    Estudio de factibilidad <div class="flechita"><a></a></div>
+                                                                </button>
+                                                            </div>
+                                                            <div class="panel-collapse collapse" id="collapseDiseno2">
+                                                                <div class="spaceetapas" id="_documentacion2"></div>
+                                                                <div class="sdretapas tamfontmvlgrl" id="_documentacion2a">Sin documentos registrados</div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div id="documentosDiseno4">
+                                                            <div class="panel-heading">
+                                                                <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#documentosDiseno4" href="#collapseDiseno4" aria-expanded="true" aria-controls="collapseDiseno4">
+                                                                    Evaluación de suelos y de asentamientos <div class="flechita"><a></a></div>
+                                                                </button>
+                                                            </div>
+                                                            <div class="panel-collapse collapse" id="collapseDiseno4">
+                                                                <div class="spaceetapas" id="_documentacion4"></div>
+                                                                <div class="sdretapas tamfontmvlgrl" id="_documentacion4a">Sin documentos registrados</div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div id="documentosDiseno3">
+                                                            <div class="panel-heading">
+                                                                <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#documentosDiseno3" href="#collapseDiseno3" aria-expanded="true" aria-controls="collapseDiseno3">
+                                                                    Plan de compensación y de reubicación <div class="flechita"><a></a></div>
+                                                                </button>
+                                                            </div>
+                                                            <div class="panel-collapse collapse" id="collapseDiseno3">
+                                                                <div class="spaceetapas" id="_documentacion14"></div>
+                                                                <div class="sdretapas tamfontmvlgrl" id="_documentacion14a">Sin documentos registrados</div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div id="documentosDiseno5">
+                                                            <div class="panel-heading">
+                                                                <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#documentosDiseno5" href="#collapseDiseno5" aria-expanded="true" aria-controls="collapseDiseno5">
+                                                                    Dictamen de aprobación del proyecto <div class="flechita"><a></a></div>
+                                                                </button>
+                                                            </div>
+                                                            <div class="panel-collapse collapse" id="collapseDiseno5">
+                                                                <div class="spaceetapas" id="_documentacion5"></div>
+                                                                <div class="sdretapas tamfontmvlgrl" id="_documentacion5a">Sin documentos registrados</div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div id="documentosDiseno6">
+                                                            <div class="panel-heading">
+                                                                <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#documentosDiseno6" href="#collapseDiseno6" aria-expanded="true" aria-controls="collapseDiseno6">
+                                                                    Plan financiero <div class="flechita"><a></a></div>
+                                                                </button>
+                                                            </div>
+                                                            <div class="panel-collapse collapse" id="collapseDiseno6">
+                                                                <div class="spaceetapas" id="_documentacion6"></div>
+                                                                <div class="sdretapas tamfontmvlgrl" id="_documentacion6a">Sin documentos registrados</div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div id="documentosDiseno7">
+                                                            <div class="panel-heading">
+                                                                <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#documentosDiseno7" href="#collapseDiseno7" aria-expanded="true" aria-controls="collapseDiseno7">
+                                                                    Actualización al Plan Financiero <div class="flechita"><a></a></div>
+                                                                </button>
+                                                            </div>
+                                                            <div class="panel-collapse collapse" id="collapseDiseno7">
+                                                                <div class="spaceetapas" id="_documentacion7"></div>
+                                                                <div class="sdretapas tamfontmvlgrl" id="_documentacion7a">Sin documentos registrados</div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                                <!-- Construcción -->
+                                                <div class="tab-pane" id="construccionFP" role="tabpanel">
+                                                    <div>
+                                                        <div>
+                                                            <h3 class="titulosFases">Documentación</h3>
+                                                        </div>
+                                                        <hr>
+                                                        <div id="documentosDiseno8">
+                                                            <div class="panel-heading">
+                                                                <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#documentosDiseno8" href="#collapseDiseno8" aria-expanded="true" aria-controls="collapseDiseno8">
+                                                                    Informe ejecutivo de la ejecución de los contratos <div class="flechita"><a></a></div>
+                                                                </button>
+                                                            </div>
+                                                            <div class="panel-collapse collapse" id="collapseDiseno8">
+                                                                <div class="spaceetapas" id="_documentacion8"></div>
+                                                                <div class="sdretapas tamfontmvlgrl" id="_documentacion8a">Sin documentos registrados</div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div id="documentosDiseno9">
+                                                            <div class="panel-heading">
+                                                                <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#documentosDiseno9" href="#collapseDiseno9" aria-expanded="true" aria-controls="collapseDiseno9">
+                                                                    Reportes de progreso <div class="flechita"><a></a></div>
+                                                                </button>
+                                                            </div>
+                                                            <div class="panel-collapse collapse" id="collapseDiseno9">
+                                                                <div class="spaceetapas" id="_documentacion9"></div>
+                                                                <div class="sdretapas tamfontmvlgrl" id="_documentacion9a">Sin documentos registrados</div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div id="documentosDiseno10">
+                                                            <div class="panel-heading">
+                                                                <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#documentosDiseno10" href="#collapseDiseno10" aria-expanded="true" aria-controls="collapseDiseno10">
+                                                                    Evaluaciones de impacto social y ambiental <div class="flechita"><a></a></div>
+                                                                </button>
+                                                            </div>
+                                                            <div class="panel-collapse collapse" id="collapseDiseno10">
+                                                                <div class="spaceetapas" id="_documentacion10"></div>
+                                                                <div class="sdretapas tamfontmvlgrl" id="_documentacion10a">Sin documentos registrados</div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                                <!-- Terminación -->
+                                                <div class="tab-pane" id="terminacionFP" role="tabpanel">
+                                                    <div class="row center-text espaciado">
+                                                            <div class="col-lg-6 col-md-12">
+                                                                <p><img class="icono_size" src="<%=icon_diseF_1%>" /></p>
+                                                                <span id="_montoFinal" class="tam_disen"><%= monto_diseno %> </span><span class="tam_disen"> MXN</span></span>
+                                                                <p class="titulosDiseño negritas">Monto final</p>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-12">
+                                                                <p><img class="icono_size" src="<%=icon_diseF_2%>" /></p>
+                                                                <span id="_fechaTerminacion" class="tam_disen"></span>
+                                                                <p class="titulosDiseño negritas">Fecha de terminación</p>
+                                                            </div>
+                                                    </div>
+                                                    <div>
+                                                        <div>
+                                                            <h3 class="titulosFases">Documentación</h3>
+                                                        </div>
+                                                        <hr>
+                                                        <div id="documentosDiseno11">
+                                                            <div class="panel-heading">
+                                                                <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#documentosDiseno11" href="#collapseDiseno11" aria-expanded="true" aria-controls="collapseDiseno11">
+                                                                    Certificado de terminación (informe de conclusión) <div class="flechita"><a></a></div>
+                                                                </button>
+                                                            </div>
+                                                            <div class="panel-collapse collapse" id="collapseDiseno11">
+                                                                <div class="spaceetapas" id="_documentacion15"></div>
+                                                                <div class="sdretapas tamfontmvlgrl" id="_documentacion15a">Sin documentos registrados</div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div id="documentosDiseno12">
+                                                            <div class="panel-heading">
+                                                                <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#documentosDiseno12" href="#collapseDiseno12" aria-expanded="true" aria-controls="collapseDiseno12">
+                                                                    Reporte de evaluación <div class="flechita"><a></a></div>
+                                                                </button>
+                                                            </div>
+                                                            <div class="panel-collapse collapse" id="collapseDiseno12">
+                                                                <div class="spaceetapas" id="_documentacion16"></div>
+                                                                <div class="sdretapas tamfontmvlgrl" id="_documentacion16a">Sin documentos registrados</div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div id="documentosDiseno13">
+                                                            <div class="panel-heading">
+                                                                <button class="collapsed btn colorBoton botonMovil" role="button" data-toggle="collapse" data-parent="#documentosDiseno13" href="#collapseDiseno13" aria-expanded="true" aria-controls="collapseDiseno13">
+                                                                    Reportes de auditorías internas <div class="flechita"><a></a></div>
+                                                                </button>
+                                                            </div>
+                                                            <div class="panel-collapse collapse" id="collapseDiseno13">
+                                                                <div class="spaceetapas" id="_documentacion17"></div>
+                                                                <div class="sdretapas tamfontmvlgrl" id="_documentacion17a">Sin documentos registrados</div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Avance -->
+                                <div class="tab-pane" id="avance" role="tabpanel" aria-labelledby="avance-tab">
+                                    <br>
+                                    <h3 class="card-title negritas">Línea de tiempo</h3>
+                                    <div class="row">
+                                        <div class="col-md-12 center-text topbotton">
+                                            <div class="row tam_disen">
+                                                <p class="col-md-12">Estatus del proyecto</p>
+                                            </div>
+                                            <span class="tablet mobile">
+                                                <div class="row">
+                                                    <p class="col-md-12"><span id="_estatusProyectoIconoMovil" ></span></p>
+                                                </div>
+                                            </span>
+                                            <span class="no-mobile">
+                                                <div class="row">
+                                                    <p class="col-md-12"><span id="_estatusProyectoIcono" ></span></p>
+                                                </div>
+                                            </span>
+                                            <div class="row negritas">
+                                                <p id="_estatusProyecto" class="col-md-12"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <!-- <p class="col-md-12 text-alin-right"><img class="tam_list_icono" src="<%=icono_date%>" /> Fecha de actualización: <%= fecha_LT %></p> -->
+                                    <br>
+                                    <!-- Slider Línea de tiempo -->
+                                    <div>
+                                        <div class="splide">
+                                            <div class="splide__track">
+                                                <ul class="splide__list">
+                                                    <li class="splide__slide margenLis">
+                                                        <div class="center-text">
+                                                            <p class="col-md-12 fechaSinEspacio"><img class="iconoSizeCalendario" src="<%=iconoCalendario%>" /> <span id="_startDateAvance"></span></p>
+                                                            <p class="lineTime"></p>
+                                                        </div>
+                                                        <div class="card styleCard">
+                                                            <div class="card-body lineaAvance">
+                                                                <h5 class="card-title faMovil">Se inicia el proyecto</h5>
+                                                                <p id="_titleProyecto" class="card-text"></p>
+                                                                <br>
+                                                                <hr>
+                                                                <div class="row">
+                                                                    <img class="iconoSizeBase col-md-3" src="<%=iconoInicioProyecto%>" /> 
+                                                                    <p class="negritas salt col-md-9">Inicio de proyecto</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="splide__slide margenLis">
+                                                        <div class="center-text">
+                                                            <p class="col-md-12 fechaSinEspacio"><img class="iconoSizeCalendario" src="<%=iconoCalendario%>" /> <span id="_approvalDate"></span></p>
+                                                            <p class="lineTime"></p>
+                                                        </div>
+                                                        <div class="card styleCard">
+                                                            <div class="card-body lineaAvance">
+                                                                <h5 class="card-title faMovil">Se aprueba el presupuesto</h5>
+                                                                <p class="card-text">Se aprueba el presupuesto del proyecto</p>
+                                                                <strong><span>$</span> <span id="_montoAprobado"><%= montoAprobado %> </span></strong> <span id="_montoCurrency"> <%= montoCurrency %> </span>
+                                                                <br>
+                                                                <hr>
+                                                                <div class="row">
+                                                                    <img class="iconoSizeBase col-md-3" src="<%=iconoAprobadoMonto%>" />
+                                                                    <p class="negritas salt col-md-9">Aprobación del presupuesto</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="splide__slide splide__listAuto"></li>
+                                                        <div id="_tendersLineaTiempo"></div>
+                                                    <li class="splide__slide splide__listAuto"></li>
+                                                        <div id="_awardsLineaTiempo"></div>
+                                                    <li class="splide__slide splide__listAuto"></li>
+                                                        <div id="_contractsLineaTiempo"></div>
+                                                    <li class="splide__slide margenLis">
+                                                        <div id="_implementationLineaTiempo"></div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br><br>
+                                    <!-- <h3 class="card-title negritas">Avance Financiero (MXN)</h3>
+                                    <p class="col-md-12 text-alin-right"><img class="tam_list_icono" src="<%=icono_date%>" /> Fecha de actualización: <%= fecha_LT %></p>
+                                    <br> -->
+                                    <!-- Avance Financiero -->
+                                    <!-- <div class="card">
+                                        <div class="card-body">
+                                            <div class="row grafico_espaciado">
+                                                <div class="col-md-3 text-alin-right">Original</div>
+                                                <div class="com-md-9 grafico" style="width: 75%;"><strong class="barra">473,192,099</strong></div>
+                                            </div>
+                                            <hr>
+                                            <div class="row grafico_espaciado">
+                                                <div class="col-md-3 text-alin-right">Modificado</div>
+                                                <div class="com-md-9 grafico" style="width: 65%;"><strong class="barra">420,834,699</strong></div>
+                                            </div>
+                                            <hr>
+                                            <div class="row grafico_espaciado">
+                                                <div class="col-md-3 text-alin-right">Ejercido</div>
+                                                <div class="com-md-9 grafico" style="width: 55%;"><strong class="barra">387,446,726</strong></div>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tabla de proyectos relacionados-->
+            <div class="proyectos_relacionados">
+                <div class="container screen_all_contratacion relacion">
+                    <div>
+                        <h1 class="titulo_lista titulosFases">Proyectos relacionados</h1>
+                        <br>
+                        <div id="lista_proyectos_relacionados"></div>
+                        <div class="container box">                 
+                            <ul class="pagination justify-content-center">
+                                <div id="paginas_lista_proyectos_relacionados" class="row"></div>        
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" id="prefixOC4ID" value="<%= prefixOC4ID %>">
+            <input type="hidden" id="identifier" value="<%= identifier %>">
+        </div>
+        <%- include ('partials/footer'); -%>
+    </body>       
+</html>
+
+<script>
+    $('#info-list a').on('click', function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
+    $('#infoGeneral-list a').on('click', function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
+    $('#fasesProyecto-list a').on('click', function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
+    new Splide( '.splide' ).mount();
+
+    $('.panel-collapse').on('show.bs.collapse', function () {
+        $(this).siblings('.panel-heading').addClass('active');
+    });
+
+    $('.panel-collapse').on('hide.bs.collapse', function () {
+        $(this).siblings('.panel-heading').removeClass('active');
+    });
+</script>

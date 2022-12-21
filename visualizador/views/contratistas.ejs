@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <%- include ('partials/headContratista'); -%>
+    </head>
+    <body>
+        <%- include ('partials/header'); -%>
+        <!-- Filtro de busqueda -->
+        <%- include ('partials/busqueda_general'); -%>
+        <!-- Sección Página -->
+        <div id="paginaSeccion" class="tamanoBody">
+            <!-- Breadcrum -->
+            <nav class="ubicacion sticky-top sticky-top_movil">
+                <ol class="breadcrumb breadcrumb_movil">
+                    <li class="breadcrumb-item"><a class="inicio" href="/">Inicio</a></li>
+                    <li class="breadcrumb-item color_detalle">Contratistas</li>
+                </ol>
+            </nav>
+
+            <div>
+                <%- include ('partials/banner_general'); -%>
+            </div>
+            <div class="container screen_all_contratacion">
+                <div>
+                    <h1 class="titulo_lista faMovil">Listado de contratistas</h1>
+                    <div class="cienWidth">
+                        <!-- Buscador -->
+                        <div class="busquedaCenlqP" id="busqueda_contratistas" onclick="closeTooltip()">
+                            <div>
+                                <form class="form-inline search-form">
+                                    <div class="input-group">
+                                        <input id="palabra_clave" class="form-control py-2 select_letra_tamaño borderCornerLeft" type="search" placeholder="Buscar contratistas" onkeyup="buscarDelay()">
+                                        <span class="input-group-append">
+                                            <button class="btn buscar_proyectos borderCorner lupin" type="button">
+                                                <i class="fa fa-search faMovil"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- d3 bubble chart-->
+                        <div id="vis" class="svg-container"></div>
+                    </div> 
+                    <div onclick="closeTooltip()">
+                        <!-- Lista de contratistas -->
+                        <div id="lista_contratistas"></div>
+                        <div class="container box">                 
+                            <ul class="pagination justify-content-center">
+                                <div id="paginas_lista_contratistas" class="row"></div>        
+                            </ul>
+                        </div>
+                        <a id="downloadAnchorElem" style="display:none"></a>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" id="year" value="<%= paramYear %>">
+            <input type="hidden" id="entity" value="<%= paramEntity %>">
+            <input type="hidden" id="implementer" value="<%= paramImplementer %>">
+        </div>
+        <%- include ('partials/footer'); -%>
+    </body>       
+</html>

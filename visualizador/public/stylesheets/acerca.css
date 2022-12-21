@@ -1,0 +1,52 @@
+/***********************
+    Sección Acerca
+***********************/
+.tituloAcerca {
+    font-size: 26px;
+    margin-top: 50px;
+}
+.colorAcerca {
+    color: #db4b36;
+    font-family: "Proxima Nova Bold";
+}
+.alineaAcerca {
+    text-align: justify;
+}
+.numeroAcerca {
+    color: #db4b36;
+}
+.letraAcerca {
+    color: #333333;
+}
+.subrayadoAcerca {
+    text-decoration: underline;
+}
+.tamanoBody {
+    display: block;
+}
+.sizeVideo {
+    width: 640px;
+    height: 360px;
+}
+
+@media only screen
+and (min-device-width: 300px)
+and (max-device-width: 1024px) {
+    .tamanoBody {
+        width: 108%;
+    }
+    .alineaAcerca {
+        max-width: 94%!important;
+        font-size: 36px;
+    }
+    .sizeVideo {
+        width: 880px;
+        height: 514px;
+    }
+    .tituloAcerca {
+        font-size: 36px;
+    }
+    .colorAcerca {
+        font-size: 36px;
+    }
+}

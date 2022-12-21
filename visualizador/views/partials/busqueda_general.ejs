@@ -1,0 +1,24 @@
+<div id="inputSearch" class="busqueda_altura">
+    <div class="card card-body" style="border: 0px;">
+        <div class="busqueda_espacio interno be_movil">
+            <form class="form-inline search-form">
+                <div class="col-4 select_menu_movil filtrosSepara">
+                    <input id="palabra_clave_gral" placeholder="Buscar palabra clave" class="vMovil ia_search busqanch bordeEsquinas" type="search" onkeyup="buscarDelayGral()">
+                    <button class="btn buscarMapa lupanone borderDerecho" type="button">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Div que muestra los resultados -->
+<div class="container" id="myDIV" style='display:none; margin-top: 200px;'>
+    <div style="display: inline-flex; margin-bottom: 14px;">
+        <h2>Resultados para: </h2> <input type="text" id="textoresultado" style="font-weight: 700; font-size: 2rem; border:0px; margin-top: -10px; margin-left: 10px;" readonly/>
+    </div>
+    <div>
+        <div id="lista_proyectos_gral"></div>
+    </div>
+    <div id="myDIVsr" style="display:none;" class="estiloSinResultados">No hubo resultados</div>
+</div>

@@ -1,0 +1,52 @@
+<div>
+    <section class="banner">
+        <div>
+          <p class="identificador col-lg-2 col-md-6 col-sm-4 texto_gral_movil"><%= texto_identificador %> <strong><span id="_identificador_banner"><%= identificador_banner %></span></strong></p>
+        </div>
+        <div>
+          <p class="actualiza_fecha col-lg-2 col-md-6 col-sm-4 id_movil texto_gral_movil"><i class="<%=icono_fecha_actualizacion%>"></i> <%= texto_fecha_actualizacion %> <strong id="_fecha_actualizacion"><%= fecha_actualizacion %></strong> </p>
+        </div>
+      <div class="container area_movil">
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                <h1 id="_title" class="titulo_bd espacio_linea titulo_movil"><%= title %></h1>
+                <p class="titulo_detalle descripcion_gral_movil">
+                  <strong><%= texto_legalname %></strong> <span id="_legalname"><%= descriptionL %></span>
+                  <br>
+                  <strong><%= texto_contacto %></strong> <span id="_contacto"><%= descriptionC %></span>
+                  <br>
+                  <strong><%= texto_direccion %></strong> <span id="_direccion"><%= descriptionD %></span>
+                </p>
+            </div>
+            <%if (icono_1 == '') { %>
+              <div class="col-6 col-sm-4 col-md-6 col-lg-3 text_center">
+                <img class="tam_icono" src="<%=icono_2%>" />
+                <h2 id="_cifra_2" class="cifras_altura cifras_gral_movil"><%= cifra_2 %></h2> 
+                <p class="size_letra texto_gral_movil"><%= texto_2 %></p>
+              </div>
+              <div class="col-6 col-sm-4 col-md-6 col-lg-3 text_center">
+                <img class="tam_icono" src="<%=icono_3%>" />
+                <h2 id="_cifra_3" class="cifras_altura cifras_gral_movil"><%= cifra_3 %></h2>
+                <p class="size_letra texto_gral_movil"><%= texto_3 %></p>
+              </div>
+            <%} else {%>
+              <div class="col-sm-4 col-md-4 col-lg-2 text_center">
+                <img class="tam_icono" src="<%=icono_1%>" />
+                <h2 id="_cifra_1" class="cifras_altura cifras_gral_movil"><%= cifra_1 %></h2>
+                <p class="size_letra texto_gral_movil"><%= texto_1 %></p>
+              </div>
+              <div class="col-6 col-sm-4 col-md-4 col-lg-2 text_center">
+                <img class="tam_icono" src="<%=icono_2%>" />
+                <h2 id="_cifra_2" class="cifras_altura cifras_gral_movil"><%= cifra_2 %></h2> 
+                <p class="size_letra texto_gral_movil"><%= texto_2 %></p>
+              </div>
+              <div class="col-6 col-sm-4 col-md-4 col-lg-2 text_center">
+                <img class="tam_icono" src="<%=icono_3%>" />
+                <h2 id="_cifra_3" class="cifras_altura cifras_gral_movil"><%= cifra_3 %></h2>
+                <p class="size_letra texto_gral_movil"><%= texto_3 %></p>
+              </div>
+            <%}%>
+        </div>
+      </div>
+    </section>
+  </div>
